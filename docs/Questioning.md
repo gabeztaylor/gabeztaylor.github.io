@@ -18,7 +18,7 @@ Consider the following experiment that you can do right now:
 
 What was that process like? Why did you choose those numbers? Why didn't you choose 69, 258, and 784,532? You know those numbers exist, but they probably just didn't
 occur to you to pick them. Are you then ***free*** to choose that which does not occur to you? This is almost an exact replica of the experiment [Sam Harris](https://samharris.org/)
-usually conducts on audiences with movies and cities in liue of numbers, of which you are free to us and repeat the experiment. 
+usually conducts on audiences with movies and cities in liue of numbers, of which you are free to use and repeat the experiment. 
 
 TBA. 
 
