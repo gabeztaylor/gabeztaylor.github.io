@@ -18,9 +18,9 @@ Consider the following experiment that you can do right now:
 
 What was that process like? Why did you choose those numbers? Why didn't you choose 69, 258, and 784,532? You know those numbers exist, but they probably just didn't
 occur to you to pick them. Are you then ***free*** to choose that which does not occur to you? This is almost an exact replica of the experiment [Sam Harris](https://samharris.org/)
-usually conducts on audiences with movies and cities in liue of numbers, of which you are free to repeat the experiment instead of numbers. Pun intended. 
+usually conducts on audiences with movies and cities in liue of numbers, of which you are free to repeat the experiment instead of numbers. 
 
-There is a lot more I want to share on the subject. TBA. 
+TBA. 
 
 ## You're Probably Not Going To Heaven (or Hell). 
 
@@ -31,7 +31,7 @@ that you are completely at the mercy of the laws of physics in which you exist, 
 to [browse this site](https://whynogod.wordpress.com/) if you consider yourself a theist. If anything, consider it a *test of faith* in which God would look upon 
 you with delight as you brave the temptations of doubt. 
 
-There is a lot more I want to share on the subject. TBA. 
+TBA. 
 
 
 
