@@ -4,6 +4,8 @@ title: Working
 permalink: /working/
 ---
 
+> "All models are wrong, but some are useful" - George E. P. Box
+
 ## Programming Languages
 
 I work every day in Python (for work & school) and R (for school). I'm normally lucky enough to program outside of SAS. 
