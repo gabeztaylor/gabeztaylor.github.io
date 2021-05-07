@@ -4,9 +4,7 @@ title: Questioning
 permalink: /questioning/
 ---
 
-<p align="center" width="100%">
-    <img width="50%" src="/pics/science-vs-faith.png"> 
-</p>
+<img src="/pics/science-vs-faith.png" align="center" width="50%"/>
 
 This page is dedicated to determinisim and skepticism.
 
