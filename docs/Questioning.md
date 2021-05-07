@@ -29,7 +29,9 @@ TBA.
 Given the absence of free will there's probably no reason to believe in any religions founded in retribution and redemption. However, even if you're reluctant to accept 
 that you are completely at the mercy of the laws of physics in which you exist, there is still not really any good reason to believe there's a god. I encourage you
 to [browse this site](https://whynogod.wordpress.com/) if you consider yourself a theist. While it is not exhaustive, it at least has the potential to expose you 
-to new thoughts. If anything, consider it a *test of faith* in which God would look upon you with delight as you brave the temptations of doubt. 
+to new thoughts. If anything, consider it a *test of faith* in which God would look upon you with delight as you brave the temptations of doubt.
+
+My own deconversion started with the realization that the Bible is fallible and clearly man-made. [This is a beautiful dashboard](https://philb61.github.io/) visualizing the contradictions and moral atrocities of the bible. 
 
 TBA. 
 
