@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Working
-permalink: /newpage/
+permalink: /working/
 ---
 
 ## MAGNet Project Summaries
