@@ -24,7 +24,7 @@ There is a lot more I want to share on the subject. TBA.
 
 ## You're Probably Not Going To Heaven (or Hell). 
 
-< “Properly read, the Bible is the most potent force for atheism ever conceived.” - Isaac Asimov
+> “Properly read, the Bible is the most potent force for atheism ever conceived.” - Isaac Asimov
 
 Given the absence of free will there's probably no reason to believe in any religions founded in retribution and redemption. However, even if you're reluctant to accept 
 that you are completely at the mercy of the laws of physics in which you exist, there is still not really any good reason to believe there's a god. I encourage you
