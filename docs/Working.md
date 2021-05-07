@@ -37,7 +37,7 @@ Common libraries I use:
 
 ### SAS - Intermediate
 
-SAS gets a lot hate, and you know what, it deserves every bit. 
+SAS gets a lot of hate, and you know what? It deserves every bit. 
 
 
 ## MAGNet Project Summaries
