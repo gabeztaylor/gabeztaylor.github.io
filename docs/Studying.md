@@ -4,6 +4,8 @@ title: Studying
 permalink: /studying/
 ---
 
+> "I have never let schooling interfere with my education" - Mark Twain
+
 ## UIUC Statistics Coursework
 
 Detailed descriptions can be found [here](https://stat.illinois.edu/academics/course-catalog).
