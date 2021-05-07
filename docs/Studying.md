@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Learning
-permalink: /learning/
+title: Studying
+permalink: /studying/
 ---
 
 ## UIUC Statistics Coursework
