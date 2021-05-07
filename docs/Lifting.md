@@ -4,6 +4,8 @@ title: Lifting
 permalink: /lifting/
 ---
 
+> "Strong people are harder to kill, and more useful in general" - Mark Rippetoe
+
 ### Lifting in 2021
 
 [Here](https://docs.google.com/spreadsheets/d/1XI1Nc5aR5rGxZxPvZK1hB_FUt4B0UNe3vpiNrjCi_7s/edit?usp=sharing) is my lifting journal for 2021. In that spreadsheet, I only record bench and squat numbers, but I normally perform auxillary movements in addtion to benching and squatting, because I think it's a little superfluous to track how many curls I'm doing. 
