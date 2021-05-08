@@ -15,7 +15,7 @@ old training partners getting promoted has grown to an uncomfortable level. [Her
 
 > "Oh we're throwing spinning shit now?" - Nick Diaz
 
-My current record in Muay Thai is 2-2 and I'm pretty sure it will stay that way until die. You can view one of my wins [here](https://youtu.be/vBENzHeO1E4) 
+My current record in Muay Thai is 2-2 and I'm pretty sure it will stay that way until I die. You can view one of my wins [here](https://youtu.be/vBENzHeO1E4) 
 and one of my losses [here](https://youtu.be/0vtLnuh8sp8).
 
 ### MMA
