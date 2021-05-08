@@ -8,7 +8,7 @@ permalink: /lifting/
 
 ### Lifting in 2021
 
-[Here](https://docs.google.com/spreadsheets/d/1XI1Nc5aR5rGxZxPvZK1hB_FUt4B0UNe3vpiNrjCi_7s/edit?usp=sharing) is my lifting journal for 2021. In that spreadsheet, I only record bench and squat numbers, but I normally perform auxillary movements in addtion to benching and squatting. 
+[Here](https://docs.google.com/spreadsheets/d/1XI1Nc5aR5rGxZxPvZK1hB_FUt4B0UNe3vpiNrjCi_7s/edit?usp=sharing) is my lifting journal for 2021. Although I perform auxillary movements in addition to bench and squat, I don't record those numbers becasue I think it's a little superfluous to track how many curls I'm doing lol. 
 
 Right now, my split consists of 2 days "on" 1 and day "off". Bench day is coupled with rowing, which is followed by a squat day. 
 I'm modulating my work capacity with 4 weeks of lower intensity and higher volume followed by 4 weeks of higher intesity and lower volume. 
