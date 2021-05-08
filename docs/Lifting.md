@@ -13,6 +13,10 @@ permalink: /lifting/
 Right now, my split consists of 2 days "on" 1 and day "off". Bench day is coupled with rowing, which is followed by a squat day. 
 I'm modulating my work capacity with 4 weeks of lower intensity and higher volume followed by 4 weeks of higher intesity and lower volume. 
 
-### Current Numbers
+### Current PRs
 
 [Here](https://docs.google.com/spreadsheets/d/10txtP7DMuuvLB9lMh8Mhv-jTf4FUJG3WVf2LLiVuEwg/edit?usp=sharing) are my current PR's. I'm slacking on squat because I'm a little jaded from the amount of squatting I did last summer. 
+
+- [345 Bench (2021)](https://youtu.be/6jl2AC3ZW3g)
+- [405 Squat (2018)](https://youtu.be/ikQw1KKWMvw)
+- [455 Deadlift (2018)](https://youtu.be/YKvYp6FkIyk)
