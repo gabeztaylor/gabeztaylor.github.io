@@ -16,7 +16,7 @@ I score the books based on the following criteria:
 
 - **Practicality (1 - 5)**: how useful are the lessons? Do they map onto daily life? Do they have the potential to change someone's life? 
 
-I also provide my favorite chapters in case you want to jsut sample the book or don't want to commit to the entire book.
+I also provide my favorite chapters in case you want to just sample the book or don't want to commit to the entire book.
 
 # Closed
 
@@ -42,7 +42,6 @@ housed in other individuals. A common misconception is that the book claims all 
 - **Difficulty: 3**: This book is perfect for those who only have a base understanding of evolution and its mechanisms (like myself) who are searching
 for a bit more explanations. However, Richard Dawkins presents the material in a very layman style, which also makes it great for those who have no 
 scientific background at all. 
-
 - **Engagement: 3**: On balance, the book kept my attention, but there are some chapters I could've done without. 
 - **Practicality: 2** While the content is very interesting, I find that my life hasn't changed dramatically after reading, but I do have a more solid
 understanding of genetics and evolution, which is helpful in some conversations. 
