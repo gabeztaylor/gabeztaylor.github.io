@@ -4,13 +4,11 @@ title: "STAT 542 Final Project Report"
 date: 2021-05-19
 ---
 
-**I need to upload photos later**
+### Authors: Man Chong Chan (mcchan3), Samuel Guo (sguo), Gabe Taylor (gabet2)
 
-Man Chong Chan (mcchan3), Samuel Guo (sguo), Gabe Taylor (gabet2)
+### Team Leader: Gabe Taylor (gabet2)
 
-Team Leader: Gabe Taylor (gabet2)
-
-Spring 2021
+### Spring 2021
 
 GitHub Repository: https://github.com/gabet2/STAT542 
 
@@ -53,8 +51,8 @@ The study shows that the 5-CNL, based on an amended FSA score allows to discrimi
 
 The study examines the results of applying Term Frequency Inverse Document Frequency (TF-IDF) to determine what words in a corpus of documents might be more favorable to use in a query. TF-IDF calculates values for each word in a document through an inverse proportion of the frequency of the word in a particular document to the percentage of documents the word appears in. Words with high TF-IDF numbers imply a strong relationship with the document they appear in, suggesting that if that word were to appear in a query, the document could be of interest to the user. 
 TF-IDF is defined as below:
-                  
 
+![](/pics/tfidf.png)
 
 Note:
  is the frequency of term inside the document;  is the total number of words in the document.
@@ -79,15 +77,20 @@ Given that the ingredients of the food products are the center of this project, 
 - Post-cleaned: “bananas vegetable-oil coconut-oil corn-oil-and/or-palm-oil sugar natural-banana-flavor”
 
 After cleaning the text in the ingredients column, we compiled a master dictionary of the 1000 most frequently occurring ingredients, and removed any food products that contained ingredients not included in the master dictionary. While this action resulted in 97% reduction in rows (356,027 to 12,277), we still retain 63% of the ingredients by frequency. Below, we plot the distribution of the frequency of the top 100 ingredients, where salt, sugar, and water alone make up a little over 8% of all ingredients. 
+
+![](/pics/termfreq.png)
+
 Next, we turned to processing the macronutrient columns, including carbohydrates, fat, and protein. In addition to total carbohydrates, we include fiber and sugar to further inform the specific carbohydrate profile of a product. This reasoning is motivated by the fact that two foods having equal total carbohydrates content can be categorized as healthy or unhealthy given the fiber and sugar content, where the lower sugar and higher fiber food will be given a healthier nutrition score. Similarly, we include the saturated fat column to further inform the fat profile of a product, where two foods having equal total fat, the food with lower saturated fat will have a better nutrition score. In total, we selected 6 nutrient columns: carbohydrates, fiber, sugar, fat, saturated fat, and protein. To process these columns, we address outliers by removing any rows containing an entry further than 3 standard deviations from the respective mean for any nutrient. Next, we centered and scaled each nutrient. 
 
-
+![](/pics/eda1.png)
 
 We joined the additives column and nutrition score back onto the cleaned ingredients and macronutrients data. Finally, we dropped any rows containing missing values, which resulted in a final row count of 12,222. We cleaned the additives column using the exact techniques described in cleaning the ingredients. For the supervised task, we omitted the macronutrients and focused only on the ingredients and additives columns. In order to engineer features from the ingredients and additives, we performed a ‘bag-of-words’ transformation to represent the text as fixed length vectors with numeric entries, rendering the ingredients and additives amenable for learning. However, recall that we selected 1000 ingredients, which would yield 1000 features each for the ingredients and additives. This scale is beyond the scope of the project, and furthermore, 1000 features are most likely beyond a point of diminishing returns for predictive power. Hence, we adopt an ‘occam’s razor’ and select only 30 features for a more parsimonious model structure. The 30 chosen features are those with highest term frequency defined using TF-IDF across all food products. Below are correlation heatmaps for the 30 chosen features from both the ingredients and additives columns, each prefixed with “ING:” and “ADD:” respectively. Note that “ADD:--” is ultimately excluded from the model, because we know a priori it will not offer any significant predictive value. 
  
-
+![](/pics/eda2.png)
  
 The next preprocessing step we performed is dimensionality reduction, which is motivated by the significant overlap in content between ingredients and additives. Instead of PCA, we opt for truncated SVD, which is similar to PCA, but is preferred over PCA for text features processed with methods such as TF-IDF. In selecting the top 30 components out of 59, we still preserve 96.5% of the variance, which is unsurprising given the strong linear dependency stated previously. 
+
+![](/pics/eda3.png)
 
 Finally, with our 30 chosen features, we split our data into training (85%) and testing (15%) sets. For hyperparameter tuning, we perform cross-validation with our training set, which means that the validation folds stem from the training set. Given that we consider both a classification and regression task, we have to engineer our target appropriately. For the classification task, we split the target at the median for a balanced class structure. Additionally, despite the ordinal structure of the target, we treat the target as continuous in the regression case in effort to produce a more precise nutrition score for each prediction. 
 
@@ -96,7 +99,9 @@ Finally, with our 30 chosen features, we split our data into training (85%) and 
 **Research Objective**:
 Cluster different food products based on their macronutrient profiles and try to identify the prevalent ingredients of each food cluster.
 
-**Self Organizing Map**:       
+**Self Organizing Map**:   
+
+![](/pics/SOM.png)
 
 The clustering of Self Organizing Map preserves the underlying geometric structure between data, and the feature grid maps could potentially tell us about the relationship between different features in a cluster. Looking at the fiber, protein, fat, saturated-fat grid map, we can see that the group of data around the upper-right corner of the map tend to have high fiber, proteins, fat and saturated-fat. This suggests that fiber, protein, fat and saturated fat are somewhat proportionally correlated. Therefore, we might see cluster(s) of data that possess high fiber, protein, fat and saturated fat.
 
@@ -106,41 +111,39 @@ Similarly, if we look at the carbohydrates and the sugars grid map, we can see t
 				
 Use the Elbow Method to determine the number of clusters in the data.
 
+![](/pics/elbow.png)
 
 There is a small elbow at k = 5, suggesting that we should try k = 5 for our K-means algorithm.
 
-
-
-
-
+![](/pics/clusters1.png)
 
 Five most frequent ingredients in each of the K-means clusters were extracted and the result is as follows.
 
-Cluster 1:
+**Cluster 1**:
 The most frequent ingredients are citric-acid, corn-syrup, milk, ascorbic-
 acid and green-beans. This cluster is characterized by a more balanced 
 macronutrients profile: every nutrient is below 0, with fiber and sugar
 being relatively higher. This is considered to be the “healthier” cluster.     	 
 
-Cluster 2:								           The most frequent ingredients are enzymes, pasteurized-milk, cheese-
+**Cluster 2**:								           
+The most frequent ingredients are enzymes, pasteurized-milk, cheese-
 Culture and pasteurized-part-skim-milk. This cluster is characterized by 
 high proteins, fat and saturated-fat. The box plot indicates that there is a
 proportional relationship between proteins, fat and saturated-fat, which agrees with one of the findings of SOM. This cluster is believed to be mostly dairy products. 
 
-Cluster 3:							                    
+**Cluster 3**:							                    
 The most frequent ingredients are almonds, peanuts, pecans, peanut-oil and 
 Walnuts. This cluster is characterized by high fiber, proteins, fat and 
 moderate saturated-fat, which also corresponds to one of our finding in 
 SOM. This cluster seems to contain mostly nuts.
 
-Cluster 4:
+**Cluster 4**:
  The most frequent ingredients are niacin, riboflavin, folic-acid, iron and 
 ferrous-sulfate. This cluster is characterized by high carbohydrates and 
 moderate proteins. All the ingredients can be commonly found in Pasta, so
 we believe that this cluster mainly consists of pasta and wheat products.
 
-
-Cluster 5:								      
+**Cluster 5**:								      
 The most frequent ingredient are corn-syrup, soy-lecithin, cocoa-butter, 
 citric-acid and chocolate-liquor. This cluster is characterized by high 
 carbohydrate, sugar and moderate fiber, fat and saturated-fat. The box plot indicates that there is a proportional relationship between carbohydrate and 
@@ -150,47 +153,47 @@ and pastries.
 
 **Hierarchical Clustering (Ward’s linkage)**: 	
    	       
-               Dendrogram of Foods on Macronutrient 
+Dendrogram of Foods on Macronutrient 
+
+![](/pics/dendrogram.png)
 
 n = 5 seems to be a reasonable cutoff according to the Dendrogram
 
-
+![](/pics/clusters2.png)
 
 Similar to K-means, five most frequent ingredients in each of the clusters were extracted and the result is as follows.
 
-
-
-Cluster 1:								     
+**Cluster 1**:								     
 The most frequent ingredient are corn-syrup, soy-lecithin, cocoa-butter, 
 citric-acid and chocolate-liquor. This cluster is characterized by high 
 carbohydrate, sugar and moderate fiber, fat and saturated-fat. This cluster corresponds to Cluster 5 in the K-means clustering. Similarly to Cluster 5
 in K-means this cluster contains mostly desserts and pastries.
 
-Cluster 2:								     
+**Cluster 2**:								     
 The most frequent ingredients are almonds, peanuts, pecans, peanut-oil 
 and walnuts. This cluster is characterized by high fiber, proteins, fat and 
 moderate saturated-fat, This corresponds to Cluster 3 in the 
 K-means clustering, and they contain mainly nuts.
 
-Cluster 3:								     
+**Cluster 3**:								     
 The most frequent ingredients are citric-acid, corn-syrup, milk, vitamin-d3
 and green-beans. This cluster is characterized by a more balanced 
 macronutrients profile. This corresponds to Cluster 1 in the 
 K-means clustering: the “healthier” cluster. 
 
-Cluster 4:								     
+**Cluster 4**:								     
 The most frequent ingredients are enzymes, pasteurized-milk, cheese-
 culture and pasteurized-part-skim-milk. This cluster is characterized by 
 high proteins, fat and saturated-fat. This corresponds to Cluster 2 in the K-means clustering, and mostly consists of dairy products.
 
-Cluster 5:								     
+**Cluster 5**:								     
  The most frequent ingredients are niacin,  folic-acid, riboflavin, iron and 
 ferrous-sulfate. This cluster is characterized by high carbohydrates,
 moderate proteins and fiber. This corresponds to Cluster 4 in the K-means 
 clustering: pasta and wheat products cluster.
 
 
-Unsupervised Learning Conclusion:
+**Unsupervised Learning Conclusion**:
 
 Of all the foods we selected, we successfully identified meaningful and congruent clustering using K-means and hierarchical clustering, and the result is also consistent with the findings of Self Organizing Map (SOM). There are five food clusters in total and each has its unique macronutrient characteristics. We then extracted the five most frequent ingredients in each cluster to identify their hypothetical dominant food type. Cluster 1, which is characterized by a relatively balanced macronutrients profile, does not exist any significant dominant food type; Cluster 2, which is characterized by high proteins, fat and saturated-fat, is believed to contain mostly dairy products; Cluster 3, which is characterized by high fiber, proteins, fat and moderate saturated-fat, is believed to be a nuts-dominant group; Cluster 4, which is characterized by high carbohydrates and moderate proteins, is believed to mainly consist of pasta and wheat products. Cluster 5, which is characterized by high carbohydrate, sugar and moderate fiber, fat and saturated-fat, is believed to be mainly desserts and pastries. With this information, we can help consumers to better understand the different macronutrient profiles between different food types and also recognize the prevalent ingredients of each food type.
 
@@ -255,6 +258,7 @@ The resulting optimal values of the hyperparameter and evaluation metrics are sh
 **Regression Residual Plots**
 We also examine the residual plots for both the training and testing datasets.
 
+![](/pics/residplots.png)
 
 The residual plots of the three models appear to have approximately the same shape. The residual values do appear to be consistently centered around zero, however their variance is much higher in the middle range of fitted values (5 to 15), and the variance tapers significantly towards the edges (-5 and 25). 
 Because the xgboost regressor has the lowest testing RMSE, we deem it as the best model. 
@@ -294,6 +298,7 @@ Optimal hyperparameters and metrics:
 
 Classification ROC Curves
 
+![](/pics/roccurves.png)
 
 The ROC curves for each of the models all look quite good, as they all have high AUC (area under curve). Logistic regression has the weakest performance and xgboost narrowly edges out Random Forest to be the best model.
 
