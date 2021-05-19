@@ -4,8 +4,6 @@ title: Questioning
 permalink: /questioning/
 ---
 
-<img src="/pics/science-vs-faith.png" width="50%"/>
-
 This page is dedicated to determinisim and skepticism.
 
 ## You Probably Don't Have Free Will
@@ -37,6 +35,8 @@ My own deconversion started with the realization that the Bible is fallible and 
 
 TBA. 
 
+
+![](/pics/science-vs-faith.png)
 
 
 
