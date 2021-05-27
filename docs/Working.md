@@ -37,9 +37,6 @@ Common libraries I use:
 
 ### SAS - Intermediate
 
-SAS gets a lot of hate, and you know what? It deserves every bit. 
-
-
 ## MAGNet Project Summaries
 
 Below, I summarize each of my three projects I have completed at my internship with State Farm. 
