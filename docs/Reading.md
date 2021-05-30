@@ -59,9 +59,12 @@ understanding of genetics and evolution, which is helpful in some conversations.
 
 ### 7 and 1/2 Lessons About the Brain
 
+### Map and Territory
+
 
 # Opened
 
+- The Black Swan
 - The Enigma of Reason
 - Thinking, Fast and Slow
 
