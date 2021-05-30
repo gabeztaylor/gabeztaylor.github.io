@@ -52,7 +52,7 @@ The study shows that the 5-CNL, based on an amended FSA score allows to discrimi
 The study examines the results of applying Term Frequency Inverse Document Frequency (TF-IDF) to determine what words in a corpus of documents might be more favorable to use in a query. TF-IDF calculates values for each word in a document through an inverse proportion of the frequency of the word in a particular document to the percentage of documents the word appears in. Words with high TF-IDF numbers imply a strong relationship with the document they appear in, suggesting that if that word were to appear in a query, the document could be of interest to the user. 
 TF-IDF is defined as below:
 
-![](../pics/tfidf.png)
+![ ](https://github.com/gabeztaylor/gabeztaylor.github.io/docs/pics/tfidf.png)
 
 Note:
  is the frequency of term inside the document;  is the total number of words in the document.
