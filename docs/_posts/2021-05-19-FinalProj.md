@@ -115,7 +115,7 @@ Use the Elbow Method to determine the number of clusters in the data.
 
 There is a small elbow at k = 5, suggesting that we should try k = 5 for our K-means algorithm.
 
-![ ](/pics/clusters1.png)
+![ ](../pics/clusters1.png)
 
 Five most frequent ingredients in each of the K-means clusters were extracted and the result is as follows.
 
@@ -155,11 +155,11 @@ and pastries.
    	       
 Dendrogram of Foods on Macronutrient 
 
-![ ](/pics/dendrogram.png)
+![ ](../pics/dendrogram.png)
 
 n = 5 seems to be a reasonable cutoff according to the Dendrogram
 
-![ ](/pics/clusters2.png)
+![ ](../pics/clusters2.png)
 
 Similar to K-means, five most frequent ingredients in each of the clusters were extracted and the result is as follows.
 
@@ -258,7 +258,7 @@ The resulting optimal values of the hyperparameter and evaluation metrics are sh
 **Regression Residual Plots**
 We also examine the residual plots for both the training and testing datasets.
 
-![ ](/pics/residplots.png)
+![ ](../pics/residplots.png)
 
 The residual plots of the three models appear to have approximately the same shape. The residual values do appear to be consistently centered around zero, however their variance is much higher in the middle range of fitted values (5 to 15), and the variance tapers significantly towards the edges (-5 and 25). 
 Because the xgboost regressor has the lowest testing RMSE, we deem it as the best model. 
@@ -298,7 +298,7 @@ Optimal hyperparameters and metrics:
 
 Classification ROC Curves
 
-![ ](/pics/roccurves.png)
+![ ](../pics/roccurves.png)
 
 The ROC curves for each of the models all look quite good, as they all have high AUC (area under curve). Logistic regression has the weakest performance and xgboost narrowly edges out Random Forest to be the best model.
 
