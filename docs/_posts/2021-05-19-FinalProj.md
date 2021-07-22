@@ -78,7 +78,7 @@ Given that the ingredients of the food products are the center of this project, 
 
 After cleaning the text in the ingredients column, we compiled a master dictionary of the 1000 most frequently occurring ingredients, and removed any food products that contained ingredients not included in the master dictionary. While this action resulted in 97% reduction in rows (356,027 to 12,277), we still retain 63% of the ingredients by frequency. Below, we plot the distribution of the frequency of the top 100 ingredients, where salt, sugar, and water alone make up a little over 8% of all ingredients. 
 
-![ ](../pics/termfreq.png)
+![ ](/pics/termfreq.png)
 
 Next, we turned to processing the macronutrient columns, including carbohydrates, fat, and protein. In addition to total carbohydrates, we include fiber and sugar to further inform the specific carbohydrate profile of a product. This reasoning is motivated by the fact that two foods having equal total carbohydrates content can be categorized as healthy or unhealthy given the fiber and sugar content, where the lower sugar and higher fiber food will be given a healthier nutrition score. Similarly, we include the saturated fat column to further inform the fat profile of a product, where two foods having equal total fat, the food with lower saturated fat will have a better nutrition score. In total, we selected 6 nutrient columns: carbohydrates, fiber, sugar, fat, saturated fat, and protein. To process these columns, we address outliers by removing any rows containing an entry further than 3 standard deviations from the respective mean for any nutrient. Next, we centered and scaled each nutrient. 
 
