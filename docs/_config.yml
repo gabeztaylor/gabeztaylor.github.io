@@ -23,7 +23,7 @@ email: gabe.z.taylor@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Hello! Welcome to my website. It is currently in its infancy and I hope to populate it with more content over this year. 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://gabeztaylor.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  gabet2
 
 # Google Analytics
