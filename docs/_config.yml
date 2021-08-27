@@ -27,7 +27,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  gabet2
 
 # Google Analytics
-google_analytics: G-7YSYSX2PN3
+google_analytics: UA-203329740-1
 
 # Build settings
 theme: minima
