@@ -21,7 +21,7 @@
 title: Gabriel Taylor
 email: gabe.z.taylor@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Gabriel's Descent is a play on words that references the optimization method of Gradient Descent that is often used in Machine Learning, and a 
+  Gabriel's Descent is a play on words referencing the optimization algorithm Gradient Descent that is often used in Machine Learning, and a 
   theological reference to the angel Gabriel's descent to the virgin Mary. The name attempts to capture an intersection of my interests.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://gabeztaylor.github.io" # the base hostname & protocol for your site, e.g. http://example.com
