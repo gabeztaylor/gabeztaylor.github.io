@@ -10,17 +10,17 @@ I just finished watching this video on youtube with 2.6 million views titled
 
 Letter Flake says:
 
-My advice to people trying to master emotions: 
-1. Don’t ignore unpleasant or exciting emotions.
-2. Understand their cause and source.
-3. Decide if you want it to overtake you.
+> My advice to people trying to master emotions: 
+> 1. Don’t ignore unpleasant or exciting emotions.
+> 2. Understand their cause and source.
+> 3. Decide if you want it to overtake you.
 
 5 minute psychology says:
 
-Emotional intelligence has changed my life. For those who want to master their emotions:
-1. Observe your emotions 
-2. Analyse what causes them
-3. Take 10 deep breaths before you react to something that makes you angry
+> Emotional intelligence has changed my life. For those who want to master their emotions:
+> 1. Observe your emotions 
+> 2. Analyse what causes them
+> 3. Take 10 deep breaths before you react to something that makes you angry
 
 Both of these people, while well intentioned, each provided two unneccesary and potentially harmful steps. They should have stopped at "Don't ignore 
 unpleasant or exciting emotions" and "Observe your emotions". The next two steps are futile at best and exhausting at worst. Let's pick apart
