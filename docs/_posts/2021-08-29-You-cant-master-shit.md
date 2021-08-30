@@ -34,7 +34,7 @@ the dejected. You can't control your emotions. Not how you think you can. You ca
 Mastering emotions is the wrong message. 
 
 I've said in a previous post to not be a slave to your emotions, and that might
-seem to contradict what I'm saying here, however, ****not being a slave does not imply becoming the master****. 
+seem to contradict what I'm saying here, however, ***not being a slave does not imply becoming the master***. 
 
 Telling someone they can master their emotions is like telling your little brother he can play video games with you, and then handing him
 a disconnected controller. You give him the illusion that he is playing, but in reality he has no fucking clue why Mario just fell
