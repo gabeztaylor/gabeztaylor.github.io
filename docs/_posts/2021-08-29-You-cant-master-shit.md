@@ -29,7 +29,7 @@ in the present moment will invariably be biased and may only capture a fraction 
 Understanding reactions and emotions is a practice for a later time.
  
 Observing your emotions and controlling your emotions are two entirely, but subtly different things. Everyone knows and wants to control
-their emotions. **That's the fucking problem.** Trying to control your emotions will only enrage the infuriated and dishearten
+their emotions. **That's the fucking problem.** Aiming to control emotions will only enrage the infuriated and dishearten
 the dejected. You can't control your emotions. Not how you think you can. You can only get better at **detatching** from your emotions. 
 Mastering emotions is the wrong message. 
 
