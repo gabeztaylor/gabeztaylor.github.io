@@ -28,3 +28,9 @@ Detailed descriptions can be found [here](https://stat.illinois.edu/academics/co
 - STAT 527: Advanced Regression Analysis
 - STAT 542: Statistical Learning
 - STAT 593: Statistics Internship
+
+## Actuarial Exams
+
+- SOA Exam P
+- SOA Exam FM
+- SOA Exam IFM
