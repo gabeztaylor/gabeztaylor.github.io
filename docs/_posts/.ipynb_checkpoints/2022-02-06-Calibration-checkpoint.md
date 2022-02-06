@@ -11,13 +11,13 @@ A friend of mine and I made an R Shiny App that makes the calibration quiz in Ch
 
 Essentially, a well-calibrated individual makes claims exactly consistent with their confidence. For example, if I say *"I'm 95% sure Khabib Nurmagomedov would beat Conor McGregor again"*, then I should be right about 95% of the time for similar 95% confident predictions. Let's say I make 100 of these claims:
 
-1. *"I'm 95% sure Khabib Nurmagomedov would beat Conor McGregor again"*
+    1. *"I'm 95% sure Khabib Nurmagomedov would beat Conor McGregor again"*
 
-2. *"I'm 95% sure Donald Cerrone would beat Al Iaquinta"*
+    2. *"I'm 95% sure Donald Cerrone would beat Al Iaquinta"*
 
-...
+    ...
 
-100. *"I'm 95% sure Kamaru Usman would beat Georges St. Pierre"*
+    100. *"I'm 95% sure Kamaru Usman would beat Georges St. Pierre"*
 
 If were a perfectly calibrated human, only 5 of these predictions would be false, if realized. 
 
