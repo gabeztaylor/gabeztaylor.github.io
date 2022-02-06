@@ -76,21 +76,21 @@ Below, I summarize projects I have completed at internships.
 ### Recreational Vehicle Rating
 
 - Built Generalized Linear Models on 30 million rows of auto data in SAS in effort to
-advise potential revision of current rating structure for recreational vehicles.
+  advise potential revision of current rating structure for recreational vehicles.
 
 ### Machine Learning Interpretation Methods
 
 - Researched black-box machine learning interpretation methods, such as Shapley
-Values and Partial Dependence, by implementing SAS action sets on a Gradient
-Boosting Machines model.
+    Values and Partial Dependence, by implementing SAS action sets on a Gradient
+    Boosting Machines model.
 
 ### Alternative Linear Models
 
 - Investigated and built alternative predictive models, such as Elastic Net and
-Generalized Additive Models, in SAS on 60 million rows of homeowner data.
+    Generalized Additive Models, in SAS on 60 million rows of homeowner data.
 
 ## Publication
 
-Somehow I wrote a paper (along with a lot of help from people a lot smarter than me) about interpretable machine learning with implementations in SAS that got accpeted for the 2019 SAS global forum. If you really have nothing better to do, you can [read it here](https://www.sas.com/content/dam/SAS/support/en/sas-global-forum-proceedings/2020/5116-2020.pdf) and the accompanying E-poster that exposes my lack of design talent [here](https://drive.google.com/file/d/1yAAPK0YgsX-gb1ooGY5VBwnYg1Zt3Cpu/view?usp=sharing).  
+I wrote a paper (along with a lot of help from people a lot smarter than me) about interpretable machine learning with implementations in SAS that got accpeted for the 2019 SAS global forum. If you really have nothing better to do, you can [read it here](https://www.sas.com/content/dam/SAS/support/en/sas-global-forum-proceedings/2020/5116-2020.pdf) and the accompanying E-poster that exposes my lack of design talent [here](https://drive.google.com/file/d/1yAAPK0YgsX-gb1ooGY5VBwnYg1Zt3Cpu/view?usp=sharing).  
 
 
