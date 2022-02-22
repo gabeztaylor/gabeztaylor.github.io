@@ -15,7 +15,7 @@ I work every day in Python (for work & school) and R (for school). I'm normally 
 Common libraries I use:
 
 - `pandas` for data wrangling
-- `h2o` for lazy machien learning
+- `h2o` for lazy machine learning
 - `numpy` for math operations 
 - `scipy` for stats operations
 - `sklearn` for lazy machine learning

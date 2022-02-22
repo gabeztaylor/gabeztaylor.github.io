@@ -4,9 +4,9 @@ title: "STAT 542 Final Project Report"
 date: 2021-05-19
 ---
 
-### Authors: Man Chong Chan (mcchan3), Samuel Guo (sguo), Gabe Taylor (gabet2)
+Authors: Man Chong Chan (mcchan3), Samuel Guo (sguo), Gabe Taylor (gabet2)
 
-### Team Leader: Gabe Taylor (gabet2)
+Team Leader: Gabe Taylor (gabet2)
 
 ### Spring 2021
 
