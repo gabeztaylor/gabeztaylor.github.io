@@ -206,7 +206,7 @@ plt.show()
 ```
 
 
-![png](MCMC_files/MCMC_23_0.png)
+![png](/pics/MCMC_23_0.png)
 
 
 ### So what do Markov Chains and Monte Carlo methods have to do with Bayesian Inference?
@@ -360,7 +360,7 @@ plt.show()
 ```
 
 
-![png](MCMC_files/MCMC_37_0.png)
+![png](/pics/MCMC_37_0.png)
 
 
 
@@ -376,7 +376,7 @@ plt.plot(samples[:200])
 
 
 
-![png](MCMC_files/MCMC_38_1.png)
+![png](/pics/MCMC_38_1.png)
 
 
 
