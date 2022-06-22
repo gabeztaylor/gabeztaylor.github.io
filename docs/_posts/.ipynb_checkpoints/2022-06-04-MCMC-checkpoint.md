@@ -282,7 +282,10 @@ $$\pi(x)T(y|x) \geq \pi(y)T(x|y)$$
 
 Thus, we want to **impose a constraint such that the reversibility constraint is met**. 
 
-3. Decompose $T(y|x) = g(y|x)A(y, x)$
+3. Decompose the transition probability
+
+
+$$T(y|x) = g(y|x)A(y, x)$$
 
 where $g(y|x)$ is the conditional probability of proposing $y$ given we're in state $x$. $A(y, x)$ is the probability of accepting such a proposal. 
 
@@ -380,11 +383,10 @@ plt.plot(samples[:200])
 
 
 
-```python
+Sources:
 
-```
+- https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm
 
+- https://gregorygundersen.com/blog/2019/11/02/metropolis-hastings/
 
-```python
-
-```
+- https://similarweb.engineering/mcmc/
