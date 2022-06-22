@@ -492,7 +492,6 @@ plt.show()
 
 Ensemble of decorrelated trees
 
-![](/pics/rfalg.png)
 
 ![](/pics/rfal-ann.png)
 
@@ -573,7 +572,6 @@ $$\dots$$
 
 $$\hat y_i ^{(t)} = \sum_{k=1}^t f_k(x_i) = f_t(x_i) + \hat y_i^{(t-1)}$$
 
-![](/pics/GBMalg.png)
 
 ![](/pics/GBMalg-ann.png)
 
@@ -848,57 +846,9 @@ gbm_model.pd_plot(full, column = 'studytime')
 
 
 
-```python
-rmse_df.loc['GBM', : ] = [round(gbm_model.rmse(train = True), 3),
-                          round(gbm_model.rmse(xval = True), 3)]
-
-rmse_df.style.format({'Train RMSE': "{:.4}", 'CV RMSE': "{:.4}"}).set_table_styles(styles)
-```
-
-
-
-
-<style  type="text/css" >
-    #T_e5b0c0c0_514e_11ec_9edf_acde48001122 th {
-          font-size: 20px;
-    }    #T_e5b0c0c0_514e_11ec_9edf_acde48001122 td {
-          font-size: 18px;
-    }</style><table id="T_e5b0c0c0_514e_11ec_9edf_acde48001122" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >Train RMSE</th>        <th class="col_heading level0 col1" >CV RMSE</th>    </tr></thead><tbody>
-                <tr>
-                        <th id="T_e5b0c0c0_514e_11ec_9edf_acde48001122level0_row0" class="row_heading level0 row0" >Mean</th>
-                        <td id="T_e5b0c0c0_514e_11ec_9edf_acde48001122row0_col0" class="data row0 col0" >4.576</td>
-                        <td id="T_e5b0c0c0_514e_11ec_9edf_acde48001122row0_col1" class="data row0 col1" >4.576</td>
-            </tr>
-            <tr>
-                        <th id="T_e5b0c0c0_514e_11ec_9edf_acde48001122level0_row1" class="row_heading level0 row1" >OLS</th>
-                        <td id="T_e5b0c0c0_514e_11ec_9edf_acde48001122row1_col0" class="data row1 col0" >3.672</td>
-                        <td id="T_e5b0c0c0_514e_11ec_9edf_acde48001122row1_col1" class="data row1 col1" >4.544</td>
-            </tr>
-            <tr>
-                        <th id="T_e5b0c0c0_514e_11ec_9edf_acde48001122level0_row2" class="row_heading level0 row2" >LASSO</th>
-                        <td id="T_e5b0c0c0_514e_11ec_9edf_acde48001122row2_col0" class="data row2 col0" >4.086</td>
-                        <td id="T_e5b0c0c0_514e_11ec_9edf_acde48001122row2_col1" class="data row2 col1" >4.362</td>
-            </tr>
-            <tr>
-                        <th id="T_e5b0c0c0_514e_11ec_9edf_acde48001122level0_row3" class="row_heading level0 row3" >Decision Tree</th>
-                        <td id="T_e5b0c0c0_514e_11ec_9edf_acde48001122row3_col0" class="data row3 col0" >4.46</td>
-                        <td id="T_e5b0c0c0_514e_11ec_9edf_acde48001122row3_col1" class="data row3 col1" >4.481</td>
-            </tr>
-            <tr>
-                        <th id="T_e5b0c0c0_514e_11ec_9edf_acde48001122level0_row4" class="row_heading level0 row4" >Random Forest</th>
-                        <td id="T_e5b0c0c0_514e_11ec_9edf_acde48001122row4_col0" class="data row4 col0" >4.001</td>
-                        <td id="T_e5b0c0c0_514e_11ec_9edf_acde48001122row4_col1" class="data row4 col1" >4.022</td>
-            </tr>
-            <tr>
-                        <th id="T_e5b0c0c0_514e_11ec_9edf_acde48001122level0_row5" class="row_heading level0 row5" >GBM</th>
-                        <td id="T_e5b0c0c0_514e_11ec_9edf_acde48001122row5_col0" class="data row5 col0" >3.382</td>
-                        <td id="T_e5b0c0c0_514e_11ec_9edf_acde48001122row5_col1" class="data row5 col1" >3.93</td>
-            </tr>
-    </tbody></table>
-
-
-
 # Conclusion
+
+The code for reproducing the visualization can be found at my github repo:
 
 My Github: https://github.com/gabeztaylor/STAT527
 
