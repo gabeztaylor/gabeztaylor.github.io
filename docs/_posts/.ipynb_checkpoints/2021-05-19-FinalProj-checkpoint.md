@@ -1,14 +1,12 @@
 ---
 layout: post
-title: "STAT 542 Final Project Report"
+title: "Natural Language Processing with Food Ingredient Labels"
 date: 2021-05-19
 ---
 
-Authors: Man Chong Chan (mcchan3), Samuel Guo (sguo), Gabe Taylor (gabet2)
+This was a final project for STAT 542 Statistical Learning at UIUC in Spring 2021.
 
-Team Leader: Gabe Taylor (gabet2)
-
-### Spring 2021
+Authors:  Gabe Taylor (gabet2), Man Chong Chan (mcchan3), Samuel Guo (sguo)
 
 GitHub Repository: https://github.com/gabet2/STAT542 
 
