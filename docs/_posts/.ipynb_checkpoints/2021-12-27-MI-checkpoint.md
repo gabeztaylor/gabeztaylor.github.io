@@ -431,3 +431,4 @@ pd.Series(mi_scores, name="MI Scores", index=indices)
 
 
 Here we see that there is a strong interaction between `x1` and `x2`. Note that the mutual information with `x3` is very similar to the 2D mutual information for `x1` and `x2`. This makes sense because `x3` is just noise and completely independent.
+
