@@ -3,7 +3,7 @@ layout: post
 title: "M-Dimensional Mutual Information Estimator"
 mathjax: true
 comments: true
-date: 2021-21-27
+date: 2021-12-27
 ---
 
 
