@@ -319,18 +319,18 @@ print("Mean Model RMSE: " + str(round(rmse(df['G3'], np.mean(df['G3'])), 3)))
 2. Reserve 1 fold for validation (scoring)
 3. Train model on remaining 9 folds
 
-![](imgs/CV-folds.png)
+![](/pics/CV-folds.png)
 
 ### How to evaluate performance
 
 One could take the average error over all of the folds:
 
-![](imgs/CV-avg.png)
+![](/pics/CV-avg.png)
 
 
 Alternatively, one could append the cross-validation predictions to the original training data, and score the predictions using the the full training observations
 
-![](imgs/CV-full.png)
+![](/pics/CV-full.png)
 
 ### What about the Test Data?
 
@@ -355,11 +355,11 @@ Alternatively, one could append the cross-validation predictions to the original
 ### Cons
 - Individual trees empirically demonstrated to overfit easily (low bias, high variance)
 
-![](imgs/DT1.png)
+![](/pics/DT1.png)
 
 [source](https://bradleyboehmke.github.io/HOML/DT.html)
 
-![](imgs/DT2.png)
+![](/pics/DT2.png)
 
 [source](https://bradleyboehmke.github.io/HOML/DT.html)
 
@@ -459,15 +459,15 @@ for depth in range(1, 6):
 ! bash maketree.sh 5
 ```
 
-![](imgs/model1.png)
+![](/pics/model1.png)
 
-![](imgs/model2.png)
+![](/pics/model2.png)
 
-![](imgs/model3.png)
+![](/pics/model3.png)
 
-![](imgs/model4.png)
+![](/pics/model4.png)
 
-![](imgs/model5.png)
+![](/pics/model5.png)
 
 
 ```python
@@ -492,9 +492,9 @@ plt.show()
 
 Ensemble of decorrelated trees
 
-![](imgs/rfalg.png)
+![](/pics/rfalg.png)
 
-![](imgs/rfal-ann.png)
+![](/pics/rfal-ann.png)
 
 
 ```python
@@ -561,17 +561,21 @@ print("Cross Validation RMSE: " + str(round(drf.rmse(xval = True), 3)))
 
 Sequentially fitting additive decision trees in stagewise fashion.
 
-![](imgs/gbdt_attractive_picture.png)
+![](/pics/gbdt_attractive_picture.png)
 
 $$\hat y_i ^{(0)} = \bar y$$
+
 $$\hat y_i ^{(1)} = f_1(x_i) + \hat y_i ^{(0)} = f_1(x_i) + \bar y$$
+
 $$\hat y_i ^{(2)} = f_2(x_i) + \hat y_i ^{(1)} = f_2(x_i) + f_1(x_i) + \bar y$$
+
 $$\dots$$
+
 $$\hat y_i ^{(t)} = \sum_{k=1}^t f_k(x_i) = f_t(x_i) + \hat y_i^{(t-1)}$$
 
-![](imgs/GBMalg.png)
+![](/pics/GBMalg.png)
 
-![](imgs/GBMalg-ann.png)
+![](/pics/GBMalg-ann.png)
 
 Take
 
@@ -599,7 +603,7 @@ $$= -\sum_{x_i \in R_{jm}} (r_{im} - \gamma) = 0$$
 
 $$\gamma = \frac{1}{n_{jm}}\sum_{x_i \in R_{jm}} r_{im}$$
 
-![](imgs/gradients.png)
+![](/pics/gradients.png)
 
 ### Tuning
 

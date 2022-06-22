@@ -366,7 +366,7 @@ plt.show()
 
 
     
-![png](/pics/MCMC_42_0.png)
+![png](/pics/MCMC_37_0.png)
     
 
 
@@ -384,7 +384,7 @@ plt.plot(samples[:200])
 
 
     
-![png](/pics/MCMC_43_1.png)
+![png](/pics/MCMC_38_1.png)
     
 
 
