@@ -13,9 +13,9 @@ So far, we've really only been interested in 1 variable problems (the proportion
 ### The Frequentist Way
 
 $$\color{red}{L(\text{data}|p)} = \prod_{i=1}^n p^{x_i} (1 - p)^{1-x_i}$$
-$$$$
+
 $$\color{red}{L(\text{data}|p)} = p^{\sum x_i} (1 - p)^{n- \sum x_i}$$
-$$$$
+
 $$l(\text{data}|p) = \ln p \sum x_i   + \ln (1-p) \left(n- \sum x_i \right) $$
 
 In our simple case, 2 accounts were sampled and only one was authentic. $\sum x_i = 1$
@@ -582,9 +582,9 @@ np.quantile(height_dist , q = (0.055, 1 - 0.055))
 ### MLE for Normal Distribution
 
 $$\color{red}{L(\text{data}|\color{blue}{\mu}, \color{green}{\sigma^2})} = \prod_{i=1}^n \frac{1}{\color{green}{\sigma^2}\sqrt{2\pi}} \exp \bigg\{-\frac{(x_i - \color{blue}{\mu})^2}{2\color{green}{\sigma^2}} \bigg\}$$
-$$$$
+
 $$\color{red}{L(\text{data}|\color{blue}{\mu}, \color{green}{\sigma^2})} \propto  \frac{1}{\color{green}{\sigma}^{2n}} \exp \bigg\{-\frac{\sum_{i=1}^n(x_i - \color{blue}{\mu})^2}{2\color{green}{\sigma^2}} \bigg\}$$
-$$$$
+
 $$l(\text{data}|\color{blue}{\mu}, \color{green}{\sigma^2}) \propto  -2n \ln \color{green}{\sigma} -\frac{\sum_{i=1}^n(x_i - \color{blue}{\mu})^2}{2\color{green}{\sigma^2}}$$
 
 We want to **maximize** this. What values of $\color{blue}{\mu}, \color{green}{\sigma^2}$ will this be maximized?
