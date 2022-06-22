@@ -82,7 +82,7 @@ plt.show()
 
 
     
-![png](MCMC_files/MCMC_11_0.png)
+![png](/pics/MCMC_11_0.png)
     
 
 
@@ -209,7 +209,7 @@ plt.show()
 
 
     
-![png](MCMC_files/MCMC_23_0.png)
+![png](/pics/MCMC_23_0.png)
     
 
 
@@ -280,11 +280,11 @@ $$\pi^{*} = \pi$$
 
 **Ensure reversibility**
 
-$$\pi(x)T(y|x) = \pi(y)T(x|y)$$
+$$\pi(x)T(y \vert x) = \pi(y)T(x \vert y)$$
 
 The above equation is unlikely to hold. In other words, it could be the case that in reality,
 
-$$\pi(x)T(y|x) \geq \pi(y)T(x|y)$$
+$$\pi(x)T(y \vert x) \geq \pi(y)T(x \vert y)$$
 
 Thus, we want to **impose a constraint such that the reversibility constraint is met**. 
 
@@ -366,7 +366,7 @@ plt.show()
 
 
     
-![png](MCMC_files/MCMC_42_0.png)
+![png](/pics/MCMC_42_0.png)
     
 
 
@@ -384,7 +384,7 @@ plt.plot(samples[:200])
 
 
     
-![png](MCMC_files/MCMC_43_1.png)
+![png](/pics/MCMC_43_1.png)
     
 
 

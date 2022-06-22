@@ -36,15 +36,15 @@ $$\pi(p|\text{data}) \propto \color{red}{L(\text{data}|p)} \pi(p)$$
 
 In our example, 
 
-$$B|p \sim \text{Bernoulli}(p)$$
+$$B \vert p \sim \text{Bernoulli}(p)$$
 $$p \sim \text{Uniform}(0, 1)$$
 
 $$\pi(p|X = 1) = 6p(1-p)$$
 
 **Remark**: What is the mean of this distribution?
 
-$$\mathbb{E}[\pi(p|X = 1)] = \int_0^1 p * 6p(1-p) dp$$
-$$\mathbb{E}[\pi(p|X = 1)] = \frac{1}{2}$$
+$$\mathbb{E}[\pi(p\vert X = 1)] = \int_0^1 p * 6p(1-p) dp$$
+$$\mathbb{E}[\pi(p\vert X = 1)] = \frac{1}{2}$$
 
 ### Two parameters does not mean two variables
 
@@ -77,7 +77,7 @@ plt.show()
 ```
 
 
-![png](03_LinearModels_files/03_LinearModels_7_0.png)
+![png](/pics/03_LinearModels_7_0.png)
 
 
 
@@ -87,7 +87,7 @@ plt.show()
 ```
 
 
-![png](03_LinearModels_files/03_LinearModels_8_0.png)
+![png](/pics/03_LinearModels_8_0.png)
 
 
 ### Linear Model Structure
@@ -250,7 +250,7 @@ plt.show()
 ```
 
 
-![png](03_LinearModels_files/03_LinearModels_21_0.png)
+![png](/pics/03_LinearModels_21_0.png)
 
 
 
@@ -279,7 +279,7 @@ plt.show()
 ```
 
 
-![png](03_LinearModels_files/03_LinearModels_25_0.png)
+![png](/pics/03_LinearModels_25_0.png)
 
 
 $$h_i \sim \text{Normal}(\mu, \sigma^2)$$
@@ -301,7 +301,7 @@ plt.show()
 ```
 
 
-![png](03_LinearModels_files/03_LinearModels_27_0.png)
+![png](/pics/03_LinearModels_27_0.png)
 
 
 
@@ -391,7 +391,7 @@ sns.lineplot(ax  = ax3, x = range(steps), y = sigma_steps, label = "Sigma2", col
 
 
 
-![png](03_LinearModels_files/03_LinearModels_31_1.png)
+![png](/pics/03_LinearModels_31_1.png)
 
 
 
@@ -411,7 +411,7 @@ sns.histplot(ax  = ax3, x = sigma_steps, label = "Sigma2", color = "dodgerblue")
 
 
 
-![png](03_LinearModels_files/03_LinearModels_32_1.png)
+![png](/pics/03_LinearModels_32_1.png)
 
 
 
@@ -452,7 +452,7 @@ plt.show()
 ```
 
 
-![png](03_LinearModels_files/03_LinearModels_36_0.png)
+![png](/pics/03_LinearModels_36_0.png)
 
 
 ## Prediction
@@ -484,7 +484,7 @@ sns.histplot(x = height_dist, color = "dodgerblue")
 
 
 
-![png](03_LinearModels_files/03_LinearModels_41_1.png)
+![png](/pics/03_LinearModels_41_1.png)
 
 
 ### Expected Value?
