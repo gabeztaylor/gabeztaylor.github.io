@@ -116,7 +116,7 @@ P(S_{t+1} = +1 |S_t = -1) &P(S_{t+1} = -1 |S_t = -1)
 \end{bmatrix}
 $$
 
-![](assets/markovchain.png)
+![](/pics/markovchain.png)
 
 If today is Monday and the stock went up a dollar today, what is the probability that the stock goes up a dollar on Wednesday at close?
 
@@ -253,7 +253,7 @@ $$0.5*0.75 = 0.5 * 0.75$$
 
 While the discrete case is useful for pedagogical reasons, from here I will transition (no pun intended) to the continuous case, which looks virutally the same:
 
-$$\pi(x)T(y|x) = \pi(y)T(x|y)$$
+$$\pi(x)T(y \vert x) = \pi(y)T(x \vert y)$$
 
 but now $\pi$ and $T$ are ***densities*** instead of matrices.
 
@@ -288,9 +288,9 @@ $$\pi(x)T(y \vert x) \geq \pi(y)T(x \vert y)$$
 
 Thus, we want to **impose a constraint such that the reversibility constraint is met**. 
 
-**Decompose $T(y|x) = g(y|x)A(y, x)$**
+**Decompose $T(y \vert x) = g(y \vert x)A(y, x)$**
 
-where $g(y|x)$ is the conditional probability of proposing $y$ given we're in state $x$. $A(y, x)$ is the probability of accepting such a proposal. 
+where $g(y \vert x)$ is the conditional probability of proposing $y$ given we're in state $x$. $A(y, x)$ is the probability of accepting such a proposal. 
 
 How does this help? Well suppose that we move from $x$ to $y$ more frequently than $y$ to $x$ (not reversible). How can we limit the moves from $x$?
 
@@ -298,13 +298,13 @@ We can introduce a **probability** that a move is made. $A(y, x) < 1$. If the pr
 
 **Plug in the decomposition**
 
-$$\pi(x)g(y|x)A(y, x) = \pi(y)g(x|y)A(x, y)$$
+$$\pi(x)g(y \vert x)A(y, x) = \pi(y)g(x \vert y)A(x, y)$$
 
 This equation ensures balance!
 
 **Rearrange**
 
-$$\frac{A(y, x)}{A(x, y)} = \frac{\pi(y)g(x|y)}{\pi(x)g(y|x)}$$
+$$\frac{A(y, x)}{A(x, y)} = \frac{\pi(y)g(x \vert y)}{\pi(x)g(y \vert x)}$$
 
 **Choose an acceptance ratio $\frac{A(y, x)}{A(x, y)}$**
 
@@ -312,7 +312,7 @@ $$\frac{A(y, x)}{A(x, y)} = \frac{\pi(y)g(x|y)}{\pi(x)g(y|x)}$$
 
 We set $A(x, y) = 1$ since we want to increase those number of moves. 
 
-$$A(y, x) = \min \bigg\{1, \frac{\pi(y)g(x|y)}{\pi(x)g(y|x)} \bigg\}$$
+$$A(y, x) = \min \bigg\{1, \frac{\pi(y)g(x \vert y)}{\pi(x)g(y \vert x)} \bigg\}$$
 
 Furthermore, if we choose $g$, such that it is symmetric, we have the Metropolis Algorithm:
 
@@ -325,7 +325,7 @@ All of that for one silly equation, huh
 
 Let's revisit the twitter bot example. Your friend observed one bot account and one authentic account, which yields the posterior:
 
-$$\pi(p|X=1) \propto p(1-p)$$
+$$\pi(p \vert X=1) \propto p(1-p)$$
 
 Now, obviously we know what the full posterior is, but let's pretend we don't and instead randomly walk around it.
 

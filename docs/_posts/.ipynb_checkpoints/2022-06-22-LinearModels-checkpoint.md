@@ -27,7 +27,9 @@ We want to **maximize** this. For what value of $p$ is this maximized?
 $$\frac{d}{dp} l(\text{data}|p) = \frac{1}{p}  - \frac{1}{1-p} = 0$$
 
 $$ \frac{1}{p}  = \frac{1}{1-p}$$
+
 $$ {p} = {1-p}$$
+
 $$ \hat{p} = \frac{1}{2}$$
 
 ### The Bayesian Way
@@ -37,6 +39,7 @@ $$\pi(p|\text{data}) \propto \color{red}{L(\text{data}|p)} \pi(p)$$
 In our example, 
 
 $$B \vert p \sim \text{Bernoulli}(p)$$
+
 $$p \sim \text{Uniform}(0, 1)$$
 
 $$\pi(p|X = 1) = 6p(1-p)$$
@@ -44,6 +47,7 @@ $$\pi(p|X = 1) = 6p(1-p)$$
 **Remark**: What is the mean of this distribution?
 
 $$\mathbb{E}[\pi(p\vert X = 1)] = \int_0^1 p * 6p(1-p) dp$$
+
 $$\mathbb{E}[\pi(p\vert X = 1)] = \frac{1}{2}$$
 
 ### Two parameters does not mean two variables
@@ -261,9 +265,13 @@ plt.show()
 ### Solve the Bayesian Way
 
 $$h_i \sim \text{Normal}(\mu, \sigma^2)$$
+
 $$\mu = \beta_0 + \beta_1 (w_i - \bar w)$$
+
 $$\beta_0 \sim \text{Normal}(150, 10)$$
+
 $$\beta_1 \sim \text{Normal}(0, 10)$$
+
 $$\sigma^2 \sim \text{Exp}(1)$$
 
 
@@ -283,9 +291,13 @@ plt.show()
 
 
 $$h_i \sim \text{Normal}(\mu, \sigma^2)$$
+
 $$\mu = \beta_0 + \beta_1(w_i - \bar w)$$
+
 $$\beta_0 \sim \text{Normal}(150, 10)$$
+
 $$\beta_1 \sim \text{Log-Normal}(0, 1)$$
+
 $$\sigma^2 \sim \text{Exp}(1)$$
 
 
