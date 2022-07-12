@@ -563,3 +563,6 @@ $$n = \frac{\sum_{i=1}^n(x_i - \color{blue}{\mu})^2}{\color{green}{\sigma^2}}$$
 $$\boxed{\color{green}{\hat \sigma^2} = \frac{\sum_{i=1}^n(x_i - \color{blue}{\hat \mu})^2}{n}} = \text{"Population variance"}$$
 
 
+### Sources 
+
+**Statistical Rethinking** - Richard McElreath

@@ -389,11 +389,10 @@ plt.plot(samples[:200])
 
 
 
-```python
+### Sources:
 
-```
+https://gregorygundersen.com/blog/2019/11/02/metropolis-hastings/
 
+https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm
 
-```python
-
-```
+https://similarweb.engineering/mcmc/

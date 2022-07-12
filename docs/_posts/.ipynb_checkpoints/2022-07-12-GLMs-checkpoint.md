@@ -1265,4 +1265,4 @@ plt.show()
     
 ### Sources:
 
-Statistical Rethinking - Richard McElreath
+**Statistical Rethinking** - Richard McElreath
