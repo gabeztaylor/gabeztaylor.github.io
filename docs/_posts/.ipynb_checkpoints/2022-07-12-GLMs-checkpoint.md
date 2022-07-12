@@ -48,7 +48,9 @@ bot.mean()
 
 
 $$B_i \sim \text{Bernoulli}(p_i)$$
+
 $$\text{logit}( p_i) \sim \beta_0 + \beta_1 R_i + \beta_2 L_i$$
+
 $$\beta_0, \beta_1, \beta_2 \sim \text{Normal}(0, 10)$$
 
 $$\text{logit}(p_i) = \ln \bigg( \frac{p_i}{1-p_i} \bigg )$$
@@ -77,14 +79,12 @@ def inv_logit(x):
     return 1 / (1 + np.exp(-x))
 ```
 
-Hint:
 $$\log f(b_i|p_i) = b_i \log p_i + (1 - b_i) \log (1 - p_i)$$
 
 
 ```python
 def prior(b0, b1, b2):
 
-    ### YOUR CODE HERE ###
 
     b0_prior = norm.pdf(x = b0, loc = 0, scale = 10)
 
@@ -102,7 +102,7 @@ def prior(b0, b1, b2):
 
 def likelihood(b0, b1, b2):
 
-    ### YOUR CODE HERE ###
+     
 
     nu = b0 + b1 * ratio + b2 * lifetime
     p = inv_logit(nu)
@@ -143,10 +143,10 @@ def metropolis(steps):
 
         b0_old, b1_old, b2_old = beta_steps[step - 1, :]
         
-        ### YOUR CODE HERE ###
+         
         b0_new, b1_new, b2_new = proposal(b0_old, b1_old, b2_old)
 
-        # HINT: Use exp to restore from log numbers
+        # Use exp to restore from log numbers
         accept_ratio = np.exp(posterior(b0_new, b1_new, b2_new) - posterior(b0_old, b1_old, b2_old))
         ######################
         
@@ -313,6 +313,7 @@ ufc.head()
 
 
 $$W_i \sim \text{Bernoulli}(p_i)$$
+
 $$\text{logit} (p_i) = \beta(L_{1[i]} - L_{2[i]})$$
 
 
@@ -326,7 +327,7 @@ f2_lefty = ufc['fighter2.lefty'].to_numpy()
 ```python
 def prior(b):
 
-    ### YOUR CODE HERE ###
+     
 
     b_prior = norm.pdf(x = b, loc = 0, scale = 1)
 
@@ -337,7 +338,7 @@ def prior(b):
 
 def likelihood(b):
 
-    ### YOUR CODE HERE ###
+     
     nu = b * (f1_lefty - f2_lefty)
     p = inv_logit(nu)
 
@@ -369,7 +370,7 @@ def metropolis(steps):
 
         b_old = beta_steps[step - 1]
         
-        ### YOUR CODE HERE ###
+         
         b_new = proposal(b_old)
         
         # Use exp to restore from log numbers
@@ -558,13 +559,14 @@ plt.show()
 
 
 $$C_i \sim \text{Poisson}(\lambda_i)$$
+
 $$\text{ln}( \lambda_i) = \beta_0 + \beta_1 A_i + \beta_2 Cr_i$$
 
 
 ```python
 def prior(b0, b1, b2):
 
-    ### YOUR CODE HERE ###
+     
 
     b0_prior = norm.pdf(x = b0, loc = 0, scale = 10)
 
@@ -581,7 +583,7 @@ def prior(b0, b1, b2):
 
 def likelihood(b0, b1, b2):
 
-    ### YOUR CODE HERE ###
+     
 
     nu = b0 + b1 * age ** (1/3) + b2 * credit
     lam = np.exp(nu)
@@ -624,7 +626,7 @@ def metropolis(steps):
 
         b0_old, b1_old, b2_old = beta_steps[step - 1, :]
         
-        ### YOUR CODE HERE ###
+         
 
         b0_new, b1_new, b2_new = proposal(b0_old, b1_old, b2_old)
 
@@ -924,6 +926,7 @@ contact = kline.contact.apply(lambda x: 1 if x == 'high' else 0).to_numpy()
 ```
 
 $$T_i \sim Poisson(\lambda_i)$$
+
 $$\ln \lambda_i = \beta_0 + \beta_1 C_i + \beta_2 \log P_i + \beta_3 C_i\log P_i $$
 
 
@@ -935,7 +938,7 @@ from scipy.stats import poisson, norm
 ```python
 def prior(b0, b1, b2, b3):
     
-    ### YOUR CODE HERE ###
+     
     b0_prior = norm.pdf(x = b0, loc = 0, scale = 100)
     b1_prior = norm.pdf(x = b1, loc = 0, scale = 1)
     b2_prior = norm.pdf(x = b2, loc = 0, scale = 1)
@@ -947,7 +950,7 @@ def prior(b0, b1, b2, b3):
 
 def likelihood(b0, b1, b2, b3):
     
-    ### YOUR CODE HERE ###
+     
     nu = b0 + b1 * contact + b2 * log_pop + b3 * contact * log_pop
     lam = np.exp(nu)
     likelihoods = poisson(lam).pmf(tools)
@@ -983,7 +986,7 @@ def metropolis(steps):
 
         b0_old, b1_old, b2_old, b3_old = beta_steps[step - 1, :]
         
-        ### YOUR CODE HERE ###
+         
         b0_new, b1_new, b2_new, b3_new = proposal(b0_old, b1_old, b2_old, b3_old)
 
 
@@ -1260,4 +1263,6 @@ plt.show()
     
 ![png](/pics/04_GLMs_80_0.png)
     
+### Sources:
 
+Statistical Rethinking - Richard McElreath

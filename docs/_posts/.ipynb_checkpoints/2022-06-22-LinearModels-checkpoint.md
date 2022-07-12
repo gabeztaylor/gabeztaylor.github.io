@@ -202,7 +202,6 @@ Solve for $\beta_1$
 
 
 ```python
-### YOUR CODE HERE ###
 w_bar = weight.mean()
 h_bar = height.mean()
 
@@ -225,7 +224,7 @@ Solve for $\beta_0$
 
 
 ```python
-### YOUR CODE HERE ###
+ 
 
 # some stuff #
 
@@ -325,7 +324,7 @@ plt.show()
 ```python
 def prior(b0, b1, s):
     
-    ### YOUR CODE HERE ###
+     
     b0_prior = norm.pdf(x = b0, loc = 150, scale = 10)
     b1_prior = np.exp(norm.pdf(x = b1, loc = 0, scale = 1))
     s_prior  = np.exp(-s)
@@ -336,7 +335,7 @@ def prior(b0, b1, s):
 
 def likelihood(b0, b1, s):
     
-    ### YOUR CODE HERE ###
+     
     mu = b0 + b1 * (weight - weight.mean())
     likelihoods = norm(loc = mu, scale = s).pdf(x = height)
     ######################
@@ -442,15 +441,17 @@ b1_steps.mean(), beta_1
 
 
 ```python
-n = 1000
+n = 5000
 weights = np.linspace(30, 65, len(weight))
 lower_89 = np.zeros(len(weight))
 upper_89 = np.zeros(len(weight))
 
 for i, w in enumerate(weights):
+    mu = b0_steps[-n:] + b1_steps[-n:] * (w - weight.mean())
+    sigma = sigma_steps[-n:]
     heights = np.random.normal(size = n, 
-                               loc = b0_steps.mean() + b1_steps.mean() * (w - weight.mean()), 
-                               scale = sigma_steps.mean())
+                               loc = mu, 
+                               scale = sigma)
     
     lower_89[i], upper_89[i] = np.quantile(heights, q = (0.055, 1 - 0.055))
 ```
@@ -503,7 +504,7 @@ sns.histplot(x = height_dist, color = "dodgerblue")
 
 
 ```python
-### YOUR CODE HERE ###
+ 
 height_dist.mean()
 ```
 
@@ -518,7 +519,7 @@ height_dist.mean()
 
 
 ```python
-### YOUR CODE HERE ###
+ 
 np.quantile(height_dist , q = (0.055, 1 - 0.055))
 ```
 
@@ -530,64 +531,7 @@ np.quantile(height_dist , q = (0.055, 1 - 0.055))
 
 
 
-```python
 
-```
-
-
-```python
-
-```
-
-
-```python
-
-```
-
-
-```python
-
-```
-
-
-```python
-
-```
-
-
-```python
-
-```
-
-
-```python
-
-```
-
-
-```python
-
-```
-
-
-```python
-
-```
-
-
-```python
-
-```
-
-
-```python
-
-```
-
-
-```python
-
-```
 
 # Appendix
 
