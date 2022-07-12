@@ -1,0 +1,1263 @@
+---
+layout: post
+title: "Bayesian Generalized Linear Models with Metropolis-Hastings Algorithm"
+mathjax: true
+comments: true
+date: 2022-07-12
+---
+
+# Generalized Linear Models
+
+
+```python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from scipy.stats import norm, poisson
+```
+
+We are going to take a problem-solving based approach to GLMs. The only conceptual leap you will need to make is the idea of a **link function**.
+
+# Binomial Likelihood
+
+## Bot Detection
+
+Suppose you wanted to predict the probability of a twitter account being a bot using common attributes of the account, such as the ratio of followers to following and the lifetime of the account. How would you design this model?
+
+
+```python
+n = 1000
+ratio = np.random.exponential(size = n, scale = 1)
+lifetime = np.random.exponential(size = n, scale = 1)
+nu = 1 - 2 * ratio - lifetime
+p = 1 / (1 + np.exp(-nu))
+bot = np.random.binomial(p = p, n = 1)
+```
+
+
+```python
+bot.mean()
+```
+
+
+
+
+    0.231
+
+
+
+$$B_i \sim \text{Bernoulli}(p_i)$$
+$$\text{logit}( p_i) \sim \beta_0 + \beta_1 R_i + \beta_2 L_i$$
+$$\beta_0, \beta_1, \beta_2 \sim \text{Normal}(0, 10)$$
+
+$$\text{logit}(p_i) = \ln \bigg( \frac{p_i}{1-p_i} \bigg )$$
+
+$$\text{inv logit}(\beta_0 + \beta_1 R_i + \beta_2 L_i) = \frac{1}{1 + \exp(-(\beta_0 + \beta_1 R_i + \beta_2 L_i))}$$
+
+
+```python
+xx = np.linspace(-5, 5, 100)
+plt.plot(xx, 1 / (1 + np.exp(-xx)))
+plt.plot(xx, np.ones(100), linestyle = '--', color = 'grey')
+plt.plot(xx, np.zeros(100), linestyle = '--', color = 'grey')
+plt.title('Inverse Logit Function')
+plt.show()
+```
+
+
+    
+![png](/pics/04_GLMs_11_0.png)
+    
+
+
+
+```python
+def inv_logit(x):
+    return 1 / (1 + np.exp(-x))
+```
+
+Hint:
+$$\log f(b_i|p_i) = b_i \log p_i + (1 - b_i) \log (1 - p_i)$$
+
+
+```python
+def prior(b0, b1, b2):
+
+    ### YOUR CODE HERE ###
+
+    b0_prior = norm.pdf(x = b0, loc = 0, scale = 10)
+
+    b1_prior = norm.pdf(x = b1, loc = 0, scale = 10)
+
+    b2_prior = norm.pdf(x = b2, loc = 0, scale = 10)
+
+    ######################
+
+    # log probability transforms multiplication to summation
+
+    return np.log(b0_prior) + np.log(b1_prior) + np.log(b2_prior)
+
+ 
+
+def likelihood(b0, b1, b2):
+
+    ### YOUR CODE HERE ###
+
+    nu = b0 + b1 * ratio + b2 * lifetime
+    p = inv_logit(nu)
+    log_likelihoods = bot * np.log(p) + (1 - bot) * np.log(1 - p)
+    ######################
+
+    # log probability transforms multiplication to summation
+    return np.sum(log_likelihoods)
+
+ 
+
+def posterior(b0, b1, b2):
+
+    return likelihood(b0, b1, b2) + prior(b0, b1, b2)
+
+ 
+
+def proposal(b0, b1, b2):
+
+    b0_new = np.random.normal(loc = b0, scale = 0.1)
+
+    b1_new = np.random.normal(loc = b1, scale = 0.1)
+
+    b2_new = np.random.normal(loc = b2, scale = 0.1) 
+
+    return b0_new, b1_new, b2_new
+```
+
+
+```python
+def metropolis(steps):
+
+    beta_steps = np.zeros((steps, 3))
+    beta_steps[0, :] = np.zeros(3)
+
+
+    for step in range(1, steps):              
+
+        b0_old, b1_old, b2_old = beta_steps[step - 1, :]
+        
+        ### YOUR CODE HERE ###
+        b0_new, b1_new, b2_new = proposal(b0_old, b1_old, b2_old)
+
+        # HINT: Use exp to restore from log numbers
+        accept_ratio = np.exp(posterior(b0_new, b1_new, b2_new) - posterior(b0_old, b1_old, b2_old))
+        ######################
+        
+        if np.random.uniform(0, 1) < accept_ratio:
+
+            beta_steps[step, :]  = b0_new, b1_new, b2_new
+
+        else:
+
+            beta_steps[step, :]  = b0_old, b1_old, b2_old
+            
+    return beta_steps
+```
+
+
+```python
+chain1 = metropolis(10000)
+```
+
+
+```python
+chain_df = pd.DataFrame(chain1, columns = ['intercept', 'ratio', 'lifetime'])
+```
+
+
+```python
+sns.displot(chain_df[5000:])
+```
+
+
+
+
+    <seaborn.axisgrid.FacetGrid at 0x7f6e20683c70>
+
+
+
+
+    
+![png](/pics/04_GLMs_18_1.png)
+    
+
+
+
+```python
+plt.plot(chain_df[5000:])
+plt.legend(chain_df.columns)
+plt.show()
+```
+
+
+    
+![png](/pics/04_GLMs_19_0.png)
+    
+
+
+## Lefthand Advantage
+
+>The data in data(UFClefties) are the outcomes
+of 205 Ultimate Fighting Championship (UFC) matches. It is widely believed that left-handed fighters (aka “Southpaws”) have an advantage against right-handed fighters, and left-handed men are indeed over-represented among fighters (and fencers and tennis players) compared to the general
+population. Estimate the average advantage, if any, that a left-handed fighter has
+against right-handed fighters. Based upon your estimate, why do you think lefthanders are over-represented among UFC fighters?
+
+
+```python
+ufc = pd.read_csv('data/UFCLefties.csv', delimiter = ";")
+```
+
+
+```python
+ufc.head()
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fight</th>
+      <th>episode</th>
+      <th>fight.in.episode</th>
+      <th>fighter1.win</th>
+      <th>fighter1</th>
+      <th>fighter2</th>
+      <th>fighter1.lefty</th>
+      <th>fighter2.lefty</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1181</td>
+      <td>118</td>
+      <td>1</td>
+      <td>0</td>
+      <td>146</td>
+      <td>175</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1182</td>
+      <td>118</td>
+      <td>2</td>
+      <td>0</td>
+      <td>133</td>
+      <td>91</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1183</td>
+      <td>118</td>
+      <td>3</td>
+      <td>1</td>
+      <td>56</td>
+      <td>147</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1184</td>
+      <td>118</td>
+      <td>4</td>
+      <td>1</td>
+      <td>192</td>
+      <td>104</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1185</td>
+      <td>118</td>
+      <td>5</td>
+      <td>1</td>
+      <td>79</td>
+      <td>15</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+$$W_i \sim \text{Bernoulli}(p_i)$$
+$$\text{logit} (p_i) = \beta(L_{1[i]} - L_{2[i]})$$
+
+
+```python
+win = ufc['fighter1.win'].to_numpy()
+f1_lefty = ufc['fighter1.lefty'].to_numpy()
+f2_lefty = ufc['fighter2.lefty'].to_numpy()
+```
+
+
+```python
+def prior(b):
+
+    ### YOUR CODE HERE ###
+
+    b_prior = norm.pdf(x = b, loc = 0, scale = 1)
+
+    ######################
+    
+    # log probability transforms multiplication to summation
+    return np.log(b_prior)
+
+def likelihood(b):
+
+    ### YOUR CODE HERE ###
+    nu = b * (f1_lefty - f2_lefty)
+    p = inv_logit(nu)
+
+    log_likelihoods = win * np.log(p) + (1 - win) * np.log(1 - p)
+    ######################
+
+    # log probability transforms multiplication to summation
+    return np.sum(log_likelihoods)
+
+def posterior(b):
+
+    return likelihood(b) + prior(b)
+
+def proposal(b):
+
+    b_new = np.random.normal(loc = b, scale = 0.5)
+
+    return b_new
+```
+
+
+```python
+def metropolis(steps):
+
+    beta_steps = np.zeros(steps)
+    beta_steps[0] = 0
+
+    for step in range(1, steps):              
+
+        b_old = beta_steps[step - 1]
+        
+        ### YOUR CODE HERE ###
+        b_new = proposal(b_old)
+        
+        # Use exp to restore from log numbers
+        accept_ratio = np.exp(posterior(b_new) - posterior(b_old))
+        #######################
+        
+        if np.random.uniform(0, 1) < accept_ratio:
+
+            beta_steps[step]  = b_new
+
+        else:
+
+            beta_steps[step]  = b_old
+            
+    return beta_steps
+```
+
+
+```python
+chain1 = metropolis(10000)
+```
+
+
+```python
+sns.displot(chain1[5000:])
+```
+
+
+
+
+    <seaborn.axisgrid.FacetGrid at 0x7f6ddfb45d90>
+
+
+
+
+    
+![png](/pics/04_GLMs_29_1.png)
+    
+
+
+
+```python
+plt.plot(chain1)
+```
+
+
+
+
+    [<matplotlib.lines.Line2D at 0x7f6ddf77e670>]
+
+
+
+
+    
+![png](/pics/04_GLMs_30_1.png)
+    
+
+
+### Why does there appear to be no advantage?
+
+
+```python
+n = 1000
+lefty = np.random.binomial(n = 1, p = 0.1, size = n)
+ability = np.random.normal(size = n)
+qualify = np.where((ability > 2) | ((ability > 1.25) & lefty), 1, 0)
+```
+
+
+```python
+(qualify & lefty).sum() / qualify.sum()
+```
+
+
+
+
+    0.34375
+
+
+
+
+```python
+np.random.seed(420)
+k = 2 # importance of ability differences
+b_sim = 0.5 # lefty advantage
+l = lefty[qualify==1]
+a = ability[qualify==1]
+M = sum(qualify==1)
+mid = int(M/2)
+win = np.zeros(mid) # matches
+f1_lefty = np.zeros(mid)
+f2_lefty = np.zeros(mid)
+
+for i in range(mid):
+    a1 = a[i] + b_sim * l[i]
+    a2 = a[mid + i] + b_sim * l[mid + i]
+    p = inv_logit(k * (a1 - a2))
+    f1win = np.random.binomial(n = 1, p = p, size = 1)
+    win[i] = f1win
+    f1_lefty[i] = l[i]
+    f2_lefty[i] = l[mid + i]
+```
+
+
+```python
+chain1 = metropolis(10000)
+```
+
+
+```python
+sns.displot(chain1[5000:])
+```
+
+
+
+
+    <seaborn.axisgrid.FacetGrid at 0x7f6ddf793400>
+
+
+
+
+    
+![png](/pics/04_GLMs_36_1.png)
+    
+
+
+
+```python
+plt.plot(chain1)
+```
+
+
+
+
+    [<matplotlib.lines.Line2D at 0x7f6ddf449f70>]
+
+
+
+
+    
+![png](/pics/04_GLMs_37_1.png)
+    
+
+
+
+```python
+
+```
+
+
+```python
+
+```
+
+
+```python
+
+```
+
+# Poisson Likelihood
+
+## Counting Claims
+
+Suppose you wish to estimate the number of automobile claims a policy holder will file over the life of a policy using the driver's age and credit score (in 00s). 
+
+
+```python
+n = 1000
+age = np.random.uniform(size = n, low = 16, high = 64)
+credit = np.random.uniform(size = n, low = 3, high = 8.5)
+nu = 6 - 0.5 * age ** (1/3) - 1.5 * credit
+lam = np.exp(nu)
+claims = np.random.poisson(lam = lam, size = n)
+```
+
+
+```python
+plt.hist(claims)
+plt.show()
+```
+
+
+    
+![png](/pics/04_GLMs_44_0.png)
+    
+
+
+$$C_i \sim \text{Poisson}(\lambda_i)$$
+$$\text{ln}( \lambda_i) = \beta_0 + \beta_1 A_i + \beta_2 Cr_i$$
+
+
+```python
+def prior(b0, b1, b2):
+
+    ### YOUR CODE HERE ###
+
+    b0_prior = norm.pdf(x = b0, loc = 0, scale = 10)
+
+    b1_prior = norm.pdf(x = b1, loc = 0, scale = 10)
+
+    b2_prior = norm.pdf(x = b2, loc = 0, scale = 10)
+    ######################
+
+    # log probability transforms multiplication to summation
+
+    return np.log(b0_prior) + np.log(b1_prior) + np.log(b2_prior)
+
+ 
+
+def likelihood(b0, b1, b2):
+
+    ### YOUR CODE HERE ###
+
+    nu = b0 + b1 * age ** (1/3) + b2 * credit
+    lam = np.exp(nu)
+
+    likelihoods = poisson(lam).pmf(claims)
+    ######################
+
+    # log probability transforms multiplication to summation
+    return np.sum(np.log(likelihoods))
+
+ 
+
+def posterior(b0, b1, b2):
+
+    return likelihood(b0, b1, b2) + prior(b0, b1, b2)
+
+ 
+
+def proposal(b0, b1, b2):
+
+    b0_new = np.random.normal(loc = b0, scale = 0.01)
+
+    b1_new = np.random.normal(loc = b1, scale = 0.01)
+
+    b2_new = np.random.normal(loc = b2, scale = 0.01) 
+
+    return b0_new, b1_new, b2_new
+```
+
+
+```python
+def metropolis(steps):
+
+    beta_steps = np.zeros((steps, 3))
+    beta_steps[0, :] = np.array([5, 0, 0])
+
+
+    for step in range(1, steps):              
+
+
+        b0_old, b1_old, b2_old = beta_steps[step - 1, :]
+        
+        ### YOUR CODE HERE ###
+
+        b0_new, b1_new, b2_new = proposal(b0_old, b1_old, b2_old)
+
+        # Use exp to restore from log numbers
+        accept_ratio = np.exp(posterior(b0_new, b1_new, b2_new) - posterior(b0_old, b1_old, b2_old))
+        #########################
+        
+        if np.random.uniform(0, 1) < accept_ratio:
+
+            beta_steps[step, :]  = b0_new, b1_new, b2_new
+
+        else:
+
+            beta_steps[step, :]  = b0_old, b1_old, b2_old
+            
+    return beta_steps
+```
+
+
+```python
+chain1 = metropolis(10000)
+```
+
+    /tmp/ipykernel_10118/599861409.py:17: RuntimeWarning: overflow encountered in exp
+      accept_ratio = np.exp(posterior(b0_new, b1_new, b2_new) - posterior(b0_old, b1_old, b2_old))
+
+
+
+```python
+chain_df = pd.DataFrame(chain1, columns = ['intercept', 'age', 'credit'])
+```
+
+
+```python
+sns.displot(chain_df[5000:])
+```
+
+
+
+
+    <seaborn.axisgrid.FacetGrid at 0x7f6ddfa7c2e0>
+
+
+
+
+    
+![png](/pics/04_GLMs_50_1.png)
+    
+
+
+
+```python
+plt.plot(chain_df[5000:])
+plt.legend(chain_df.columns)
+plt.show()
+```
+
+
+    
+![png](/pics/04_GLMs_51_0.png)
+    
+
+
+
+```python
+pd.DataFrame(chain1[5000:]).describe()
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>5000.000000</td>
+      <td>5000.000000</td>
+      <td>5000.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>5.429990</td>
+      <td>-0.596091</td>
+      <td>-1.310173</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.144655</td>
+      <td>0.119981</td>
+      <td>0.103329</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>5.097674</td>
+      <td>-0.915226</td>
+      <td>-1.590178</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>5.326552</td>
+      <td>-0.688531</td>
+      <td>-1.381540</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>5.409023</td>
+      <td>-0.585485</td>
+      <td>-1.316315</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>5.531647</td>
+      <td>-0.497935</td>
+      <td>-1.217022</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>5.756921</td>
+      <td>-0.326036</td>
+      <td>-1.101609</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+
+```
+
+## Counting Tools
+
+>The island societies of Oceania provide a natural experiment in technological evolution. Different historical island populations possessed tool kits of different size. These kits include
+fish hooks, axes, boats, hand plows, and many other types of tools. A number of theories
+predict that larger populations will both develop and sustain more complex tool kits. So the
+natural variation in population size induced by natural variation in island size in Oceania
+provides a natural experiment to test these ideas. It’s also suggested that contact rates among
+populations effectively increase population size, as it’s relevant to technological evolution.
+So variation in contact rates among Oceanic societies is also relevant.
+
+![](assets/kline.png)
+
+
+```python
+kline = pd.read_csv('data/kline.csv', delimiter = ';')
+```
+
+
+```python
+kline
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>culture</th>
+      <th>population</th>
+      <th>contact</th>
+      <th>total_tools</th>
+      <th>mean_TU</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Malekula</td>
+      <td>1100</td>
+      <td>low</td>
+      <td>13</td>
+      <td>3.2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Tikopia</td>
+      <td>1500</td>
+      <td>low</td>
+      <td>22</td>
+      <td>4.7</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Santa Cruz</td>
+      <td>3600</td>
+      <td>low</td>
+      <td>24</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Yap</td>
+      <td>4791</td>
+      <td>high</td>
+      <td>43</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Lau Fiji</td>
+      <td>7400</td>
+      <td>high</td>
+      <td>33</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Trobriand</td>
+      <td>8000</td>
+      <td>high</td>
+      <td>19</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Chuuk</td>
+      <td>9200</td>
+      <td>high</td>
+      <td>40</td>
+      <td>3.8</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Manus</td>
+      <td>13000</td>
+      <td>low</td>
+      <td>28</td>
+      <td>6.6</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Tonga</td>
+      <td>17500</td>
+      <td>high</td>
+      <td>55</td>
+      <td>5.4</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Hawaii</td>
+      <td>275000</td>
+      <td>low</td>
+      <td>71</td>
+      <td>6.6</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+tools = kline.total_tools.to_numpy()
+log_pop = np.log(kline.population.to_numpy())
+contact = kline.contact.apply(lambda x: 1 if x == 'high' else 0).to_numpy()
+```
+
+$$T_i \sim Poisson(\lambda_i)$$
+$$\ln \lambda_i = \beta_0 + \beta_1 C_i + \beta_2 \log P_i + \beta_3 C_i\log P_i $$
+
+
+```python
+from scipy.stats import poisson, norm
+```
+
+
+```python
+def prior(b0, b1, b2, b3):
+    
+    ### YOUR CODE HERE ###
+    b0_prior = norm.pdf(x = b0, loc = 0, scale = 100)
+    b1_prior = norm.pdf(x = b1, loc = 0, scale = 1)
+    b2_prior = norm.pdf(x = b2, loc = 0, scale = 1)
+    b3_prior = norm.pdf(x = b3, loc = 0, scale = 1)
+    ######################
+    
+    # log probability transforms multiplication to summation
+    return np.log(b0_prior) + np.log(b1_prior) + np.log(b2_prior) + np.log(b3_prior)
+
+def likelihood(b0, b1, b2, b3):
+    
+    ### YOUR CODE HERE ###
+    nu = b0 + b1 * contact + b2 * log_pop + b3 * contact * log_pop
+    lam = np.exp(nu)
+    likelihoods = poisson(lam).pmf(tools)
+    ######################
+    
+    # log probability transforms multiplication to summation
+    return np.sum(np.log(likelihoods))
+
+def posterior(b0, b1, b2, b3):
+    
+    return likelihood(b0, b1, b2, b3) + prior(b0, b1, b2, b3)
+
+def proposal(b0, b1, b2, b3):
+
+    b0_new = np.random.normal(loc = b0, scale = 0.01)
+    b1_new = np.random.normal(loc = b1, scale = 0.01)
+    b2_new = np.random.normal(loc = b2, scale = 0.01)
+    b3_new = np.random.normal(loc = b3, scale = 0.01)
+
+    return b0_new, b1_new, b2_new, b3_new
+```
+
+
+```python
+def metropolis(steps):
+
+    beta_steps = np.zeros((steps, 4))
+    beta_steps[0, :] = np.zeros(4)
+
+
+    for step in range(1, steps):              
+
+
+        b0_old, b1_old, b2_old, b3_old = beta_steps[step - 1, :]
+        
+        ### YOUR CODE HERE ###
+        b0_new, b1_new, b2_new, b3_new = proposal(b0_old, b1_old, b2_old, b3_old)
+
+
+        # Use exp to restore from log numbers
+        accept_ratio = np.exp(posterior(b0_new, b1_new, b2_new, b3_new) - posterior(b0_old, b1_old, b2_old, b3_old))
+        #########################
+
+
+        if np.random.uniform(0, 1) < accept_ratio:
+
+            beta_steps[step, :]  = b0_new, b1_new, b2_new, b3_new
+
+        else:
+
+            beta_steps[step, :]  = b0_old, b1_old, b2_old, b3_old
+            
+    return beta_steps
+```
+
+
+```python
+chain1 = metropolis(20000)
+```
+
+
+```python
+chain_df = pd.DataFrame(chain1, columns = ['intercept', 'contact', 'logpop', 'interaction'])
+```
+
+
+```python
+sns.displot(chain_df.iloc[5000:, :])
+```
+
+
+
+
+    <seaborn.axisgrid.FacetGrid at 0x7f6ddf143d60>
+
+
+
+
+    
+![png](/pics/04_GLMs_66_1.png)
+    
+
+
+
+```python
+plt.plot(chain_df.iloc[5000:])
+plt.legend(chain_df.columns)
+plt.show()
+```
+
+
+    
+![png](/pics/04_GLMs_67_0.png)
+    
+
+
+
+```python
+chain_df.iloc[5000:].describe()
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>intercept</th>
+      <th>contact</th>
+      <th>logpop</th>
+      <th>interaction</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>15000.000000</td>
+      <td>15000.000000</td>
+      <td>15000.000000</td>
+      <td>15000.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>0.904522</td>
+      <td>-0.572605</td>
+      <td>0.267322</td>
+      <td>0.096037</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.195995</td>
+      <td>0.268268</td>
+      <td>0.019789</td>
+      <td>0.030269</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.489351</td>
+      <td>-1.156353</td>
+      <td>0.210057</td>
+      <td>0.005709</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>0.751685</td>
+      <td>-0.733303</td>
+      <td>0.253605</td>
+      <td>0.073918</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>0.897453</td>
+      <td>-0.569403</td>
+      <td>0.267624</td>
+      <td>0.093761</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>1.046071</td>
+      <td>-0.373637</td>
+      <td>0.281905</td>
+      <td>0.116540</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>1.363002</td>
+      <td>-0.032650</td>
+      <td>0.326950</td>
+      <td>0.182332</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+### No Contact Simulations
+
+
+```python
+n = 10000
+post = chain_df.iloc[-n:, :]
+logpop = np.linspace(7, 13, 100)
+nc_lower_89 = np.zeros(100)
+nc_upper_89 = np.zeros(100)
+
+for i, lp in enumerate(logpop):
+    nu = post.intercept + post.logpop * lp
+    lam = np.exp(nu)
+    tools_sim = np.random.poisson(size = n, lam = lam)
+    
+    nc_lower_89[i], nc_upper_89[i] = np.quantile(tools_sim, q = (0.055, 1 - 0.055))
+```
+
+### Contact Simulations
+
+
+```python
+n = 10000
+post = chain_df.iloc[-n:, :]
+logpop = np.linspace(7, 13, 100)
+c_lower_89 = np.zeros(100)
+c_upper_89 = np.zeros(100)
+
+for i, lp in enumerate(logpop):
+    nu = post.intercept + post.logpop * lp + chain_df.contact.mean() + post.interaction * lp
+    lam = np.exp(nu)
+    tools_sim = np.random.poisson(size = n, lam = lam)
+    
+    c_lower_89[i], c_upper_89[i] = np.quantile(tools_sim, q = (0.055, 1 - 0.055))
+```
+
+
+```python
+kline['log_pop'] = np.log(kline.population)
+```
+
+
+```python
+sns.scatterplot(x = 'log_pop', y = 'total_tools', data = kline, hue = 'contact')
+
+### No Contact
+nu = post.intercept.mean() + post.logpop.mean() * logpop
+plt.plot(logpop, np.exp(nu), color = "dodgerblue")
+plt.fill_between(logpop, nc_upper_89, nc_lower_89, color = "dodgerblue", alpha = 0.5)
+
+### Contact
+nu = post.intercept.mean() + post.logpop.mean() * logpop + post.contact.mean() + post.interaction.mean()*logpop
+plt.plot(logpop, np.exp(nu), color = "darkorange")
+plt.fill_between(logpop, c_upper_89, c_lower_89, color = "darkorange", alpha = 0.5)
+plt.show()
+```
+
+
+    
+![png](/pics/04_GLMs_74_0.png)
+    
+
+
+## On the natural scale
+
+### No Contact Simulations
+
+
+```python
+n = 10000
+post = chain_df.iloc[-n:, :]
+pop = np.linspace(1000, 275000, 100)
+nc_lower_89 = np.zeros(100)
+nc_upper_89 = np.zeros(100)
+
+for i, p in enumerate(pop):
+    nu = post.intercept + post.logpop * np.log(p)
+    lam = np.exp(nu)
+    tools_sim = np.random.poisson(size = n, lam = lam)
+    
+    nc_lower_89[i], nc_upper_89[i] = np.quantile(tools_sim, q = (0.055, 1 - 0.055))
+```
+
+### Contact Simulations
+
+
+```python
+n = 10000
+post = chain_df.iloc[-n:, :]
+pop = np.linspace(1000, 275000, 100)
+c_lower_89 = np.zeros(100)
+c_upper_89 = np.zeros(100)
+
+for i, p in enumerate(pop):
+    nu = post.intercept + post.logpop * np.log(p) + post.contact + post.interaction * np.log(p)
+    lam = np.exp(nu)
+    tools_sim = np.random.poisson(size = n, lam = lam)
+    
+    c_lower_89[i], c_upper_89[i] = np.quantile(tools_sim, q = (0.055, 1 - 0.055))
+```
+
+
+```python
+sns.scatterplot(x = 'population', y = 'total_tools', data = kline, hue = 'contact')
+
+### No Contact
+nu = chain_df.intercept.mean() + chain_df.logpop.mean() * np.log(pop)
+plt.plot(pop, np.exp(nu), color = "dodgerblue")
+plt.fill_between(pop, nc_upper_89, nc_lower_89, color = "dodgerblue", alpha = 0.5)
+
+### Contact
+nu = chain_df.intercept.mean() + chain_df.logpop.mean() * np.log(pop) + chain_df.contact.mean() + chain_df.interaction.mean()*np.log(pop)
+plt.plot(pop, np.exp(nu), color = "darkorange")
+plt.fill_between(pop, c_upper_89, c_lower_89, color = "darkorange", alpha = 0.5)
+plt.show()
+```
+
+
+    
+![png](/pics/04_GLMs_80_0.png)
+    
+
