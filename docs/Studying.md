@@ -34,3 +34,5 @@ Detailed descriptions can be found [here](https://stat.illinois.edu/academics/co
 - SOA Exam P
 - SOA Exam FM
 - SOA Exam IFM
+- CAS Exam MAS-I
+- CAS Exam MAS-II
