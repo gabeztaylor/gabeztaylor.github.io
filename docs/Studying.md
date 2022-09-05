@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Studying
-permalink: /studying/
+permalink: /Studying/
 ---
 
 > "I have never let schooling interfere with my education" - Mark Twain

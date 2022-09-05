@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Questioning
-permalink: /questioning/
+permalink: /Questioning/
 ---
 
 This page is dedicated to determinisim and skepticism.

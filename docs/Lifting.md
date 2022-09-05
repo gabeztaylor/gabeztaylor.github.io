@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Lifting
-permalink: /lifting/
+permalink: /Lifting/
 ---
 
 > "Strong people are harder to kill, and more useful in general" - Mark Rippetoe
