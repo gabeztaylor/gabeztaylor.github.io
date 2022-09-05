@@ -1,5 +1,5 @@
 ---
-layout: defualt
+layout: default
 title: "How Sure Are You?"
 comments: true
 date: 2022-02-06

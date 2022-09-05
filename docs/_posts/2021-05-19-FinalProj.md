@@ -1,5 +1,5 @@
 ---
-layout: defualt
+layout: default
 title: "Natural Language Processing with Food Ingredient Labels"
 date: 2021-05-19
 ---
