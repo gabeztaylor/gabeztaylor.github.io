@@ -37,7 +37,7 @@ disqus:
   shortname: https-gabeztaylor-github-io
 
 # Build settings
-theme: minima
+# theme: minima
 plugins:
   - jekyll-feed
   - jekyll-spaceship
