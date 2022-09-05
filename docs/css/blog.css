@@ -140,7 +140,7 @@ h1 {
   margin: 33px auto;
   width: 70px;
 }
-#bibliography {
+/* #bibliography {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 #bibliography ol.bibliography {
@@ -148,7 +148,7 @@ h1 {
   padding-top: 30px;
   font-size: 12px;
   color: rgba(0, 0, 0, 0.5);
-}
+} */
 #blog {
   margin-top: 80px;
   margin-bottom: 100px;
