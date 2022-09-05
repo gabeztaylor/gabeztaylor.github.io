@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: defualt
 title: "Bayesian Linear Regression"
 mathjax: true
 comments: true

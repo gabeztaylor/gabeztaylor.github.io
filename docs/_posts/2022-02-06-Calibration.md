@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: defualt
 title: "How Sure Are You?"
 comments: true
 date: 2022-02-06
