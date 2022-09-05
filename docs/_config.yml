@@ -41,6 +41,8 @@ disqus:
 plugins:
   - jekyll-feed
   - jekyll-spaceship
+  - jekyll-scholar
+  - jekyll-sitemap
 
 # Exclude from processing.
 # The following items will not be processed, by default.
