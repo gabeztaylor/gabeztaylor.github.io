@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Fighting
-permalink: /fighting/
+permalink: /Fighting/
 ---
 
 ### Brazilian Jiu Jitsu
