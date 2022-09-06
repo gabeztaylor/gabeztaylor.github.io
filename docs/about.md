@@ -4,5 +4,8 @@ title: About
 permalink: /About/
 ---
 
-I work as a Data Scientist at a large insurance company in the midwest. I hold a Bachelor's and Master's in Statistics.  
+I like studying the science of optimizing decisions under uncertainty. 
+
+> email: gabe.z.taylor@gmail.com
+> phone: 309-361-5940
 
