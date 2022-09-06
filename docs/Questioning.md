@@ -20,8 +20,6 @@ What was that process like? Why did you choose those numbers? Why didn't you cho
 occur to you to pick them. Are you then ***free*** to choose that which does not occur to you? This is almost an exact replica of the experiment [Sam Harris](https://samharris.org/)
 usually conducts on audiences with movies and cities in liue of numbers, of which you are free to use and repeat the experiment. 
 
-TBA. 
-
 ## You're Probably Not Going To Heaven (or Hell). 
 
 > “Properly read, the Bible is the most potent force for atheism ever conceived.” - Isaac Asimov
@@ -36,7 +34,10 @@ My own deconversion started with the realization that the Bible is fallible and 
 TBA. 
 
 
-![](/pics/science-vs-faith.png)
+<div class='figure'>
+    <img src="/pics/science-vs-faith.png"
+         style="width: 60%; display: block; margin: 0 auto;"/>
+</div>
 
 
 
