@@ -7,7 +7,12 @@ date: 2022-02-06
 
 A friend of mine and I made an R Shiny App that makes the calibration quiz in Chapter 6 of Julia Galef's 'Scout Mindset' slightly more accessible. You can access it [here](https://gabrieltaylor.shinyapps.io/Calibration/?_ga=2.56086636.631607110.1644073854-1888315552.1644073854).
 
-![ ](/pics/calquiz.png)
+<div class='figure'>
+    <img src="/pics/calquiz.png"
+         style="width: 60%; display: block; margin: 0 auto;"/>
+</div>
+
+
 
 Essentially, a well-calibrated individual makes claims exactly consistent with their confidence. For example, if I say *"I'm 95% sure Khabib Nurmagomedov would beat Conor McGregor again"*, then I should be right about 95% of the time for similar 95% confident predictions. Let's say I make 100 of these claims:
 
