@@ -4,8 +4,6 @@ title: Questioning
 permalink: /Questioning/
 ---
 
-This page is dedicated to determinisim and skepticism.
-
 ## You Probably Don't Have Free Will
 
 > "Why aren't you more interested in rocks?" - Sam Harris
@@ -31,12 +29,9 @@ to new thoughts. If anything, consider it a *test of faith* in which God would l
 
 My own deconversion started with the realization that the Bible is fallible and clearly man-made. [This is a beautiful dashboard](https://philb61.github.io/) visualizing the contradictions and moral atrocities of the bible. 
 
-TBA. 
-
-
 <div class='figure'>
     <img src="/pics/science-vs-faith.png"
-         style="width: 60%; display: block; margin: 0 auto;"/>
+         style="width: 75%; display: block; margin: 0 auto;"/>
 </div>
 
 
