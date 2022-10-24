@@ -8,7 +8,7 @@ permalink: /Working/
 
 ## Programming Languages
 
-I work every day in Python (for work & school) and R (for school). I'm normally lucky enough to program outside of SAS. 
+I work every day in Python, R, C, and sometimes C++.
 
 ### Python - Advanced
 
@@ -23,7 +23,7 @@ Common libraries I use:
 - `OpenCV` for computer vision
 - `matplotlib` for plotting
 - `seaborn` for prettier plotting
-- `bokeh` for dashboards
+- `dash` for dashboards
 
 ### R - Advanced
 
