@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Reading
-permalink: /reading/
+permalink: /Reading/
 ---
 
 ### Read & Recommend
