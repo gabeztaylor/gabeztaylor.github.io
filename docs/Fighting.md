@@ -20,7 +20,7 @@ My current record in Muay Thai is 2-2 and I'm pretty sure it will stay that way 
 
 {% include youtube.html id="vBENzHeO1E4" %}
 
->
+>       
 
 {% include youtube.html id="0vtLnuh8sp8" %}
 
