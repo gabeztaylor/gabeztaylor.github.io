@@ -28,10 +28,25 @@ Detailed descriptions can be found [here](https://stat.illinois.edu/academics/co
 - STAT 527: Advanced Regression Analysis
 - STAT 542: Statistical Learning
 - STAT 593: Statistics Internship
-## Actuarial Exams
 
-- SOA Exam Probability
-- SOA Exam Financial Mathematics
-- SOA Exam Investing and Financial Markets
-- CAS Exam Modern Actuarial Statistics I
-- CAS Exam Modern Actuarial Statistics II
+## UIUC Mathematics Coursework
+- MATH 220: Calculus
+- MATH 225: Introductory Matrix Theory
+- MATH 231: Calculus II
+- MATH 241: Calculus III
+- MATH 284: Intro Differential Systems
+- MATH 415: Applied Linear Algebra
+- MATH 444: Elementary Real Analysis
+
+## GT Computer Science Coursework
+- CS 6200: Graduate Introduction to Operating Systems
+- CS 6220: High Performance Computing
+
+## Actuarial Exams
+- SOA Probability
+- SOA Financial Mathematics
+- SOA Investing and Financial Markets
+- CAS Modern Actuarial Statistics I
+- CAS Modern Actuarial Statistics II
+
+

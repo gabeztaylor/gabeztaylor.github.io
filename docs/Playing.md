@@ -4,6 +4,10 @@ title: Playing
 permalink: /Playing/
 ---
 
+### Layla - Eric Clapton
+
+{% include youtube.html id="OtS8feLOfgk" %}
+
 ### Dani California - Red Hot Chili Peppers
 
 {% include youtube.html id="QQFQtwXqYgU" %}
