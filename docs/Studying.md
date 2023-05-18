@@ -34,13 +34,15 @@ Detailed descriptions can be found [here](https://stat.illinois.edu/academics/co
 - MATH 225: Introductory Matrix Theory
 - MATH 231: Calculus II
 - MATH 241: Calculus III
-- MATH 284: Intro Differential Systems
+- MATH 284: Introductory Differential Systems
 - MATH 415: Applied Linear Algebra
 - MATH 444: Elementary Real Analysis
+- MATH 446: Applied Complex Variables
 
 ## GT Computer Science Coursework
 - CS 6200: Graduate Introduction to Operating Systems
 - CS 6220: High Performance Computing
+- CS 7646: Reinforcement Learning
 
 ## Actuarial Exams
 - SOA Probability
