@@ -42,7 +42,7 @@ Detailed descriptions can be found [here](https://stat.illinois.edu/academics/co
 ## GT Computer Science Coursework
 - CS 6200: Graduate Introduction to Operating Systems
 - CS 6220: High Performance Computing
-- CS 7646: Reinforcement Learning
+- CS 7642: Reinforcement Learning
 
 ## Actuarial Exams
 - SOA Probability
