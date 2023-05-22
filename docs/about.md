@@ -4,7 +4,7 @@ title: About
 permalink: /About/
 ---
 
-My intellectual interests can be broadly described as studying the science of optimizing decisions under uncertainty. "Gabriel's Descent" is a play on words referencing the optimization algorithm Gradient Descent that is often used in Machine Learning, and a theological reference to the angel Gabriel's descent to the virgin Mary. The name attempts to capture an intersection of my interest in Computer Science, Statistics and Skepticism.
+It's Bayes all the way down.
 
 > email: gabe.z.taylor@gmail.com
 
