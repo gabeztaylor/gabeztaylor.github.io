@@ -21,7 +21,7 @@ Detailed descriptions can be found [here](https://stat.illinois.edu/academics/co
 - STAT 429: Time Series Analysis
 - STAT 430: Data Science Programming
 - STAT 431: Applied Bayesian Analysis
-- STAT 432: Basics of Stastical Learning
+- STAT 432: Basics of Statistical Learning
 - STAT 433: Stochastic Processes
 - STAT 480: Data Science Foundations
 - STAT 510: Mathematical Statistics
