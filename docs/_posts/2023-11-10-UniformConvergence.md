@@ -7,6 +7,8 @@ date: 2023-11-10
 published: true
 ---
 
+My professor and I were exploring conditions for uniform convergence of power series when the power series converges with an infinite radius of convergence. My professor suggested that we had a constraint the the limiting function as finite limits everywhere. In this post, I suggest the Gaussian function as a counterexample. 
+
 Suppose that 
 
 $$f(x) = \sum_{n=0}^{\infty} a_n x^n$$
