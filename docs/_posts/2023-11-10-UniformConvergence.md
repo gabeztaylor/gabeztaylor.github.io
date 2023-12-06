@@ -7,13 +7,11 @@ date: 2023-11-10
 published: true
 ---
 
-My professor and I were exploring conditions for uniform convergence of power series when the power series converges with an infinite radius of convergence. My professor suggested that we had a constraint the the limiting function as finite limits everywhere. In this post, I suggest the Gaussian function as a counterexample. 
-
 Suppose that 
 
 $$f(x) = \sum_{n=0}^{\infty} a_n x^n$$
 
-converges with infinite radius of convergence. Moreover, suppose that 
+has an infinite radius of convergence. Moreover, suppose that 
 
 $$\lim_{x \to \pm \infty} f(x) = L < \infty$$
 
@@ -57,4 +55,4 @@ $$
 \end{aligned}    
 $$
 
-Thus, $f_n(x)$ does not converge uniformly to $f(x)$.
+Thus, $f_n(x)$ does not converge uniformly to $f(x)$. It turns out that any power series with infinite radius of convergence that converges uniformly must be a polynomial. 
