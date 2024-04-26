@@ -1,30 +1,17 @@
 {% if page.mathjax %}
 
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
+    jax: ['input/TeX', 'output/HTML-CSS'],
     tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      inlineMath: [['$','$']],
       processEscapes: true
     },
     'HTML-CSS': { preferredFont: 'TeX', availableFonts: ['STIX','TeX'] }
   });
 </script>
-<!-- 
-<script src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML' type='text/javascript'></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous"> -->
-<!-- <script
-  type="text/javascript"
-  charset="utf-8"
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
->
-</script>
-<script
-  type="text/javascript"
-  charset="utf-8"
-  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
->
-</script> -->
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 {% endif %}
