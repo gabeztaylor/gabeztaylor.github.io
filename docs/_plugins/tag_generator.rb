@@ -1,15 +1,18 @@
 Jekyll::Hooks.register :site, :post_write do |site|
-    site.tags.keys.each do |tag|
-      FileUtils.mkdir_p(File.join(site.dest, 'tags', tag))
-      File.open(File.join(site.dest, 'tags', tag, 'index.html'), 'w') do |file|
-        site.pages << Jekyll::PageWithoutAFile.new(site, site.dest, File.join('tags', tag), "index.html")
-        page = site.pages.last
-        page.data['layout'] = 'tag_page'
-        page.data['tag'] = tag
-        page.content = "{% for post in site.tags['#{tag}'] %}<li><a href='{{ post.url }}'>{{ post.title }}</a></li>{% endfor %}"
-        page.output = Jekyll::Renderer.new(site, page).run
-        file.puts page.output
+    site.tags.each do |tag, posts|
+      dir = File.join(site.dest, '_tags', Jekyll::Utils.slugify(tag))
+      unless File.exist?(dir)
+        FileUtils.mkdir_p(dir)
+      end
+      File.open(File.join(dir, 'index.html'), 'w') do |file|
+        content = "<h1>#{tag}</h1><ul>"
+        posts.each do |post|
+          content += "<li><a href='#{site.baseurl}#{post.url}'>#{post.title}</a></li>"
+        end
+        content += "</ul>"
+        file.write(content)
       end
     end
   end
+  
   
