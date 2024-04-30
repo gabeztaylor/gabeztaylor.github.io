@@ -22,6 +22,14 @@ title: blog
     <div id='blog' class='wrap'>
         <h1>Gabriel Taylor</h1>
         <div id='intro'>
+            {% for tag in site.tags %}
+            <h3>{{ tag[0] }}</h3>
+            <ul>
+                {% for post in tag[1] %}
+                <li><a href="tags/{{ tag[0] }}">{{ tag[0] }}</a></li>
+                {% endfor %}
+            </ul>
+            {% endfor %}
             <div class='quote'>
                 <p>One man's noise is another man's signal.</p>
                 <a href='https://en.wikipedia.org/wiki/Edwin_Thompson_Jaynes' target='_blank'>Edwin Jaynes</a>
