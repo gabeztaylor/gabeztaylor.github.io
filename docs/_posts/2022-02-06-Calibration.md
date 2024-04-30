@@ -3,6 +3,7 @@ layout: default
 title: "How Sure Are You?"
 comments: true
 date: 2022-02-06
+tags: [decision theory]
 ---
 
 A friend of mine and I made an R Shiny App that makes the calibration quiz in Chapter 6 of Julia Galef's 'Scout Mindset' slightly more accessible. You can access it [here](https://gabrieltaylor.shinyapps.io/Calibration/?_ga=2.56086636.631607110.1644073854-1888315552.1644073854).

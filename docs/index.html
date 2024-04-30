@@ -22,15 +22,18 @@ title: blog
     <div id='blog' class='wrap'>
         <h1>Gabriel Taylor</h1>
         <div id='intro'>
-            {% for tag in site.tags %}
-            <ul>
-                <li><a href="tags/{{ tag[0] }}">{{ tag[0] }}</a></li>
-            </ul>
-            {% endfor %}
             <div class='quote'>
                 <p>One man's noise is another man's signal.</p>
                 <a href='https://en.wikipedia.org/wiki/Edwin_Thompson_Jaynes' target='_blank'>Edwin Jaynes</a>
             </div>
+        </div>
+        <div class="tags-list">
+            <h4>
+              {% assign all_tags = site.posts | map: 'tags' | flatten | uniq %}
+              {% for tag in all_tags %}
+                <a href="tags/{{ tag | slugify }}/">{{ tag }}</a>
+              {% endfor %}
+            </h4>
         </div>
         <div id='posts' class='section'>
             {% for post in site.posts %}

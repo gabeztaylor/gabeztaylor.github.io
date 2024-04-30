@@ -4,6 +4,7 @@ title: "Bayesian Linear Regression"
 mathjax: true
 comments: true
 date: 2022-06-22
+tags: [bayesian statistics]
 ---
 
 ### Null Models

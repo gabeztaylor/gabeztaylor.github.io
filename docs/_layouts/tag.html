@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<body>
+  <div id='blog' class='wrap'>
+      <div id='posts' class='section'>
+          {% for post in site.posts %}
+          {% if post.tags contains page.tag %}
+              <div class='post-row'>
+                  <p class='post-title'>
+                      <a href="{{ post.url }}">
+                          {{ post.title }}
+                      </a>
+                  </p>
+                  <p class='post-date'>
+                      {{ post.date | date_to_long_string }}
+                  </p>
+              </div>
+              <p class='post-subtitle'>
+                  {{ post.subtitle }}
+              </p>
+              <span class='hidden'>{{ forloop.index }}</span>
+          {% endif %}
+          {% endfor %}
+      </div>
+  </div>
+</body>
