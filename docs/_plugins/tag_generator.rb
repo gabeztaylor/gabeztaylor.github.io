@@ -1,18 +1,23 @@
-Jekyll::Hooks.register :site, :post_write do |site|
-    site.tags.each do |tag, posts|
-      dir = File.join(site.dest, '_tags', Jekyll::Utils.slugify(tag))
-      unless File.exist?(dir)
-        FileUtils.mkdir_p(dir)
-      end
-      File.open(File.join(dir, 'index.html'), 'w') do |file|
-        content = "<h1>#{tag}</h1><ul>"
-        posts.each do |post|
-          content += "<li><a href='#{site.baseurl}#{post.url}'>#{post.title}</a></li>"
-        end
-        content += "</ul>"
-        file.write(content)
-      end
+Jekyll::Hooks.register :posts, :post_write do |post|
+    all_existing_tags = Dir.entries("_tags")
+    .map { |t| t.match(/(.*).md/) }
+    .compact.map { |m| m[1] }
+
+    tags = post['tags'].reject { |t| t.empty? }
+    tags.each do |tag|
+    generate_tag_file(tag) if !all_existing_tags.include?(tag)
     end
-  end
+end
+
+def generate_tag_file(tag)
+    # generate tag file
+    File.open("_tags/#{tag}.md", "wb") do |file|
+    file << "---\nlayout: tags\ntag: #{tag}\n---\n"
+    end
+    # generate feed file
+    File.open("feeds/#{tag}.xml", "wb") do |file|
+    file << "---\nlayout: feed\ntag: #{tag}\n---\n"
+    end
+end
   
   
