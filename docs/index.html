@@ -9,12 +9,11 @@ title: blog
     <meta content='width=device-width, initial-scale=1' name='viewport'/>
     <!-- A decent browser will parse this fine:
          https://webmasters.stackexchange.com/questions/92744. -->
-    <meta name='keywords' content='
-         real analysis,
-         machine learning
-     '>
 
     <meta name='author' content='Gabriel Taylor'>
+    {% for tag in site.tags %}
+        <li><a href="#{{ tag[0] }}">{{ tag[0] }}</a></li>
+    {% endfor %}
 
     <link href='/css/blog.css' rel='stylesheet'/>
 
