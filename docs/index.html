@@ -7,8 +7,6 @@ title: blog
     <title>Gabriel Taylor</title>
     <meta charset='UTF-8'>
     <meta content='width=device-width, initial-scale=1' name='viewport'/>
-
-    <meta name='description' content='Gabriel Taylor is a Masters student at Georgia Tech.'>
     <!-- A decent browser will parse this fine:
          https://webmasters.stackexchange.com/questions/92744. -->
 
@@ -28,6 +26,16 @@ title: blog
                 <p>One man's noise is another man's signal.</p>
                 <a href='https://en.wikipedia.org/wiki/Edwin_Thompson_Jaynes' target='_blank'>Edwin Jaynes</a>
             </div>
+        </div>
+        <div>
+            {% for tag in site.tags %}
+                <h3>{{ tag[0] }}</h3>
+                <ul>
+                    {% for post in tag[1] %}
+                    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+                    {% endfor %}
+                </ul>
+                {% endfor %}
         </div>
         <div id='posts' class='section'>
             {% for post in site.posts %}

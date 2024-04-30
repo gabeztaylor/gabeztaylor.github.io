@@ -37,6 +37,7 @@ Detailed descriptions can be found [here](https://stat.illinois.edu/academics/co
 - MATH 284: Introductory Differential Systems
 - MATH 415: Applied Linear Algebra
 - MATH 416: Abstract Linear Algebra
+- MATH 417: Abstract Algebra I (In progress)
 - MATH 444: Elementary Real Analysis
 - MATH 446: Applied Complex Variables
 - MATH 447: Real Variables
@@ -46,6 +47,7 @@ Detailed descriptions can be found [here](https://stat.illinois.edu/academics/co
 - CS 6220: High Performance Computing
 - CS 7642: Reinforcement Learning
 - CS 7646: Machine Learning for Trading
+- IYSE 6669: Deterministic Optimization (In progress)
 
 ## Actuarial Exams
 - SOA Probability
