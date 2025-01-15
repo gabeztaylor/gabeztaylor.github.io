@@ -41,9 +41,13 @@ Detailed descriptions can be found [here](https://stat.illinois.edu/academics/co
 - MATH 444: Elementary Real Analysis
 - MATH 446: Applied Complex Variables
 - MATH 447: Real Variables
-- MATH 540: Real Analysis (In progress)
-- MATH 563: Risk Modeling and Analysis (In progress)
-- MATH 564: Applied Stochastic Processes (In progress)
+- MATH 500: Abstract Algebra I (in progress)
+- MATH 540: Real Analysis 
+- MATH 541: Functional Analysis (in progress)
+- MATH 561: Theory of Probability I (in progress)
+- MATH 563: Risk Modeling and Analysis 
+- MATH 564: Applied Stochastic Processes
+
 
 ## GT Computer Science Coursework
 - CS 6200: Graduate Introduction to Operating Systems
