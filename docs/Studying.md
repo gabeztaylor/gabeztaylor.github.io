@@ -41,12 +41,14 @@ Detailed descriptions can be found [here](https://stat.illinois.edu/academics/co
 - MATH 444: Elementary Real Analysis
 - MATH 446: Applied Complex Variables
 - MATH 447: Real Variables
+- MATH 500: Abstract Algebra 
 - MATH 540: Real Analysis 
-- MATH 541: Functional Analysis (in progress)
-- MATH 550: Dynamical Systems (in progress)
-- MATH 561: Theory of Probability I (in progress)
+- MATH 541: Functional Analysis 
+- MATH 550: Dynamical Systems 
+- MATH 561: Theory of Probability I
 - MATH 563: Risk Modeling and Analysis 
 - MATH 564: Applied Stochastic Processes
+- MATH 595: Representation Theory in Quantum Information
 
 
 ## GT Computer Science Coursework
