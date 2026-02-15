@@ -19,3 +19,13 @@ permalink: /Studying/
     - Biggest takeaway from this session was learning the difference between encoder and decoder, which he doesn't really explain until the end
 
 
+- **8:28 AM – 9:13 AM**: Built this app, made some git repos and pushed changes
+
+
+- **9:18 AM – 12:42 PM**: Continued studying Asymptotics of RL paper
+  - **Sources**
+    - https://arxiv.org/pdf/1911.07304
+  - **Notes**
+    - The measure for the weight distribution is frozen in time, but the solution still evolves in time. Roughly, the network is so wide that we're making tiny enough updates that the distribution doesn't change, but the accumulated changes over all weights is $$O(1)$$. The learning is driven from the kernel $$A$$ and the TD-error given from the environment. The network acts as like a fixed feature space instead of learning to represent new features.
+
+
