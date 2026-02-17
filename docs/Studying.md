@@ -6,6 +6,16 @@ permalink: /Studying/
 
 ### 2/17/26
 
+- **11:20 AM – 12:59 PM**: More asymptotics of rl
+  - **Tags**
+    - #research
+  - **Notes**
+    - Went over the convergence in the finite time case and discovered why the result holds for all discount factors there
+
+- **10:55 AM – 11:20 AM**: Logic puzzle and integral
+  - **Sources**
+    - dailyintegral.com
+
 - **9:15 AM – 9:45 AM**: Asymptotics in RL with NN
   - **Tags**
     - #research
