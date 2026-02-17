@@ -6,6 +6,11 @@ permalink: /Studying/
 
 ### 2/17/26
 
+- **9:15 AM – 9:45 AM**: Asymptotics in RL with NN
+  - **Tags**
+    - #research
+    - #rl
+
 - **7:57 AM – 8:57 AM**: Read more of high-dimensional probability by Vershnin. Did the first exercise in Chapter 2
   - **Tags**
     - #probability
