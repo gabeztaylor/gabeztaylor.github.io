@@ -4,6 +4,13 @@ title: Studying
 permalink: /Studying/
 ---
 
+### 2/18/26
+
+- **8:15 AM – 11:04 AM**: PDE homework which mainly covered weak derivatives and more practice solving 1d wave equations
+  - **Tags**
+    - #homework
+    - #pde
+
 ### 2/17/26
 
 - **11:20 AM – 12:59 PM**: More asymptotics of rl
