@@ -4,6 +4,13 @@ title: Studying
 permalink: /Studying/
 ---
 
+### 2/19/26
+
+- **9:50 AM – 12:13 PM**: Continued PDE homework, mainly practiced higher dimensional weak derivatives
+  - **Tags**
+    - #homework
+    - #pde
+
 ### 2/18/26
 
 - **8:15 AM – 11:04 AM**: PDE homework which mainly covered weak derivatives and more practice solving 1d wave equations
