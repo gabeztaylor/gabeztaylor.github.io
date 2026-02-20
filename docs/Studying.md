@@ -3,6 +3,33 @@ layout: page
 title: Studying
 permalink: /Studying/
 ---
+<!-- STUDY_STYLE_START -->
+<style>
+  .study-day {
+    margin: 18px 0;
+    padding: 14px 16px;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 14px;
+    background: rgba(0,0,0,0.02);
+  }
+  .study-day h3 {
+    margin: 0 0 10px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+  .study-day ul { margin-top: 8px; }
+  .study-day > ul { margin-bottom: 0; }
+  @media (prefers-color-scheme: dark) {
+    .study-day {
+      border-color: rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.04);
+    }
+    .study-day h3 { border-bottom-color: rgba(255,255,255,0.14); }
+  }
+</style>
+<!-- STUDY_STYLE_END -->
+
+
 <!-- TAG_INDEX_START -->
 ## Tags
 
@@ -41,6 +68,7 @@ permalink: /Studying/
 
 <!-- TAG_INDEX_END -->
 
+<section class="study-day" markdown="1">
 ### 2/19/26 {#d-2-19-26}
 
 - **9:50 AM – 12:13 PM** (2h 23m): Continued PDE homework, mainly practiced higher dimensional weak derivatives
@@ -48,6 +76,9 @@ permalink: /Studying/
     - [#homework](#tag-homework)
     - [#pde](#tag-pde)
 
+</section>
+
+<section class="study-day" markdown="1">
 ### 2/18/26 {#d-2-18-26}
 
 - **8:15 AM – 11:04 AM** (2h 49m): PDE homework which mainly covered weak derivatives and more practice solving 1d wave equations
@@ -55,6 +86,9 @@ permalink: /Studying/
     - [#homework](#tag-homework)
     - [#pde](#tag-pde)
 
+</section>
+
+<section class="study-day" markdown="1">
 ### 2/17/26 {#d-2-17-26}
 
 - **11:20 AM – 12:59 PM** (1h 39m): More asymptotics of rl
@@ -81,6 +115,9 @@ permalink: /Studying/
   - **Screenshots**
     - ![](/assets/study-journal/2026-02-17T14-59-15-638Z_6c4318_Screenshot_2026-02-17_at_8.59.12_AM.png)
 
+</section>
+
+<section class="study-day" markdown="1">
 ### 2/16/26 {#d-2-16-26}
 
 - **7:30 AM – 9:00 AM** (1h 30m): Reviewed Asymptotics of RL paper and talked a bit with Gemini and NotebookLM
@@ -91,6 +128,9 @@ permalink: /Studying/
   - **Notes**
     - Still struggling with colors, blues always give me a tough time
 
+</section>
+
+<section class="study-day" markdown="1">
 ### 2/15/26 {#d-2-15-26}
 
 - **7:30 AM – 8:00 AM** (30m): Relearned comparative advantage
@@ -112,4 +152,6 @@ permalink: /Studying/
     - https://arxiv.org/pdf/1911.07304
   - **Notes**
     - The measure for the weight distribution is frozen in time, but the solution still evolves in time. Roughly, the network is so wide that we're making tiny enough updates that the distribution doesn't change, but the accumulated changes over all weights is $$O(1)$$. The learning is driven from the kernel $$A$$ and the TD-error given from the environment. The network acts as like a fixed feature space instead of learning to represent new features.
+
+</section>
 
