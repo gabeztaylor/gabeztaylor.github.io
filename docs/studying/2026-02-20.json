@@ -2,6 +2,18 @@
   "date": "2026-02-20",
   "sessions": [
     {
+      "start": "2026-02-20T13:26",
+      "end": "2026-02-20T14:26",
+      "durationMinutes": 60,
+      "description": "Updated this site",
+      "tags": [
+        "dev"
+      ],
+      "sources": [],
+      "notes": [],
+      "screenshots": []
+    },
+    {
       "start": "2026-02-20T11:11",
       "end": "2026-02-20T11:41",
       "durationMinutes": 30,
