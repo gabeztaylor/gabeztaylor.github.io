@@ -1,0 +1,199 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { countStates, groupCardsByDeck, loadAnkiMasterDeck } from "../lib/ankiContent.js";
+
+const loaded = loadAnkiMasterDeck();
+const data = loaded.ok ? loaded.data : null;
+const cards = Array.isArray(data?.cards) ? data.cards : [];
+const decks = groupCardsByDeck(cards);
+const totalCounts = countStates(cards);
+
+const stateOrder = ["New", "Learning", "Review", "Relearning", "Unknown"];
+function stateLabel(s) {
+  return stateOrder.includes(s) ? s : "Unknown";
+}
+---
+
+<BaseLayout title="Anki">
+  <section class="hero card">
+    <div class="inner">
+      <div class="kicker pill">Anki</div>
+      <h1>Master Deck</h1>
+      <p class="muted">A snapshot of my local Anki deck, grouped by deck/subdeck. Suspended cards are excluded.</p>
+      <div class="meta">
+        <span class="pill">Cards: {cards.length}</span>
+        {stateOrder.map((s) => (
+          <span class="pill">{s}: {totalCounts.get(s) || 0}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {!loaded.ok ? (
+    <section class="card page">
+      <div class="inner">
+        <h2>Not synced yet</h2>
+        <p class="muted">
+          Export file not found at <code>{loaded.exportPath}</code>.
+        </p>
+        <p class="muted">
+          Run the local exporter (Study Journal → “Sync Anki → Site”) to generate <code>docs/anki/master-deck.json</code>.
+        </p>
+      </div>
+    </section>
+  ) : (
+    <section class="card page">
+      <div class="inner">
+        <div class="toolbar">
+          <input id="ankiSearch" class="pill" type="search" placeholder="Search cards…" />
+          <div class="filters" id="ankiFilters">
+            <button class="chip active" type="button" data-state="ALL">All</button>
+            {stateOrder.map((s) => (
+              <button class="chip" type="button" data-state={s}>{s}</button>
+            ))}
+          </div>
+        </div>
+
+        <div class="deckList" id="ankiDeckList">
+          {decks.map((d) => {
+            const counts = countStates(d.cards);
+            return (
+              <details class="deck" open>
+                <summary>
+                  <div class="left">
+                    <div class="name">{d.deckName}</div>
+                    <div class="muted small">{d.cards.length} cards</div>
+                  </div>
+                  <div class="right">
+                    {stateOrder.map((s) => (
+                      <span class="badge">{s}: {counts.get(s) || 0}</span>
+                    ))}
+                  </div>
+                </summary>
+                <ul class="cards">
+                  {d.cards.map((c) => (
+                    <li class="cardRow" data-state={stateLabel(String(c.state || ""))} data-text={String(c.frontText || "").toLowerCase()}>
+                      <span class="state">{stateLabel(String(c.state || ""))}</span>
+                      <span class="front" set:html={c.frontHtml || c.frontText || ""} />
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  )}
+</BaseLayout>
+
+<style>
+  .hero { padding: 18px; }
+  .hero .inner { display: grid; gap: 12px; padding: 12px; }
+  .kicker { width: fit-content; font-weight: 800; font-size: 12px; color: var(--muted); }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; }
+
+  .page { padding: 18px; }
+  .page .inner { padding: 12px; }
+
+  .toolbar { display: grid; gap: 10px; margin-bottom: 14px; }
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--muted);
+    font-weight: 850;
+    font-size: 12px;
+    padding: 7px 10px;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+  .chip.active {
+    color: var(--text);
+    border-color: color-mix(in oklab, var(--accent) 35%, var(--border));
+  }
+
+  .deck { border: 1px solid var(--border); border-radius: 14px; background: var(--surface); margin: 12px 0; }
+  .deck summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 12px;
+    font-weight: 900;
+  }
+  .deck summary::-webkit-details-marker { display: none; }
+  .name { font-size: 14px; }
+  .small { font-size: 12px; }
+  .right { display: inline-flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+  .badge {
+    font-size: 11px;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    padding: 4px 8px;
+    border-radius: 999px;
+    white-space: nowrap;
+    font-weight: 850;
+  }
+
+  .cards { margin: 0; padding: 0 12px 12px; list-style: none; display: grid; gap: 8px; }
+  .cardRow {
+    display: grid;
+    grid-template-columns: 92px minmax(0, 1fr);
+    gap: 10px;
+    padding: 10px 10px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: color-mix(in oklab, var(--surface2) 65%, transparent);
+    align-items: start;
+  }
+  .state {
+    font-size: 12px;
+    font-weight: 900;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding: 6px 8px;
+    border-radius: 999px;
+    width: fit-content;
+  }
+  .front :global(*) { margin: 0; }
+  .front { line-height: 1.45; }
+
+  @media (max-width: 720px) {
+    .cardRow { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script is:inline>
+  const search = document.getElementById("ankiSearch");
+  const deckList = document.getElementById("ankiDeckList");
+  const filters = document.getElementById("ankiFilters");
+  let activeState = "ALL";
+
+  function apply() {
+    const q = String(search?.value || "").trim().toLowerCase();
+    const rows = Array.from(deckList?.querySelectorAll?.(".cardRow") || []);
+    for (const r of rows) {
+      const s = r.getAttribute("data-state") || "";
+      const text = r.getAttribute("data-text") || "";
+      const okState = activeState === "ALL" || s === activeState;
+      const okText = !q || text.includes(q);
+      r.style.display = okState && okText ? "" : "none";
+    }
+  }
+
+  search?.addEventListener("input", apply);
+  filters?.addEventListener("click", (e) => {
+    const btn = e.target?.closest?.("button[data-state]");
+    if (!btn) return;
+    activeState = btn.getAttribute("data-state") || "ALL";
+    for (const b of Array.from(filters.querySelectorAll("button[data-state]"))) {
+      b.classList.toggle("active", b === btn);
+    }
+    apply();
+  });
+</script>
+
