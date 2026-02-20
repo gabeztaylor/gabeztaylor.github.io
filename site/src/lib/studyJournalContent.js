@@ -38,6 +38,16 @@ function toMdDate(dateISO) {
   return `${mo}/${d}/${yy}`;
 }
 
+function toLongDate(dateISO) {
+  const m = String(dateISO || "").match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!m) return dateISO;
+  const y = Number(m[1]);
+  const mo = Number(m[2]);
+  const d = Number(m[3]);
+  const dt = new Date(y, mo - 1, d, 12, 0, 0, 0);
+  return new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric" }).format(dt);
+}
+
 function dayIdFromMdDate(mdDate) {
   return `d-${String(mdDate).trim().replace(/\s+/g, "").replace(/\//g, "-")}`;
 }
@@ -119,6 +129,7 @@ export function loadStudyJournalDays() {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(dateISO)) continue;
 
     const mdDate = toMdDate(dateISO);
+    const longDate = toLongDate(dateISO);
     const dayId = mdDate ? dayIdFromMdDate(mdDate) : dateISO;
 
     const sessionsRaw = Array.isArray(obj?.sessions) ? obj.sessions : [];
@@ -151,6 +162,7 @@ export function loadStudyJournalDays() {
     days.push({
       dateISO,
       mdDate: mdDate || dateISO,
+      longDate,
       id: dayId,
       sessions,
     });

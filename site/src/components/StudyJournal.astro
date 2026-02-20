@@ -49,57 +49,29 @@ function renderInline(s) {
 
 <section class="card page">
   <div class="content">
-    <div id="tag-index"></div>
-
-    {tagIndex.tags.length === 0 ? (
-      <p class="muted">No tags yet.</p>
-    ) : (
-      tagIndex.tags.map((t) => (
-        <details class="tagGroup" id={t.id}>
-          <summary>
-            <span class="tagTitle">#{t.tag}</span>
-            <span class="tagMeta">
-              <span class="tagTotal">{t.totalLabel}</span>
-              <span class="tagCount">{t.dayCount}</span>
-            </span>
-          </summary>
-          <ul>
-            {t.dateISOs.map((dateISO) => {
-              const d = dayByISO.get(dateISO);
-              if (!d) return null;
-              return (
-                <li>
-                  <a href={`#${d.id}`}>{d.mdDate}</a>
-                </li>
-              );
-            })}
-          </ul>
-        </details>
-      ))
-    )}
-
     {days.length === 0 ? (
       <p class="muted" style="margin-top: 18px;">No study sessions yet.</p>
     ) : (
       days.map((d) => (
         <section class="study-day">
-          <h3 id={d.id}>{d.mdDate}</h3>
+          <h3 id={d.id}>{d.longDate || d.mdDate}</h3>
           <ul>
             {d.sessions.map((s) => (
               <li>
-                <strong>{s.startLabel} – {s.endLabel}</strong> ({s.durationLabel}): {s.description}
+                <div class="sessionHead">
+                  <div class="sessionText">
+                    <strong>{s.startLabel} – {s.endLabel}</strong> ({s.durationLabel}): {s.description}
+                  </div>
+                  {s.tags.length > 0 && (
+                    <div class="sessionTags" aria-label="Tags">
+                      {s.tags.map((tag) => (
+                        <a class="tagChip" href={`#tag-${tag}`}>#{tag}</a>
+                      ))}
+                    </div>
+                  )}
+                </div>
                 {(s.tags.length > 0 || s.sources.length > 0 || s.notes.length > 0 || s.screenshots.length > 0) && (
                   <ul>
-                    {s.tags.length > 0 && (
-                      <li>
-                        <strong>Tags</strong>
-                        <ul>
-                          {s.tags.map((tag) => (
-                            <li><a href={`#tag-${tag}`}>#{tag}</a></li>
-                          ))}
-                        </ul>
-                      </li>
-                    )}
                     {s.sources.length > 0 && (
                       <li>
                         <strong>Sources</strong>
@@ -138,6 +110,40 @@ function renderInline(s) {
         </section>
       ))
     )}
+
+    <div class="tagSection" id="tag-index">
+      <div class="row space">
+        <h2>Tags</h2>
+        <div class="muted" style="font-size: 13px;">Browse days by topic</div>
+      </div>
+
+      {tagIndex.tags.length === 0 ? (
+        <p class="muted" style="margin-top: 10px;">No tags yet.</p>
+      ) : (
+        tagIndex.tags.map((t) => (
+          <details class="tagGroup" id={t.id}>
+            <summary>
+              <span class="tagTitle">#{t.tag}</span>
+              <span class="tagMeta">
+                <span class="tagTotal">{t.totalLabel}</span>
+                <span class="tagCount">{t.dayCount}</span>
+              </span>
+            </summary>
+            <ul>
+              {t.dateISOs.map((dateISO) => {
+                const d = dayByISO.get(dateISO);
+                if (!d) return null;
+                return (
+                  <li>
+                    <a href={`#${d.id}`}>{d.mdDate}</a>
+                  </li>
+                );
+              })}
+            </ul>
+          </details>
+        ))
+      )}
+    </div>
   </div>
 </section>
 
@@ -148,7 +154,21 @@ function renderInline(s) {
   .cta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px; }
 
   .page { padding: 18px; }
-  .content :global(.study-day) { margin: 16px 0; overflow: hidden; }
+  .content :global(.study-day) {
+    margin: 16px 0;
+    overflow: hidden;
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: color-mix(in oklab, var(--surface2) 70%, transparent);
+  }
+  .content :global(.study-day h3) {
+    margin: 0 0 10px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .content :global(.study-day ul) { margin-top: 10px; }
+  .content :global(.study-day > ul) { margin-bottom: 0; }
   .content :global(.study-day img) {
     max-width: 100%;
     height: auto;
@@ -157,6 +177,45 @@ function renderInline(s) {
     border: 1px solid var(--border);
     background: var(--surface);
   }
+
+  .content :global(.sessionHead) {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .content :global(.sessionTags) {
+    display: inline-flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .content :global(a.tagChip) {
+    display: inline-flex;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    text-decoration: none;
+    color: var(--muted);
+    font-weight: 850;
+    font-size: 12px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .content :global(a.tagChip:hover) {
+    color: var(--text);
+    border-color: color-mix(in oklab, var(--accent) 35%, var(--border));
+  }
+
+  .content :global(.tagSection) {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+  }
+  .content :global(.row) { display: flex; align-items: baseline; gap: 10px; }
+  .content :global(.space) { justify-content: space-between; }
 
   .content :global(details.tagGroup) {
     border: 1px solid var(--border);
