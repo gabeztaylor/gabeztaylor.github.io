@@ -3,26 +3,63 @@ layout: page
 title: Studying
 permalink: /Studying/
 ---
+<!-- TAG_INDEX_START -->
+## Tags
 
-### 2/19/26
+- [#exercise](#tag-exercise)
+- [#homework](#tag-homework)
+- [#pde](#tag-pde)
+- [#probability](#tag-probability)
+- [#research](#tag-research)
+- [#rl](#tag-rl)
+
+### #exercise {#tag-exercise}
+
+- [2/17/26](#d-2-17-26)
+
+### #homework {#tag-homework}
+
+- [2/19/26](#d-2-19-26)
+- [2/18/26](#d-2-18-26)
+
+### #pde {#tag-pde}
+
+- [2/19/26](#d-2-19-26)
+- [2/18/26](#d-2-18-26)
+
+### #probability {#tag-probability}
+
+- [2/17/26](#d-2-17-26)
+
+### #research {#tag-research}
+
+- [2/17/26](#d-2-17-26)
+
+### #rl {#tag-rl}
+
+- [2/17/26](#d-2-17-26)
+
+<!-- TAG_INDEX_END -->
+
+### 2/19/26 {#d-2-19-26}
 
 - **9:50 AM – 12:13 PM** (2h 23m): Continued PDE homework, mainly practiced higher dimensional weak derivatives
   - **Tags**
-    - #homework
-    - #pde
+    - [#homework](#tag-homework)
+    - [#pde](#tag-pde)
 
-### 2/18/26
+### 2/18/26 {#d-2-18-26}
 
 - **8:15 AM – 11:04 AM** (2h 49m): PDE homework which mainly covered weak derivatives and more practice solving 1d wave equations
   - **Tags**
-    - #homework
-    - #pde
+    - [#homework](#tag-homework)
+    - [#pde](#tag-pde)
 
-### 2/17/26
+### 2/17/26 {#d-2-17-26}
 
 - **11:20 AM – 12:59 PM** (1h 39m): More asymptotics of rl
   - **Tags**
-    - #research
+    - [#research](#tag-research)
   - **Notes**
     - Went over the convergence in the finite time case and discovered why the result holds for all discount factors there
 
@@ -32,19 +69,19 @@ permalink: /Studying/
 
 - **9:15 AM – 9:45 AM** (30m): Asymptotics in RL with NN
   - **Tags**
-    - #research
-    - #rl
+    - [#research](#tag-research)
+    - [#rl](#tag-rl)
 
 - **7:57 AM – 8:57 AM** (1h): Read more of high-dimensional probability by Vershnin. Did the first exercise in Chapter 2
   - **Tags**
-    - #probability
-    - #exercise
+    - [#probability](#tag-probability)
+    - [#exercise](#tag-exercise)
   - **Notes**
     - I got the lower bound with induction, upper bound using Markov's after logging, exponentiating
   - **Screenshots**
     - ![](/assets/study-journal/2026-02-17T14-59-15-638Z_6c4318_Screenshot_2026-02-17_at_8.59.12_AM.png)
 
-### 2/16/26
+### 2/16/26 {#d-2-16-26}
 
 - **7:30 AM – 9:00 AM** (1h 30m): Reviewed Asymptotics of RL paper and talked a bit with Gemini and NotebookLM
   - **Notes**
@@ -54,7 +91,7 @@ permalink: /Studying/
   - **Notes**
     - Still struggling with colors, blues always give me a tough time
 
-### 2/15/26
+### 2/15/26 {#d-2-15-26}
 
 - **7:30 AM – 8:00 AM** (30m): Relearned comparative advantage
   - **Sources**
