@@ -1,0 +1,163 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { loadPosts, loadTagDefinitions, slugifyTag } from "../lib/jekyllContent.js";
+
+const posts = loadPosts();
+const defs = loadTagDefinitions();
+const allTags = Array.from(new Set(posts.flatMap((p) => (p.tags || []).map((t) => slugifyTag(t)))))
+  .filter(Boolean)
+  .sort((a, b) => a.localeCompare(b));
+---
+
+<BaseLayout title="Blog">
+	<section class="hero card">
+		<div class="inner">
+			<div class="kicker pill">Blog</div>
+			<h1>Posts</h1>
+			<p class="muted">Essays and notes. Legacy post URLs are preserved.</p>
+			<div class="cta">
+				<button class="btn primary" type="button" id="openSearch">Search (⌘K)</button>
+				<a class="btn" href="/tags/machine-learning/">Browse Tags</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="tagbar card">
+		<div class="inner">
+			<div class="label muted">Tags</div>
+			<div class="chips">
+				{allTags.map((t) => (
+					<a class="chip" href={`/tags/${t}/`}>
+						#{defs.get(t)?.name || t}
+					</a>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class="posts card">
+		<div class="inner">
+			<div class="row space">
+				<h2>All posts</h2>
+				<a class="btn" href="/">Studying</a>
+			</div>
+			<div class="list" id="postList">
+				{posts.map((p) => (
+					<a
+						class="postRow"
+						href={p.url}
+						data-title={p.title.toLowerCase()}
+						data-tags={(p.tags || []).join(" ").toLowerCase()}
+					>
+						<div class="left">
+							<div class="title">{p.title}</div>
+							{p.subtitle && <div class="muted sub">{p.subtitle}</div>}
+						</div>
+						<div class="muted date">{p.dateISO}</div>
+					</a>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<dialog class="search" id="searchDialog">
+		<div class="card inner">
+			<div class="row space">
+				<h3>Search</h3>
+				<button class="btn" type="button" id="closeSearch">Close</button>
+			</div>
+			<input id="searchInput" class="pill" type="search" placeholder="Search titles and tags…" />
+			<p class="muted hint">Tip: type “rl”, “analysis”, etc. Filters instantly.</p>
+		</div>
+	</dialog>
+</BaseLayout>
+
+<style>
+	.hero { padding: 18px; }
+	.hero .inner { display: grid; gap: 12px; padding: 12px; }
+	.kicker { width: fit-content; font-weight: 800; font-size: 12px; color: var(--muted); }
+	.cta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px; }
+
+	.tagbar { margin-top: 16px; }
+	.tagbar .inner { padding: 14px 14px 10px; }
+	.tagbar .label { font-weight: 850; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; }
+	.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+	.chip {
+		display: inline-flex;
+		padding: 8px 10px;
+		border-radius: 999px;
+		border: 1px solid var(--border);
+		background: var(--surface);
+		text-decoration: none;
+		color: var(--muted);
+		font-weight: 800;
+		font-size: 13px;
+	}
+	.chip:hover { color: var(--text); border-color: color-mix(in oklab, var(--accent) 35%, var(--border)); }
+
+	.posts { margin-top: 16px; }
+	.posts .inner { padding: 14px; }
+	.row { display: flex; align-items: center; gap: 10px; }
+	.space { justify-content: space-between; }
+	.list { margin-top: 12px; display: grid; gap: 10px; }
+	.postRow {
+		display: flex;
+		justify-content: space-between;
+		gap: 12px;
+		padding: 12px 12px;
+		border-radius: 14px;
+		border: 1px solid var(--border);
+		background: var(--surface);
+		text-decoration: none;
+	}
+	.postRow:hover { border-color: color-mix(in oklab, var(--accent) 35%, var(--border)); }
+	.title { font-weight: 850; }
+	.sub { margin-top: 4px; font-size: 13px; }
+	.date { font-size: 13px; white-space: nowrap; }
+	@media (max-width: 720px) {
+		.postRow { flex-direction: column; align-items: flex-start; }
+		.date { white-space: normal; }
+	}
+
+	.search { border: 0; padding: 0; background: transparent; }
+	.search::backdrop { background: rgba(0,0,0,0.45); backdrop-filter: blur(8px); }
+	.search .inner { padding: 14px; width: min(720px, calc(100vw - 30px)); }
+	.hint { font-size: 12px; margin: 10px 0 0; }
+</style>
+
+<script is:inline>
+	const dlg = document.getElementById("searchDialog");
+	const openBtn = document.getElementById("openSearch");
+	const closeBtn = document.getElementById("closeSearch");
+	const input = document.getElementById("searchInput");
+	const rows = Array.from(document.querySelectorAll("#postList .postRow"));
+
+	function open() {
+		if (!dlg?.showModal) return;
+		dlg.showModal();
+		input?.focus();
+	}
+	function close() { dlg?.close(); }
+
+	openBtn?.addEventListener("click", open);
+	closeBtn?.addEventListener("click", close);
+	dlg?.addEventListener("click", (e) => {
+		if (e.target === dlg) close();
+	});
+	document.addEventListener("keydown", (e) => {
+		if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+			e.preventDefault();
+			open();
+		}
+	});
+
+	function applyFilter(q) {
+		const needle = String(q || "").trim().toLowerCase();
+		for (const r of rows) {
+			const hay = (r.dataset.title || "") + " " + (r.dataset.tags || "");
+			r.style.display = !needle || hay.includes(needle) ? "" : "none";
+		}
+	}
+	input?.addEventListener("input", () => applyFilter(input.value));
+</script>
+

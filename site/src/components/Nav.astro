@@ -1,0 +1,115 @@
+---
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/Blog', label: 'Blog' },
+  { href: '/Fighting', label: 'Fighting' },
+  { href: '/About', label: 'About' },
+];
+---
+
+<header class="nav card">
+  <div class="inner">
+    <a class="brand" href="/" aria-label="Home">
+      <span class="mark">G</span>
+      <span class="name">Gabriel Taylor</span>
+    </a>
+
+    <nav class="links" aria-label="Primary">
+      {links.map((l) => (
+        <a class="link" href={l.href}>
+          {l.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="actions">
+      <button class="btn" type="button" id="themeToggle" aria-label="Toggle theme">
+        Theme
+      </button>
+    </div>
+  </div>
+</header>
+
+<script is:inline>
+  const root = document.documentElement;
+  const key = "theme";
+
+  function apply(theme) {
+    if (theme === "dark") root.setAttribute("data-theme", "dark");
+    else if (theme === "light") root.setAttribute("data-theme", "light");
+    else root.removeAttribute("data-theme");
+  }
+
+  const saved = localStorage.getItem(key);
+  apply(saved);
+
+  document.getElementById("themeToggle")?.addEventListener("click", () => {
+    const cur = root.getAttribute("data-theme") || "";
+    const next = cur === "dark" ? "light" : "dark";
+    localStorage.setItem(key, next);
+    apply(next);
+  });
+</script>
+
+<style>
+  .nav {
+    position: sticky;
+    top: 12px;
+    z-index: 50;
+    margin: 12px 0 22px;
+  }
+  .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 12px 14px;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: 850;
+  }
+  .mark {
+    width: 34px;
+    height: 34px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--border);
+    background: linear-gradient(
+      135deg,
+      color-mix(in oklab, var(--accent) 28%, transparent),
+      color-mix(in oklab, var(--accent2) 18%, transparent)
+    );
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--border) 55%, transparent);
+  }
+  .name { white-space: nowrap; }
+  .links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .link {
+    padding: 8px 10px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    text-decoration: none;
+    color: var(--muted);
+    font-weight: 750;
+  }
+  .link:hover {
+    color: var(--text);
+    border-color: var(--border);
+    background: var(--surface);
+  }
+  .actions { display: flex; gap: 10px; }
+  @media (max-width: 760px) {
+    .inner { flex-direction: column; align-items: stretch; }
+    .links { justify-content: flex-start; }
+  }
+</style>
+

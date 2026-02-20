@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+
+# Node (anywhere)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Astro (site/)
+site/dist/
+site/.astro/
+
+# Local env files (if any)
+.env
+.env.*

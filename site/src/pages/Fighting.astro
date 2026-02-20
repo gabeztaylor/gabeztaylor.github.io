@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { loadPageByPermalink } from "../lib/jekyllContent.js";
+
+const page = loadPageByPermalink("/Fighting");
+---
+
+<BaseLayout title={page?.title || "Fighting"}>
+  <section class="card page">
+    <div class="content" set:html={page?.html || "<p>Fighting page not found.</p>"} />
+  </section>
+</BaseLayout>
+
+<style>
+  .page { padding: 18px; }
+  .content :global(.youtube) {
+    position: relative;
+    padding-top: 56.25%;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    margin: 14px 0;
+  }
+  .content :global(.youtube iframe) { position: absolute; inset: 0; width: 100%; height: 100%; }
+</style>
+

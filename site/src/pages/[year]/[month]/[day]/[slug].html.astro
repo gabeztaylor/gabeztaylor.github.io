@@ -1,0 +1,120 @@
+---
+import BaseLayout from "../../../../layouts/BaseLayout.astro";
+import { loadPosts } from "../../../../lib/jekyllContent.js";
+
+export function getStaticPaths() {
+  const posts = loadPosts();
+  return posts.map((p) => ({
+    params: { year: p.year, month: p.month, day: p.day, slug: p.slug },
+    props: { post: p },
+  }));
+}
+
+const { post } = Astro.props;
+---
+
+<BaseLayout title={post.title} description={post.description} math={post.mathjax}>
+  <div class="layout">
+    <article class="post card">
+      <header class="hdr">
+        <h1>{post.title}</h1>
+        {post.subtitle && <p class="muted">{post.subtitle}</p>}
+        <div class="meta muted">
+          <span>{post.dateISO}</span>
+          <span>·</span>
+          <span>{post.readingTimeMinutes} min read</span>
+        </div>
+        {post.tags?.length > 0 && (
+          <div class="tags">
+            {post.tags.map((t) => {
+              const slug = t.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+              return (
+                <a class="tag" href={`/tags/${slug}/`}>
+                  {t}
+                </a>
+              );
+            })}
+          </div>
+        )}
+      </header>
+
+      <div class="content" set:html={post.html} />
+    </article>
+
+    {post.toc?.length > 0 && (
+      <aside class="toc card">
+        <div class="tocInner">
+          <div class="tocTitle muted">On this page</div>
+          <nav>
+            <ul>
+              {post.toc.map((h) => (
+                <li class={h.level === 3 ? "l3" : "l2"}>
+                  <a href={`#${h.id}`}>{h.text}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      </aside>
+    )}
+  </div>
+</BaseLayout>
+
+<style>
+  .layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 14px;
+    align-items: start;
+  }
+  .post { padding: 18px; }
+  .hdr { padding: 10px 10px 14px; border-bottom: 1px solid var(--border); margin-bottom: 14px; }
+  .meta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 10px; font-size: 13px; }
+  .tags { display: inline-flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .tag {
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    text-decoration: none;
+    font-weight: 750;
+    color: var(--muted);
+  }
+  .tag:hover { color: var(--text); border-color: color-mix(in oklab, var(--accent) 35%, var(--border)); }
+  .content :global(img) { max-width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--border); }
+  .content :global(.youtube) {
+    position: relative;
+    padding-top: 56.25%;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .content :global(.youtube iframe) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .content :global(h2) { margin-top: 28px; }
+  .content :global(h3) { margin-top: 20px; }
+  .content :global(blockquote) {
+    margin: 18px 0;
+    padding: 12px 14px;
+    border-left: 3px solid color-mix(in oklab, var(--accent) 55%, var(--border));
+    background: color-mix(in oklab, var(--surface) 70%, transparent);
+    border-radius: 12px;
+  }
+
+  .toc { position: sticky; top: 88px; padding: 14px; }
+  .tocTitle { font-weight: 900; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .toc ul { list-style: none; padding: 0; margin: 10px 0 0; display: grid; gap: 8px; }
+  .toc a { text-decoration: none; color: var(--muted); font-weight: 750; }
+  .toc a:hover { color: var(--text); }
+  .l3 { padding-left: 12px; }
+  @media (max-width: 980px) {
+    .layout { grid-template-columns: 1fr; }
+    .toc { position: static; }
+  }
+</style>
+

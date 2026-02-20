@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { loadPageByPermalink } from "../lib/jekyllContent.js";
+
+const page = loadPageByPermalink("/About");
+---
+
+<BaseLayout title={page?.title || "About"}>
+  <section class="card page">
+    <div class="content" set:html={page?.html || "<p>About page not found.</p>"} />
+  </section>
+</BaseLayout>
+
+<style>
+  .page { padding: 18px; }
+  .content :global(blockquote) {
+    margin: 14px 0;
+    padding: 12px 14px;
+    border-left: 3px solid color-mix(in oklab, var(--accent) 55%, var(--border));
+    background: color-mix(in oklab, var(--surface) 70%, transparent);
+    border-radius: 12px;
+  }
+</style>
+

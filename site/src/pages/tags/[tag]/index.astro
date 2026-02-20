@@ -1,0 +1,61 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { loadPosts, loadTagDefinitions, slugifyTag } from "../../../lib/jekyllContent.js";
+
+export function getStaticPaths() {
+  const posts = loadPosts();
+  const tags = new Set();
+  for (const p of posts) {
+    for (const t of p.tags || []) tags.add(slugifyTag(t));
+  }
+  return Array.from(tags)
+    .filter(Boolean)
+    .map((tag) => ({ params: { tag } }));
+}
+
+const { tag } = Astro.params;
+const posts = loadPosts();
+const defs = loadTagDefinitions();
+const def = defs.get(tag);
+const label = def?.name || tag;
+const tagged = posts.filter((p) => (p.tagSlugs || []).includes(tag));
+---
+
+<BaseLayout title={`Tag: ${label}`}>
+  <section class="card page">
+    <header class="hdr">
+      <h1>#{label}</h1>
+      <p class="muted">{tagged.length} post(s)</p>
+    </header>
+    <div class="list">
+      {tagged.map((p) => (
+        <a class="row" href={p.url}>
+          <div class="title">{p.title}</div>
+          <div class="meta muted">{p.dateISO}</div>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page { padding: 18px; }
+  .hdr { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .hdr h1 { font-size: 26px; }
+  .list { margin-top: 14px; display: grid; gap: 10px; }
+  .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 12px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    text-decoration: none;
+  }
+  .row:hover { border-color: color-mix(in oklab, var(--accent) 35%, var(--border)); }
+  .title { font-weight: 800; }
+  .meta { font-size: 13px; white-space: nowrap; }
+  @media (max-width: 720px) { .row { flex-direction: column; align-items: flex-start; } }
+</style>
+

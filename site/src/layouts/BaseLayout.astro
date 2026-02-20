@@ -1,0 +1,127 @@
+---
+import Nav from "../components/Nav.astro";
+import "../styles/global.css";
+import "../styles/prism.css";
+import clientEnhancementsUrl from "../scripts/clientEnhancements.js?url";
+
+const { title, description } = Astro.props;
+const pageTitle = title ? `${title} · Gabriel Taylor` : "Gabriel Taylor";
+const pageDescription =
+  description ||
+  "Gabriel’s Descent: essays on machine learning, statistics, analysis, and study notes.";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <script is:inline>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+          processEscapes: true,
+        },
+        chtml: {
+          linebreaks: { automatic: true, width: "container" },
+        },
+        options: {
+          skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"],
+        },
+      };
+    </script>
+    <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <Nav />
+      <main>
+        <slot />
+      </main>
+      <footer class="footer muted">
+        <div>© {new Date().getFullYear()} Gabriel Taylor</div>
+        <div class="right">
+          <a href="https://github.com/gabeztaylor" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </footer>
+    </div>
+
+    <dialog class="imgZoom" id="imgZoom">
+      <button class="btn close" type="button" id="imgZoomClose">Close</button>
+      <img id="imgZoomImg" alt="" />
+    </dialog>
+
+    <script type="module" src={clientEnhancementsUrl}></script>
+  </body>
+</html>
+
+<style>
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 34px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+  }
+  .right { display: flex; gap: 12px; }
+
+  .imgZoom {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    max-width: 92vw;
+    max-height: 92vh;
+  }
+  .imgZoom::backdrop { background: rgba(0,0,0,0.55); backdrop-filter: blur(10px); }
+  .imgZoom img {
+    display: block;
+    max-width: 92vw;
+    max-height: 88vh;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: var(--surface);
+  }
+  .imgZoom .close {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 2;
+  }
+</style>
+
+<script is:inline>
+  const dlg = document.getElementById("imgZoom");
+  const img = document.getElementById("imgZoomImg");
+  const closeBtn = document.getElementById("imgZoomClose");
+
+  function close() { dlg?.close(); }
+  closeBtn?.addEventListener("click", close);
+  dlg?.addEventListener("click", (e) => { if (e.target === dlg) close(); });
+
+  document.addEventListener("click", (e) => {
+    const t = e.target;
+    if (!(t instanceof HTMLImageElement)) return;
+    if (t.closest("dialog")) return;
+    const src = t.getAttribute("src");
+    if (!src) return;
+    img?.setAttribute("src", src);
+    img?.setAttribute("alt", t.getAttribute("alt") || "");
+    dlg?.showModal?.();
+  });
+</script>
+
