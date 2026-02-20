@@ -4,9 +4,7 @@ title: About
 permalink: /About/
 ---
 
-It's Bayes all the way down.
+I'm a math PhD student at University of Illinois at Urbana-Champaign. My current research focus is on proving theoretical limiting results for deep learning algorithms using tools from statistical physics. 
 
-> email: gabe.z.taylor@gmail.com
-
-> phone: 309-361-5940
+> email: gabet2@illinois.edu
 
