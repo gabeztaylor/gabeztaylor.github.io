@@ -20,7 +20,7 @@
       "end": "2026-02-17T11:20",
       "durationMinutes": 25,
       "description": "Logic puzzle and integral",
-      "tags": [],
+      "tags": ["puzzle"],
       "sources": [
         "dailyintegral.com"
       ],

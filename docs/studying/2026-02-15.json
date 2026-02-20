@@ -6,7 +6,7 @@
       "end": "2026-02-15T12:42",
       "durationMinutes": 204,
       "description": "Continued studying Asymptotics of RL paper",
-      "tags": [],
+      "tags": ["research", "rl"],
       "sources": [
         "https://arxiv.org/pdf/1911.07304"
       ],
@@ -30,7 +30,7 @@
       "end": "2026-02-15T08:30",
       "durationMinutes": 30,
       "description": "Continued learning transformers",
-      "tags": [],
+      "tags": ["ml"],
       "sources": [
         "Karpathy's tutorial on youtube"
       ],
@@ -44,7 +44,7 @@
       "end": "2026-02-15T08:00",
       "durationMinutes": 30,
       "description": "Relearned comparative advantage",
-      "tags": [],
+      "tags": ["economics"],
       "sources": [
         "https://en.wikipedia.org/wiki/Comparative_advantage"
       ],
