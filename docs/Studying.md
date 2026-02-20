@@ -38,6 +38,13 @@ permalink: /Studying/
 
 <section class="study-day" markdown="1">
 
+
+
+
+
+
+<section class="study-day" markdown="1">
+
 <!-- STUDY_STYLE_START -->
 <style>
   .study-day {
@@ -68,14 +75,20 @@ permalink: /Studying/
 <!-- TAG_INDEX_START -->
 ## Tags
 
+- [#a](#tag-a)
 - [#exercise](#tag-exercise)
 - [#homework](#tag-homework)
+- [#ki](#tag-ki)
 - [#pde](#tag-pde)
 - [#probability](#tag-probability)
 - [#puzzle](#tag-puzzle)
 - [#research](#tag-research)
 - [#rl](#tag-rl)
 - [#test](#tag-test)
+
+### #a {#tag-a}
+
+- [2/20/26](#d-2-20-26)
 
 ### #exercise {#tag-exercise}
 
@@ -85,6 +98,10 @@ permalink: /Studying/
 
 - [2/19/26](#d-2-19-26)
 - [2/18/26](#d-2-18-26)
+
+### #ki {#tag-ki}
+
+- [2/20/26](#d-2-20-26)
 
 ### #pde {#tag-pde}
 
@@ -116,6 +133,11 @@ permalink: /Studying/
 <section class="study-day" markdown="1">
 ### 2/20/26 {#d-2-20-26}
 
+- **11:11 AM – 11:41 AM** (30m): Anki
+  - **Tags**
+    - [#a](#tag-a)
+    - [#ki](#tag-ki)
+
 - **9:00 AM – 9:10 AM** (10m): test json write
   - **Tags**
     - [#test](#tag-test)
@@ -134,6 +156,10 @@ permalink: /Studying/
   - **Sources**
     - https://cluesbysam.com/
     - https://dailyintegral.com/
+
+</section>
+
+<section class="study-day" markdown="1">
 
 </section>
 
@@ -184,12 +210,20 @@ permalink: /Studying/
 </section>
 
 <section class="study-day" markdown="1">
+
+</section>
+
+<section class="study-day" markdown="1">
 ### 2/18/26 {#d-2-18-26}
 
 - **8:15 AM – 11:04 AM** (2h 49m): PDE homework which mainly covered weak derivatives and more practice solving 1d wave equations
   - **Tags**
     - [#homework](#tag-homework)
     - [#pde](#tag-pde)
+
+</section>
+
+<section class="study-day" markdown="1">
 
 </section>
 
@@ -263,6 +297,10 @@ permalink: /Studying/
 </section>
 
 <section class="study-day" markdown="1">
+
+</section>
+
+<section class="study-day" markdown="1">
 ### 2/16/26 {#d-2-16-26}
 
 - **7:30 AM – 9:00 AM** (1h 30m): Reviewed Asymptotics of RL paper and talked a bit with Gemini and NotebookLM
@@ -272,6 +310,10 @@ permalink: /Studying/
 - **9:30 AM – 11:00 AM** (1h 30m): Cleared Anki deck, roughly 250 cards.
   - **Notes**
     - Still struggling with colors, blues always give me a tough time
+
+</section>
+
+<section class="study-day" markdown="1">
 
 </section>
 
@@ -317,6 +359,8 @@ permalink: /Studying/
     - https://arxiv.org/pdf/1911.07304
   - **Notes**
     - The measure for the weight distribution is frozen in time, but the solution still evolves in time. Roughly, the network is so wide that we're making tiny enough updates that the distribution doesn't change, but the accumulated changes over all weights is $$O(1)$$. The learning is driven from the kernel $$A$$ and the TD-error given from the environment. The network acts as like a fixed feature space instead of learning to represent new features.
+
+</section>
 
 </section>
 
