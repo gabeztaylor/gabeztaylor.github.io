@@ -2,6 +2,20 @@
   "date": "2026-02-20",
   "sessions": [
     {
+      "start": "2026-02-20T15:03",
+      "end": "2026-02-20T17:27",
+      "durationMinutes": 144,
+      "description": "Texed PDE homework",
+      "tags": [
+        "latex"
+      ],
+      "sources": [],
+      "notes": [
+        "This never gets less painful"
+      ],
+      "screenshots": []
+    },
+    {
       "start": "2026-02-20T13:26",
       "end": "2026-02-20T14:26",
       "durationMinutes": 60,
