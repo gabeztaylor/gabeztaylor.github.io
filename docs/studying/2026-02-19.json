@@ -1,0 +1,18 @@
+{
+  "date": "2026-02-19",
+  "sessions": [
+    {
+      "start": "2026-02-19T09:50",
+      "end": "2026-02-19T12:13",
+      "durationMinutes": 143,
+      "description": "Continued PDE homework, mainly practiced higher dimensional weak derivatives",
+      "tags": [
+        "homework",
+        "pde"
+      ],
+      "sources": [],
+      "notes": [],
+      "screenshots": []
+    }
+  ]
+}

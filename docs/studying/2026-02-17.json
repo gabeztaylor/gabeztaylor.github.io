@@ -1,0 +1,61 @@
+{
+  "date": "2026-02-17",
+  "sessions": [
+    {
+      "start": "2026-02-17T11:20",
+      "end": "2026-02-17T12:59",
+      "durationMinutes": 99,
+      "description": "More asymptotics of rl",
+      "tags": [
+        "research"
+      ],
+      "sources": [],
+      "notes": [
+        "Went over the convergence in the finite time case and discovered why the result holds for all discount factors there"
+      ],
+      "screenshots": []
+    },
+    {
+      "start": "2026-02-17T10:55",
+      "end": "2026-02-17T11:20",
+      "durationMinutes": 25,
+      "description": "Logic puzzle and integral",
+      "tags": [],
+      "sources": [
+        "dailyintegral.com"
+      ],
+      "notes": [],
+      "screenshots": []
+    },
+    {
+      "start": "2026-02-17T09:15",
+      "end": "2026-02-17T09:45",
+      "durationMinutes": 30,
+      "description": "Asymptotics in RL with NN",
+      "tags": [
+        "research",
+        "rl"
+      ],
+      "sources": [],
+      "notes": [],
+      "screenshots": []
+    },
+    {
+      "start": "2026-02-17T07:57",
+      "end": "2026-02-17T08:57",
+      "durationMinutes": 60,
+      "description": "Read more of high-dimensional probability by Vershnin. Did the first exercise in Chapter 2",
+      "tags": [
+        "probability",
+        "exercise"
+      ],
+      "sources": [],
+      "notes": [
+        "I got the lower bound with induction, upper bound using Markov's after logging, exponentiating"
+      ],
+      "screenshots": [
+        "/assets/study-journal/2026-02-17T14-59-15-638Z_6c4318_Screenshot_2026-02-17_at_8.59.12_AM.png"
+      ]
+    }
+  ]
+}

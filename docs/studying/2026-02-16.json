@@ -1,0 +1,29 @@
+{
+  "date": "2026-02-16",
+  "sessions": [
+    {
+      "start": "2026-02-16T09:30",
+      "end": "2026-02-16T11:00",
+      "durationMinutes": 90,
+      "description": "Cleared Anki deck, roughly 250 cards.",
+      "tags": [],
+      "sources": [],
+      "notes": [
+        "Still struggling with colors, blues always give me a tough time"
+      ],
+      "screenshots": []
+    },
+    {
+      "start": "2026-02-16T07:30",
+      "end": "2026-02-16T09:00",
+      "durationMinutes": 90,
+      "description": "Reviewed Asymptotics of RL paper and talked a bit with Gemini and NotebookLM",
+      "tags": [],
+      "sources": [],
+      "notes": [
+        "Mainly focused on overall proof flow. The trickiest step is the stochastic decomposition step where the martingale terms pop out."
+      ],
+      "screenshots": []
+    }
+  ]
+}

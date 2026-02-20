@@ -1,0 +1,18 @@
+{
+  "date": "2026-02-18",
+  "sessions": [
+    {
+      "start": "2026-02-18T08:15",
+      "end": "2026-02-18T11:04",
+      "durationMinutes": 169,
+      "description": "PDE homework which mainly covered weak derivatives and more practice solving 1d wave equations",
+      "tags": [
+        "homework",
+        "pde"
+      ],
+      "sources": [],
+      "notes": [],
+      "screenshots": []
+    }
+  ]
+}
