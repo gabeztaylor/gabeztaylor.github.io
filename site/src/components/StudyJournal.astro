@@ -1,0 +1,208 @@
+---
+import { computeStudyTagIndex, loadStudyJournalDays } from "../lib/studyJournalContent.js";
+
+const {
+  showHero = false,
+  heroKicker = "Daily",
+  heroTitle = "Study Journal",
+  heroSubtitle = "What I’m studying, with notes, sources, screenshots, tags, and time totals.",
+} = Astro.props;
+
+const days = loadStudyJournalDays();
+const tagIndex = computeStudyTagIndex(days);
+const dayByISO = new Map(days.map((d) => [d.dateISO, d]));
+
+function escapeHtml(s) {
+  return String(s || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function renderInline(s) {
+  // Minimal safe inline formatting for notes/sources.
+  let out = escapeHtml(s);
+  out = out.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+  out = out.replace(
+    /(https?:\/\/[^\s<]+)/g,
+    '<a href="$1" target="_blank" rel="noreferrer">$1</a>',
+  );
+  return out;
+}
+---
+
+{showHero && (
+  <section class="hero card">
+    <div class="inner">
+      <div class="kicker pill">{heroKicker}</div>
+      <h1>{heroTitle}</h1>
+      <p class="muted">{heroSubtitle}</p>
+      <div class="cta">
+        <a class="btn primary" href="#tag-index">Browse by tag</a>
+        <a class="btn" href="/Blog">Blog</a>
+      </div>
+    </div>
+  </section>
+)}
+
+<section class="card page">
+  <div class="content">
+    <div id="tag-index"></div>
+
+    {tagIndex.tags.length === 0 ? (
+      <p class="muted">No tags yet.</p>
+    ) : (
+      tagIndex.tags.map((t) => (
+        <details class="tagGroup" id={t.id}>
+          <summary>
+            <span class="tagTitle">#{t.tag}</span>
+            <span class="tagMeta">
+              <span class="tagTotal">{t.totalLabel}</span>
+              <span class="tagCount">{t.dayCount}</span>
+            </span>
+          </summary>
+          <ul>
+            {t.dateISOs.map((dateISO) => {
+              const d = dayByISO.get(dateISO);
+              if (!d) return null;
+              return (
+                <li>
+                  <a href={`#${d.id}`}>{d.mdDate}</a>
+                </li>
+              );
+            })}
+          </ul>
+        </details>
+      ))
+    )}
+
+    {days.length === 0 ? (
+      <p class="muted" style="margin-top: 18px;">No study sessions yet.</p>
+    ) : (
+      days.map((d) => (
+        <section class="study-day">
+          <h3 id={d.id}>{d.mdDate}</h3>
+          <ul>
+            {d.sessions.map((s) => (
+              <li>
+                <strong>{s.startLabel} – {s.endLabel}</strong> ({s.durationLabel}): {s.description}
+                {(s.tags.length > 0 || s.sources.length > 0 || s.notes.length > 0 || s.screenshots.length > 0) && (
+                  <ul>
+                    {s.tags.length > 0 && (
+                      <li>
+                        <strong>Tags</strong>
+                        <ul>
+                          {s.tags.map((tag) => (
+                            <li><a href={`#tag-${tag}`}>#{tag}</a></li>
+                          ))}
+                        </ul>
+                      </li>
+                    )}
+                    {s.sources.length > 0 && (
+                      <li>
+                        <strong>Sources</strong>
+                        <ul>
+                          {s.sources.map((src) => (
+                            <li><span set:html={renderInline(src)} /></li>
+                          ))}
+                        </ul>
+                      </li>
+                    )}
+                    {s.notes.length > 0 && (
+                      <li>
+                        <strong>Notes</strong>
+                        <ul>
+                          {s.notes.map((n) => (
+                            <li><span set:html={renderInline(n)} /></li>
+                          ))}
+                        </ul>
+                      </li>
+                    )}
+                    {s.screenshots.length > 0 && (
+                      <li>
+                        <strong>Screenshots</strong>
+                        <ul>
+                          {s.screenshots.map((u) => (
+                            <li><img src={u} alt="" loading="lazy" /></li>
+                          ))}
+                        </ul>
+                      </li>
+                    )}
+                  </ul>
+                )}
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    )}
+  </div>
+</section>
+
+<style>
+  .hero { padding: 18px; }
+  .hero .inner { display: grid; gap: 12px; padding: 12px; }
+  .kicker { width: fit-content; font-weight: 800; font-size: 12px; color: var(--muted); }
+  .cta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px; }
+
+  .page { padding: 18px; }
+  .content :global(.study-day) { margin: 16px 0; overflow: hidden; }
+  .content :global(.study-day img) {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  .content :global(details.tagGroup) {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--surface);
+    padding: 10px 12px;
+    margin: 12px 0;
+  }
+  .content :global(details.tagGroup summary) {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    font-weight: 900;
+    color: var(--text);
+    padding: 6px 4px;
+  }
+  .content :global(details.tagGroup summary::-webkit-details-marker) { display: none; }
+  .content :global(.tagTitle) { font-size: 16px; }
+  .content :global(.tagMeta) { display: inline-flex; gap: 8px; align-items: center; }
+  .content :global(.tagTotal),
+  .content :global(.tagCount) {
+    font-size: 12px;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    padding: 4px 8px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .content :global(details.tagGroup[open] ul) { margin-top: 10px; }
+</style>
+
+<script is:inline>
+  function openIfTagHash() {
+    const hash = location.hash || "";
+    if (!hash.startsWith("#tag-")) return;
+    const el = document.getElementById(hash.slice(1));
+    if (el && el.tagName === "DETAILS") {
+      el.open = true;
+      setTimeout(() => el.scrollIntoView({ block: "start" }), 0);
+    }
+  }
+  window.addEventListener("hashchange", openIfTagHash);
+  openIfTagHash();
+</script>
+
