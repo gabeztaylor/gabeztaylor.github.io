@@ -6,36 +6,36 @@ permalink: /Studying/
 
 ### 2/19/26
 
-- **9:50 AM – 12:13 PM**: Continued PDE homework, mainly practiced higher dimensional weak derivatives
+- **9:50 AM – 12:13 PM** (2h 23m): Continued PDE homework, mainly practiced higher dimensional weak derivatives
   - **Tags**
     - #homework
     - #pde
 
 ### 2/18/26
 
-- **8:15 AM – 11:04 AM**: PDE homework which mainly covered weak derivatives and more practice solving 1d wave equations
+- **8:15 AM – 11:04 AM** (2h 49m): PDE homework which mainly covered weak derivatives and more practice solving 1d wave equations
   - **Tags**
     - #homework
     - #pde
 
 ### 2/17/26
 
-- **11:20 AM – 12:59 PM**: More asymptotics of rl
+- **11:20 AM – 12:59 PM** (1h 39m): More asymptotics of rl
   - **Tags**
     - #research
   - **Notes**
     - Went over the convergence in the finite time case and discovered why the result holds for all discount factors there
 
-- **10:55 AM – 11:20 AM**: Logic puzzle and integral
+- **10:55 AM – 11:20 AM** (25m): Logic puzzle and integral
   - **Sources**
     - dailyintegral.com
 
-- **9:15 AM – 9:45 AM**: Asymptotics in RL with NN
+- **9:15 AM – 9:45 AM** (30m): Asymptotics in RL with NN
   - **Tags**
     - #research
     - #rl
 
-- **7:57 AM – 8:57 AM**: Read more of high-dimensional probability by Vershnin. Did the first exercise in Chapter 2
+- **7:57 AM – 8:57 AM** (1h): Read more of high-dimensional probability by Vershnin. Did the first exercise in Chapter 2
   - **Tags**
     - #probability
     - #exercise
@@ -46,31 +46,31 @@ permalink: /Studying/
 
 ### 2/16/26
 
-- **7:30 AM – 9:00 AM**: Reviewed Asymptotics of RL paper and talked a bit with Gemini and NotebookLM
+- **7:30 AM – 9:00 AM** (1h 30m): Reviewed Asymptotics of RL paper and talked a bit with Gemini and NotebookLM
   - **Notes**
     - Mainly focused on overall proof flow. The trickiest step is the stochastic decomposition step where the martingale terms pop out.
 
-- **9:30 AM – 11:00 AM**: Cleared Anki deck, roughly 250 cards.
+- **9:30 AM – 11:00 AM** (1h 30m): Cleared Anki deck, roughly 250 cards.
   - **Notes**
     - Still struggling with colors, blues always give me a tough time
 
 ### 2/15/26
 
-- **7:30 AM – 8:00 AM**: Relearned comparative advantage
+- **7:30 AM – 8:00 AM** (30m): Relearned comparative advantage
   - **Sources**
     - https://en.wikipedia.org/wiki/Comparative_advantage
   - **Notes**
     - So the only reason this works is because of relative opportunity cost. Even if party A has an absolute advantage in efficiency over party B, paty A has an opportunity cost in choosing to spend time making something that they aren't **most** efficient at. Thus, they leave it to the scrubs to make that thing (even thought party A is better at it).
 
-- **8:00 AM – 8:30 AM**: Continued learning transformers
+- **8:00 AM – 8:30 AM** (30m): Continued learning transformers
   - **Sources**
     - Karpathy's tutorial on youtube
   - **Notes**
     - Biggest takeaway from this session was learning the difference between encoder and decoder, which he doesn't really explain until the end
 
-- **8:28 AM – 9:13 AM**: Built this app, made some git repos and pushed changes
+- **8:28 AM – 9:13 AM** (45m): Built this app, made some git repos and pushed changes
 
-- **9:18 AM – 12:42 PM**: Continued studying Asymptotics of RL paper
+- **9:18 AM – 12:42 PM** (3h 24m): Continued studying Asymptotics of RL paper
   - **Sources**
     - https://arxiv.org/pdf/1911.07304
   - **Notes**
