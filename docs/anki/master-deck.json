@@ -1,7 +1,7 @@
 {
   "version": 1,
   "deckRoot": "Master Deck",
-  "generatedAt": "2026-02-20T17:13:09.284Z",
+  "generatedAt": "2026-02-20T17:42:03.279Z",
   "excludeSuspended": true,
   "cards": [
     {
@@ -2996,7 +2996,7 @@
       "cardId": 1574587964718,
       "noteId": 1574587964685,
       "deckName": "Master Deck::Ultimate Geography",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "Bosnia and Herzegovina",
       "backHtml": "<style>.card {\n  padding: 1em 0;\n  background-color: white;\n  color: black;\n  font-family: Verdana;\n  font-size: 16px;\n  text-align: center;\n}\n\n.type {\n  margin-bottom: 0.25em;\n  color: #333;\n  font-size: 70%;\n  font-weight: bold;\n  text-transform: uppercase;\n}\n\n.info {\n  max-width: 30em;\n  margin: 0.75em auto;\n  color: #333;\n  font-size: 90%;\n  font-style: italic;\n}\n\n.value {\n  font-size: 150%;\n}\n\n.value--top {\n  margin-top: 1em;\n}\n\n.value--image {\n  margin-top: 0.75em;\n}\n\n.value > img,\n.value > .placeholder {\n  max-width: 100%;\n  height: auto;\n}\n\n/**\n * Apply shadow to images, notably to bring out white areas on flags.\n * Ignore images with non-rectangular outlines (e.g. flag of Nepal).\n */\n.value > img:not([src*=\"-nobox\"]) {\n  box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.2);\n}\n\n/**\n * Some flags (e.g. Guam's) contain identifying words that can give away the answer.\n * If a blurred version is available, show it on the front but not on the back.\n */\n.value--front > img[src*=\"-blur\"] + img {\n  display: none;\n}\n\n.value--back > img[src*=\"-blur\"] {\n  display: none;\n}\n\n/**\n * Placeholder SVG to hint at the type of answer that is expected.\n * Used on \"Country - Flag\" and \"Country - Map\" templates.\n */\n.placeholder {\n  color: #333;\n}\n\n.placeholder > path {\n  fill: none;\n  stroke: currentColor;\n  stroke-width: 1;\n}\n\n.night_mode .info,\n.night_mode .type,\n.night_mode .placeholder,\n.nightMode .info,\n.nightMode .type,\n.nightMode .placeholder {\n  color: #ccc;\n}\n\n/**\n * Apply shadow to images, to bring out black areas on flags, in night\n   mode.\n */\n.nightMode .value > img:not([src*=\"-nobox\"]),\n.night_mode .value > img:not([src*=\"-nobox\"]) {\n  box-shadow: 0 0 4px 1px rgba(54, 54, 54, 0.9);\n}\n\nhr {\n  margin: 1.5em 0;\n}\n</style><div id=answer class=\"value value--top\">Bosnia and Herzegovina</div>\n\n\n<hr>\n\n<div class=\"type\">Location</div>\n<div class=\"value value--image\"><img src=\"ug-map-bosnia_and_herzegovina.png\" /></div>\n\n<style>\n  kbd {\n    box-shadow: inset 0 1px 0 0 white;\n    background:\n      gradient(\n        linear,\n        left top,\n        left bottom,\n        color-stop(0.05, #f9f9f9),\n        color-stop(1, #e9e9e9)\n      );\n    background-color: #f9f9f9;\n    border-radius: 4px;\n    border: 1px solid gainsboro;\n    display: inline-block;\n    font-size: 15px;\n    height: 15px;\n    line-height: 15px;\n    padding: 4px 4px;\n    margin: 5px;\n    text-align: center;\n    text-shadow: 1px 1px 0 white;\n    cursor: pointer;\n    cursor: hand;\n  }\n  \n</style>\n\n<div>\n  <script type=\"text/javascript\">\n    function ct_click(tag) {\n      pycmd(\"ct_click_\" + tag)\n    }\n    function ct_dblclick(tag, deck) {\n      pycmd(\"ct_dblclick_\" + tag + \"|\" + deck)\n    }\n\n    (function(){\n      // numTagLevelsToShow is defined in AnKing note types\n      if(typeof numTagLevelsToShow === 'undefined') return;\n\n      var clickableTags = document.getElementsByClassName(\"clickable-tag\");\n      for (let tagElm of clickableTags){\n        var tag = tagElm.innerHTML;\n        // numTagLevelsToShow == 0 means the whole tag should be shown\n        if(numTagLevelsToShow != 0){\n          tag = tag.split('::').slice(-numTagLevelsToShow).join(\"::\");\n        }\n        tagElm.innerHTML = tag;\n      };\n\n    })();\n    \n  </script>\n</div>\n",
       "frontText": "Bosnia and Herzegovina"
@@ -3005,7 +3005,7 @@
       "cardId": 1574587964722,
       "noteId": 1574587964686,
       "deckName": "Master Deck::Ultimate Geography",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "Bulgaria",
       "backHtml": "<style>.card {\n  padding: 1em 0;\n  background-color: white;\n  color: black;\n  font-family: Verdana;\n  font-size: 16px;\n  text-align: center;\n}\n\n.type {\n  margin-bottom: 0.25em;\n  color: #333;\n  font-size: 70%;\n  font-weight: bold;\n  text-transform: uppercase;\n}\n\n.info {\n  max-width: 30em;\n  margin: 0.75em auto;\n  color: #333;\n  font-size: 90%;\n  font-style: italic;\n}\n\n.value {\n  font-size: 150%;\n}\n\n.value--top {\n  margin-top: 1em;\n}\n\n.value--image {\n  margin-top: 0.75em;\n}\n\n.value > img,\n.value > .placeholder {\n  max-width: 100%;\n  height: auto;\n}\n\n/**\n * Apply shadow to images, notably to bring out white areas on flags.\n * Ignore images with non-rectangular outlines (e.g. flag of Nepal).\n */\n.value > img:not([src*=\"-nobox\"]) {\n  box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.2);\n}\n\n/**\n * Some flags (e.g. Guam's) contain identifying words that can give away the answer.\n * If a blurred version is available, show it on the front but not on the back.\n */\n.value--front > img[src*=\"-blur\"] + img {\n  display: none;\n}\n\n.value--back > img[src*=\"-blur\"] {\n  display: none;\n}\n\n/**\n * Placeholder SVG to hint at the type of answer that is expected.\n * Used on \"Country - Flag\" and \"Country - Map\" templates.\n */\n.placeholder {\n  color: #333;\n}\n\n.placeholder > path {\n  fill: none;\n  stroke: currentColor;\n  stroke-width: 1;\n}\n\n.night_mode .info,\n.night_mode .type,\n.night_mode .placeholder,\n.nightMode .info,\n.nightMode .type,\n.nightMode .placeholder {\n  color: #ccc;\n}\n\n/**\n * Apply shadow to images, to bring out black areas on flags, in night\n   mode.\n */\n.nightMode .value > img:not([src*=\"-nobox\"]),\n.night_mode .value > img:not([src*=\"-nobox\"]) {\n  box-shadow: 0 0 4px 1px rgba(54, 54, 54, 0.9);\n}\n\nhr {\n  margin: 1.5em 0;\n}\n</style><div id=answer class=\"value value--top\">Bulgaria</div>\n\n\n<hr>\n\n<div class=\"type\">Location</div>\n<div class=\"value value--image\"><img src=\"ug-map-bulgaria.png\" /></div>\n\n<style>\n  kbd {\n    box-shadow: inset 0 1px 0 0 white;\n    background:\n      gradient(\n        linear,\n        left top,\n        left bottom,\n        color-stop(0.05, #f9f9f9),\n        color-stop(1, #e9e9e9)\n      );\n    background-color: #f9f9f9;\n    border-radius: 4px;\n    border: 1px solid gainsboro;\n    display: inline-block;\n    font-size: 15px;\n    height: 15px;\n    line-height: 15px;\n    padding: 4px 4px;\n    margin: 5px;\n    text-align: center;\n    text-shadow: 1px 1px 0 white;\n    cursor: pointer;\n    cursor: hand;\n  }\n  \n</style>\n\n<div>\n  <script type=\"text/javascript\">\n    function ct_click(tag) {\n      pycmd(\"ct_click_\" + tag)\n    }\n    function ct_dblclick(tag, deck) {\n      pycmd(\"ct_dblclick_\" + tag + \"|\" + deck)\n    }\n\n    (function(){\n      // numTagLevelsToShow is defined in AnKing note types\n      if(typeof numTagLevelsToShow === 'undefined') return;\n\n      var clickableTags = document.getElementsByClassName(\"clickable-tag\");\n      for (let tagElm of clickableTags){\n        var tag = tagElm.innerHTML;\n        // numTagLevelsToShow == 0 means the whole tag should be shown\n        if(numTagLevelsToShow != 0){\n          tag = tag.split('::').slice(-numTagLevelsToShow).join(\"::\");\n        }\n        tagElm.innerHTML = tag;\n      };\n\n    })();\n    \n  </script>\n</div>\n",
       "frontText": "Bulgaria"
@@ -3014,7 +3014,7 @@
       "cardId": 1574587964726,
       "noteId": 1574587964687,
       "deckName": "Master Deck::Ultimate Geography",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "Croatia",
       "backHtml": "<style>.card {\n  padding: 1em 0;\n  background-color: white;\n  color: black;\n  font-family: Verdana;\n  font-size: 16px;\n  text-align: center;\n}\n\n.type {\n  margin-bottom: 0.25em;\n  color: #333;\n  font-size: 70%;\n  font-weight: bold;\n  text-transform: uppercase;\n}\n\n.info {\n  max-width: 30em;\n  margin: 0.75em auto;\n  color: #333;\n  font-size: 90%;\n  font-style: italic;\n}\n\n.value {\n  font-size: 150%;\n}\n\n.value--top {\n  margin-top: 1em;\n}\n\n.value--image {\n  margin-top: 0.75em;\n}\n\n.value > img,\n.value > .placeholder {\n  max-width: 100%;\n  height: auto;\n}\n\n/**\n * Apply shadow to images, notably to bring out white areas on flags.\n * Ignore images with non-rectangular outlines (e.g. flag of Nepal).\n */\n.value > img:not([src*=\"-nobox\"]) {\n  box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.2);\n}\n\n/**\n * Some flags (e.g. Guam's) contain identifying words that can give away the answer.\n * If a blurred version is available, show it on the front but not on the back.\n */\n.value--front > img[src*=\"-blur\"] + img {\n  display: none;\n}\n\n.value--back > img[src*=\"-blur\"] {\n  display: none;\n}\n\n/**\n * Placeholder SVG to hint at the type of answer that is expected.\n * Used on \"Country - Flag\" and \"Country - Map\" templates.\n */\n.placeholder {\n  color: #333;\n}\n\n.placeholder > path {\n  fill: none;\n  stroke: currentColor;\n  stroke-width: 1;\n}\n\n.night_mode .info,\n.night_mode .type,\n.night_mode .placeholder,\n.nightMode .info,\n.nightMode .type,\n.nightMode .placeholder {\n  color: #ccc;\n}\n\n/**\n * Apply shadow to images, to bring out black areas on flags, in night\n   mode.\n */\n.nightMode .value > img:not([src*=\"-nobox\"]),\n.night_mode .value > img:not([src*=\"-nobox\"]) {\n  box-shadow: 0 0 4px 1px rgba(54, 54, 54, 0.9);\n}\n\nhr {\n  margin: 1.5em 0;\n}\n</style><div id=answer class=\"value value--top\">Croatia</div>\n\n\n<hr>\n\n<div class=\"type\">Location</div>\n<div class=\"value value--image\"><img src=\"ug-map-croatia.png\" /></div>\n\n<style>\n  kbd {\n    box-shadow: inset 0 1px 0 0 white;\n    background:\n      gradient(\n        linear,\n        left top,\n        left bottom,\n        color-stop(0.05, #f9f9f9),\n        color-stop(1, #e9e9e9)\n      );\n    background-color: #f9f9f9;\n    border-radius: 4px;\n    border: 1px solid gainsboro;\n    display: inline-block;\n    font-size: 15px;\n    height: 15px;\n    line-height: 15px;\n    padding: 4px 4px;\n    margin: 5px;\n    text-align: center;\n    text-shadow: 1px 1px 0 white;\n    cursor: pointer;\n    cursor: hand;\n  }\n  \n</style>\n\n<div>\n  <script type=\"text/javascript\">\n    function ct_click(tag) {\n      pycmd(\"ct_click_\" + tag)\n    }\n    function ct_dblclick(tag, deck) {\n      pycmd(\"ct_dblclick_\" + tag + \"|\" + deck)\n    }\n\n    (function(){\n      // numTagLevelsToShow is defined in AnKing note types\n      if(typeof numTagLevelsToShow === 'undefined') return;\n\n      var clickableTags = document.getElementsByClassName(\"clickable-tag\");\n      for (let tagElm of clickableTags){\n        var tag = tagElm.innerHTML;\n        // numTagLevelsToShow == 0 means the whole tag should be shown\n        if(numTagLevelsToShow != 0){\n          tag = tag.split('::').slice(-numTagLevelsToShow).join(\"::\");\n        }\n        tagElm.innerHTML = tag;\n      };\n\n    })();\n    \n  </script>\n</div>\n",
       "frontText": "Croatia"
@@ -6299,25 +6299,16 @@
       "cardId": 1766416871994,
       "noteId": 1766416871962,
       "deckName": "Master Deck::Squares",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "\\(39^2\\)",
       "backHtml": "1521",
       "frontText": "\\(39^2\\)"
     },
     {
-      "cardId": 1766416871995,
-      "noteId": 1766416871963,
-      "deckName": "Master Deck::Squares",
-      "state": "New",
-      "frontHtml": "\\(40^2\\)",
-      "backHtml": "1600",
-      "frontText": "\\(40^2\\)"
-    },
-    {
       "cardId": 1766416871996,
       "noteId": 1766416871964,
       "deckName": "Master Deck::Squares",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "\\(41^2\\)",
       "backHtml": "1681",
       "frontText": "\\(41^2\\)"
@@ -6326,7 +6317,7 @@
       "cardId": 1766416871997,
       "noteId": 1766416871965,
       "deckName": "Master Deck::Squares",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "\\(42^2\\)",
       "backHtml": "1764",
       "frontText": "\\(42^2\\)"
@@ -6335,7 +6326,7 @@
       "cardId": 1766416871998,
       "noteId": 1766416871966,
       "deckName": "Master Deck::Squares",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "\\(43^2\\)",
       "backHtml": "1849",
       "frontText": "\\(43^2\\)"
@@ -6344,7 +6335,7 @@
       "cardId": 1766416871999,
       "noteId": 1766416871967,
       "deckName": "Master Deck::Squares",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "\\(44^2\\)",
       "backHtml": "1936",
       "frontText": "\\(44^2\\)"
@@ -7307,7 +7298,7 @@
       "cardId": 1768419405641,
       "noteId": 1768419405615,
       "deckName": "Master Deck::Plants",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/d/de/Anemones5.jpg\">",
       "backHtml": "Anemone",
       "frontText": ""
@@ -7316,7 +7307,7 @@
       "cardId": 1768419405642,
       "noteId": 1768419405616,
       "deckName": "Master Deck::Plants",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/3/38/Alpen_Edelwei%C3%9F,_Leontopodium_alpinum_2.JPG\">",
       "backHtml": "Edelweiss",
       "frontText": ""
@@ -7325,43 +7316,25 @@
       "cardId": 1768419405643,
       "noteId": 1768419405617,
       "deckName": "Master Deck::Plants",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/9/90/Ipomoea_tricolor_'Heavenly_Blue'.jpg\">",
       "backHtml": "Morning glory",
-      "frontText": ""
-    },
-    {
-      "cardId": 1768419405644,
-      "noteId": 1768419405618,
-      "deckName": "Master Deck::Plants",
-      "state": "New",
-      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/a/a3/Vehn%C3%A4pelto_6.jpg\">",
-      "backHtml": "Wheat",
       "frontText": ""
     },
     {
       "cardId": 1768419405645,
       "noteId": 1768419405619,
       "deckName": "Master Deck::Plants",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/0/0a/20201102.Hengnan.Hybrid_rice_Sanyou-1.6.jpg\">",
       "backHtml": "Rice",
-      "frontText": ""
-    },
-    {
-      "cardId": 1768419405646,
-      "noteId": 1768419405620,
-      "deckName": "Master Deck::Plants",
-      "state": "New",
-      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/e/e3/Zea_mays_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-283.jpg\">",
-      "backHtml": "Maize",
       "frontText": ""
     },
     {
       "cardId": 1768419405647,
       "noteId": 1768419405621,
       "deckName": "Master Deck::Plants",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/2/20/Barley_(Hordeum_vulgare)_-_United_States_National_Arboretum_-_24_May_2009.jpg\">",
       "backHtml": "Barley",
       "frontText": ""
@@ -7856,7 +7829,7 @@
       "cardId": 1768420061455,
       "noteId": 1768420061434,
       "deckName": "Master Deck::English Vocabulary",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "{{c1::Prudence}}, indeed, will dictate that Governments {{c2::long established}} should not be changed for {{c3::light and transient causes}}...",
       "backHtml": "<style>.card {\n    font-family: arial;\n    font-size: 20px;\n    text-align: center;\n    color: black;\n    background-color: white;\n}\n.cloze {\n    font-weight: bold;\n    color: blue;\n}\n.nightMode .cloze {\n    color: lightblue;\n}\n</style><span class=\"cloze\" data-ordinal=\"1\">Prudence</span>, indeed, will dictate that Governments <span class=\"cloze-inactive\" data-ordinal=\"2\">long established</span> should not be changed for <span class=\"cloze-inactive\" data-ordinal=\"3\">light and transient causes</span>...<br>\n\n<style>\n  kbd {\n    box-shadow: inset 0 1px 0 0 white;\n    background:\n      gradient(\n        linear,\n        left top,\n        left bottom,\n        color-stop(0.05, #f9f9f9),\n        color-stop(1, #e9e9e9)\n      );\n    background-color: #f9f9f9;\n    border-radius: 4px;\n    border: 1px solid gainsboro;\n    display: inline-block;\n    font-size: 15px;\n    height: 15px;\n    line-height: 15px;\n    padding: 4px 4px;\n    margin: 5px;\n    text-align: center;\n    text-shadow: 1px 1px 0 white;\n    cursor: pointer;\n    cursor: hand;\n  }\n  \n</style>\n\n<div>\n  <script type=\"text/javascript\">\n    function ct_click(tag) {\n      pycmd(\"ct_click_\" + tag)\n    }\n    function ct_dblclick(tag, deck) {\n      pycmd(\"ct_dblclick_\" + tag + \"|\" + deck)\n    }\n\n    (function(){\n      // numTagLevelsToShow is defined in AnKing note types\n      if(typeof numTagLevelsToShow === 'undefined') return;\n\n      var clickableTags = document.getElementsByClassName(\"clickable-tag\");\n      for (let tagElm of clickableTags){\n        var tag = tagElm.innerHTML;\n        // numTagLevelsToShow == 0 means the whole tag should be shown\n        if(numTagLevelsToShow != 0){\n          tag = tag.split('::').slice(-numTagLevelsToShow).join(\"::\");\n        }\n        tagElm.innerHTML = tag;\n      };\n\n    })();\n    \n  </script>\n</div>\n",
       "frontText": "{{c1::Prudence}}, indeed, will dictate that Governments {{c2::long established}} should not be changed for {{c3::light and transient causes}}..."
@@ -7874,7 +7847,7 @@
       "cardId": 1768420061457,
       "noteId": 1768420061435,
       "deckName": "Master Deck::English Vocabulary",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "...accordingly all {{c1::experience hath shewn}}, that mankind are more disposed to {{c2::suffer, while evils are sufferable}}...",
       "backHtml": "<style>.card {\n    font-family: arial;\n    font-size: 20px;\n    text-align: center;\n    color: black;\n    background-color: white;\n}\n.cloze {\n    font-weight: bold;\n    color: blue;\n}\n.nightMode .cloze {\n    color: lightblue;\n}\n</style>...accordingly all <span class=\"cloze\" data-ordinal=\"1\">experience hath shewn</span>, that mankind are more disposed to <span class=\"cloze-inactive\" data-ordinal=\"2\">suffer, while evils are sufferable</span>...<br>\n\n<style>\n  kbd {\n    box-shadow: inset 0 1px 0 0 white;\n    background:\n      gradient(\n        linear,\n        left top,\n        left bottom,\n        color-stop(0.05, #f9f9f9),\n        color-stop(1, #e9e9e9)\n      );\n    background-color: #f9f9f9;\n    border-radius: 4px;\n    border: 1px solid gainsboro;\n    display: inline-block;\n    font-size: 15px;\n    height: 15px;\n    line-height: 15px;\n    padding: 4px 4px;\n    margin: 5px;\n    text-align: center;\n    text-shadow: 1px 1px 0 white;\n    cursor: pointer;\n    cursor: hand;\n  }\n  \n</style>\n\n<div>\n  <script type=\"text/javascript\">\n    function ct_click(tag) {\n      pycmd(\"ct_click_\" + tag)\n    }\n    function ct_dblclick(tag, deck) {\n      pycmd(\"ct_dblclick_\" + tag + \"|\" + deck)\n    }\n\n    (function(){\n      // numTagLevelsToShow is defined in AnKing note types\n      if(typeof numTagLevelsToShow === 'undefined') return;\n\n      var clickableTags = document.getElementsByClassName(\"clickable-tag\");\n      for (let tagElm of clickableTags){\n        var tag = tagElm.innerHTML;\n        // numTagLevelsToShow == 0 means the whole tag should be shown\n        if(numTagLevelsToShow != 0){\n          tag = tag.split('::').slice(-numTagLevelsToShow).join(\"::\");\n        }\n        tagElm.innerHTML = tag;\n      };\n\n    })();\n    \n  </script>\n</div>\n",
       "frontText": "...accordingly all {{c1::experience hath shewn}}, that mankind are more disposed to {{c2::suffer, while evils are sufferable}}..."
@@ -7892,7 +7865,7 @@
       "cardId": 1768420061459,
       "noteId": 1768420061436,
       "deckName": "Master Deck::English Vocabulary",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "...than to right themselves by {{c1::abolishing the forms}} to which they are {{c2::accustomed}}.",
       "backHtml": "<style>.card {\n    font-family: arial;\n    font-size: 20px;\n    text-align: center;\n    color: black;\n    background-color: white;\n}\n.cloze {\n    font-weight: bold;\n    color: blue;\n}\n.nightMode .cloze {\n    color: lightblue;\n}\n</style>...than to right themselves by <span class=\"cloze\" data-ordinal=\"1\">abolishing the forms</span> to which they are <span class=\"cloze-inactive\" data-ordinal=\"2\">accustomed</span>.<br>\n\n<style>\n  kbd {\n    box-shadow: inset 0 1px 0 0 white;\n    background:\n      gradient(\n        linear,\n        left top,\n        left bottom,\n        color-stop(0.05, #f9f9f9),\n        color-stop(1, #e9e9e9)\n      );\n    background-color: #f9f9f9;\n    border-radius: 4px;\n    border: 1px solid gainsboro;\n    display: inline-block;\n    font-size: 15px;\n    height: 15px;\n    line-height: 15px;\n    padding: 4px 4px;\n    margin: 5px;\n    text-align: center;\n    text-shadow: 1px 1px 0 white;\n    cursor: pointer;\n    cursor: hand;\n  }\n  \n</style>\n\n<div>\n  <script type=\"text/javascript\">\n    function ct_click(tag) {\n      pycmd(\"ct_click_\" + tag)\n    }\n    function ct_dblclick(tag, deck) {\n      pycmd(\"ct_dblclick_\" + tag + \"|\" + deck)\n    }\n\n    (function(){\n      // numTagLevelsToShow is defined in AnKing note types\n      if(typeof numTagLevelsToShow === 'undefined') return;\n\n      var clickableTags = document.getElementsByClassName(\"clickable-tag\");\n      for (let tagElm of clickableTags){\n        var tag = tagElm.innerHTML;\n        // numTagLevelsToShow == 0 means the whole tag should be shown\n        if(numTagLevelsToShow != 0){\n          tag = tag.split('::').slice(-numTagLevelsToShow).join(\"::\");\n        }\n        tagElm.innerHTML = tag;\n      };\n\n    })();\n    \n  </script>\n</div>\n",
       "frontText": "...than to right themselves by {{c1::abolishing the forms}} to which they are {{c2::accustomed}}."
@@ -7919,7 +7892,7 @@
       "cardId": 1768420061462,
       "noteId": 1768420061437,
       "deckName": "Master Deck::English Vocabulary",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "But when a {{c1::long train of abuses and usurpations}}, pursuing invariably the same Object evinces a design to reduce them under {{c2::absolute Despotism}}...",
       "backHtml": "<style>.card {\n    font-family: arial;\n    font-size: 20px;\n    text-align: center;\n    color: black;\n    background-color: white;\n}\n.cloze {\n    font-weight: bold;\n    color: blue;\n}\n.nightMode .cloze {\n    color: lightblue;\n}\n</style>But when a <span class=\"cloze\" data-ordinal=\"1\">long train of abuses and usurpations</span>, pursuing invariably the same Object evinces a design to reduce them under <span class=\"cloze-inactive\" data-ordinal=\"2\">absolute Despotism</span>...<br>\n\n<style>\n  kbd {\n    box-shadow: inset 0 1px 0 0 white;\n    background:\n      gradient(\n        linear,\n        left top,\n        left bottom,\n        color-stop(0.05, #f9f9f9),\n        color-stop(1, #e9e9e9)\n      );\n    background-color: #f9f9f9;\n    border-radius: 4px;\n    border: 1px solid gainsboro;\n    display: inline-block;\n    font-size: 15px;\n    height: 15px;\n    line-height: 15px;\n    padding: 4px 4px;\n    margin: 5px;\n    text-align: center;\n    text-shadow: 1px 1px 0 white;\n    cursor: pointer;\n    cursor: hand;\n  }\n  \n</style>\n\n<div>\n  <script type=\"text/javascript\">\n    function ct_click(tag) {\n      pycmd(\"ct_click_\" + tag)\n    }\n    function ct_dblclick(tag, deck) {\n      pycmd(\"ct_dblclick_\" + tag + \"|\" + deck)\n    }\n\n    (function(){\n      // numTagLevelsToShow is defined in AnKing note types\n      if(typeof numTagLevelsToShow === 'undefined') return;\n\n      var clickableTags = document.getElementsByClassName(\"clickable-tag\");\n      for (let tagElm of clickableTags){\n        var tag = tagElm.innerHTML;\n        // numTagLevelsToShow == 0 means the whole tag should be shown\n        if(numTagLevelsToShow != 0){\n          tag = tag.split('::').slice(-numTagLevelsToShow).join(\"::\");\n        }\n        tagElm.innerHTML = tag;\n      };\n\n    })();\n    \n  </script>\n</div>\n",
       "frontText": "But when a {{c1::long train of abuses and usurpations}}, pursuing invariably the same Object evinces a design to reduce them under {{c2::absolute Despotism}}..."
@@ -7928,7 +7901,7 @@
       "cardId": 1768420061463,
       "noteId": 1768420061438,
       "deckName": "Master Deck::English Vocabulary",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "...it is their {{c1::right}}, it is their {{c2::duty}}, to {{c3::throw off such Government}}...",
       "backHtml": "<style>.card {\n    font-family: arial;\n    font-size: 20px;\n    text-align: center;\n    color: black;\n    background-color: white;\n}\n.cloze {\n    font-weight: bold;\n    color: blue;\n}\n.nightMode .cloze {\n    color: lightblue;\n}\n</style>...it is their <span class=\"cloze\" data-ordinal=\"1\">right</span>, it is their <span class=\"cloze-inactive\" data-ordinal=\"2\">duty</span>, to <span class=\"cloze-inactive\" data-ordinal=\"3\">throw off such Government</span>...<br>\n\n<style>\n  kbd {\n    box-shadow: inset 0 1px 0 0 white;\n    background:\n      gradient(\n        linear,\n        left top,\n        left bottom,\n        color-stop(0.05, #f9f9f9),\n        color-stop(1, #e9e9e9)\n      );\n    background-color: #f9f9f9;\n    border-radius: 4px;\n    border: 1px solid gainsboro;\n    display: inline-block;\n    font-size: 15px;\n    height: 15px;\n    line-height: 15px;\n    padding: 4px 4px;\n    margin: 5px;\n    text-align: center;\n    text-shadow: 1px 1px 0 white;\n    cursor: pointer;\n    cursor: hand;\n  }\n  \n</style>\n\n<div>\n  <script type=\"text/javascript\">\n    function ct_click(tag) {\n      pycmd(\"ct_click_\" + tag)\n    }\n    function ct_dblclick(tag, deck) {\n      pycmd(\"ct_dblclick_\" + tag + \"|\" + deck)\n    }\n\n    (function(){\n      // numTagLevelsToShow is defined in AnKing note types\n      if(typeof numTagLevelsToShow === 'undefined') return;\n\n      var clickableTags = document.getElementsByClassName(\"clickable-tag\");\n      for (let tagElm of clickableTags){\n        var tag = tagElm.innerHTML;\n        // numTagLevelsToShow == 0 means the whole tag should be shown\n        if(numTagLevelsToShow != 0){\n          tag = tag.split('::').slice(-numTagLevelsToShow).join(\"::\");\n        }\n        tagElm.innerHTML = tag;\n      };\n\n    })();\n    \n  </script>\n</div>\n",
       "frontText": "...it is their {{c1::right}}, it is their {{c2::duty}}, to {{c3::throw off such Government}}..."
@@ -7955,7 +7928,7 @@
       "cardId": 1768420061466,
       "noteId": 1768420061439,
       "deckName": "Master Deck::English Vocabulary",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "...and to provide {{c1::new Guards}} for their {{c2::future security}}.",
       "backHtml": "<style>.card {\n    font-family: arial;\n    font-size: 20px;\n    text-align: center;\n    color: black;\n    background-color: white;\n}\n.cloze {\n    font-weight: bold;\n    color: blue;\n}\n.nightMode .cloze {\n    color: lightblue;\n}\n</style>...and to provide <span class=\"cloze\" data-ordinal=\"1\">new Guards</span> for their <span class=\"cloze-inactive\" data-ordinal=\"2\">future security</span>.<br>\n\n<style>\n  kbd {\n    box-shadow: inset 0 1px 0 0 white;\n    background:\n      gradient(\n        linear,\n        left top,\n        left bottom,\n        color-stop(0.05, #f9f9f9),\n        color-stop(1, #e9e9e9)\n      );\n    background-color: #f9f9f9;\n    border-radius: 4px;\n    border: 1px solid gainsboro;\n    display: inline-block;\n    font-size: 15px;\n    height: 15px;\n    line-height: 15px;\n    padding: 4px 4px;\n    margin: 5px;\n    text-align: center;\n    text-shadow: 1px 1px 0 white;\n    cursor: pointer;\n    cursor: hand;\n  }\n  \n</style>\n\n<div>\n  <script type=\"text/javascript\">\n    function ct_click(tag) {\n      pycmd(\"ct_click_\" + tag)\n    }\n    function ct_dblclick(tag, deck) {\n      pycmd(\"ct_dblclick_\" + tag + \"|\" + deck)\n    }\n\n    (function(){\n      // numTagLevelsToShow is defined in AnKing note types\n      if(typeof numTagLevelsToShow === 'undefined') return;\n\n      var clickableTags = document.getElementsByClassName(\"clickable-tag\");\n      for (let tagElm of clickableTags){\n        var tag = tagElm.innerHTML;\n        // numTagLevelsToShow == 0 means the whole tag should be shown\n        if(numTagLevelsToShow != 0){\n          tag = tag.split('::').slice(-numTagLevelsToShow).join(\"::\");\n        }\n        tagElm.innerHTML = tag;\n      };\n\n    })();\n    \n  </script>\n</div>\n",
       "frontText": "...and to provide {{c1::new Guards}} for their {{c2::future security}}."
@@ -7973,7 +7946,7 @@
       "cardId": 1768420061468,
       "noteId": 1768420061440,
       "deckName": "Master Deck::English Vocabulary",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "Such has been the {{c1::patient sufferance}} of these Colonies; and such is now the {{c2::necessity}} which constrains them to {{c3::alter their former Systems of Government}}.",
       "backHtml": "<style>.card {\n    font-family: arial;\n    font-size: 20px;\n    text-align: center;\n    color: black;\n    background-color: white;\n}\n.cloze {\n    font-weight: bold;\n    color: blue;\n}\n.nightMode .cloze {\n    color: lightblue;\n}\n</style>Such has been the <span class=\"cloze\" data-ordinal=\"1\">patient sufferance</span> of these Colonies; and such is now the <span class=\"cloze-inactive\" data-ordinal=\"2\">necessity</span> which constrains them to <span class=\"cloze-inactive\" data-ordinal=\"3\">alter their former Systems of Government</span>.<br>\n\n<style>\n  kbd {\n    box-shadow: inset 0 1px 0 0 white;\n    background:\n      gradient(\n        linear,\n        left top,\n        left bottom,\n        color-stop(0.05, #f9f9f9),\n        color-stop(1, #e9e9e9)\n      );\n    background-color: #f9f9f9;\n    border-radius: 4px;\n    border: 1px solid gainsboro;\n    display: inline-block;\n    font-size: 15px;\n    height: 15px;\n    line-height: 15px;\n    padding: 4px 4px;\n    margin: 5px;\n    text-align: center;\n    text-shadow: 1px 1px 0 white;\n    cursor: pointer;\n    cursor: hand;\n  }\n  \n</style>\n\n<div>\n  <script type=\"text/javascript\">\n    function ct_click(tag) {\n      pycmd(\"ct_click_\" + tag)\n    }\n    function ct_dblclick(tag, deck) {\n      pycmd(\"ct_dblclick_\" + tag + \"|\" + deck)\n    }\n\n    (function(){\n      // numTagLevelsToShow is defined in AnKing note types\n      if(typeof numTagLevelsToShow === 'undefined') return;\n\n      var clickableTags = document.getElementsByClassName(\"clickable-tag\");\n      for (let tagElm of clickableTags){\n        var tag = tagElm.innerHTML;\n        // numTagLevelsToShow == 0 means the whole tag should be shown\n        if(numTagLevelsToShow != 0){\n          tag = tag.split('::').slice(-numTagLevelsToShow).join(\"::\");\n        }\n        tagElm.innerHTML = tag;\n      };\n\n    })();\n    \n  </script>\n</div>\n",
       "frontText": "Such has been the {{c1::patient sufferance}} of these Colonies; and such is now the {{c2::necessity}} which constrains them to {{c3::alter their former Systems of Government}}."
@@ -8064,7 +8037,7 @@
       "noteId": 1768841314111,
       "deckName": "Master Deck::History",
       "state": "Review",
-      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/4/45/Special%3AFilePath%3ACode-de-Hammurabi-1.jpg\"><br><b>Code of Hammurabi compiled</b><br><i>Event</i>",
+      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/6/64/P1050763_Louvre_code_Hammurabi_face_rwk.JPG\"><br><b>Code of Hammurabi compiled</b><br><i>Event</i>",
       "backHtml": "<b>c. 1754 BCE</b><br>One of the best-preserved ancient law codes.",
       "frontText": "Code of Hammurabi compiledEvent"
     },
@@ -8208,7 +8181,7 @@
       "noteId": 1768841314133,
       "deckName": "Master Deck::History",
       "state": "Review",
-      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/b/b0/Special%3AFilePath%3AHijra.svg\"><br><b>Hijra (Muhammad's migration to Medina)</b><br><i>Event</i>",
+      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/6/6f/New_York_Public_Library%2C_Spencer_Collection_Turk._MS._3_Siyar-i_Nab%C3%AE_fol._286r_Jibril_delivers_to_Muhammad_a_message_from_God_telling_him_to_leave_Makka_for_Madina.jpg\"><br><b>Hijra (Muhammad's migration to Medina)</b><br><i>Event</i>",
       "backHtml": "<b>622</b><br>Marks the start of the Islamic calendar.",
       "frontText": "Hijra (Muhammad's migration to Medina)Event"
     },
@@ -8217,8 +8190,8 @@
       "noteId": 1768841314134,
       "deckName": "Master Deck::History",
       "state": "Review",
-      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/5/58/Rashidun_Caliphate_map.jpg\"><br><b>Early Muslim conquests</b><br><i>War</i>",
-      "backHtml": "<b>632–750</b><br>Participants: Rashidun/Umayyad Caliphates vs Byzantine & Sasanian and others.",
+      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/7/72/Map_of_expansion_of_Caliphate.svg\"><br><b>Early Muslim conquests</b><br><i>War</i>",
+      "backHtml": "<b>632–750</b><br>Participants: Rashidun/Umayyad Caliphates vs Byzantine &amp; Sasanian and others.",
       "frontText": "Early Muslim conquestsWar"
     },
     {
@@ -8244,7 +8217,7 @@
       "noteId": 1768841314137,
       "deckName": "Master Deck::History",
       "state": "Review",
-      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/d/db/Great_Heathen_Army_map.png\"><br><b>Viking invasions of England (Great Heathen Army)</b><br><i>War</i>",
+      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/9/91/Cnutcoin.jpg\"><br><b>Viking invasions of England (Great Heathen Army)</b><br><i>War</i>",
       "backHtml": "<b>865–878</b><br>Participants: Viking forces (Danes) vs Anglo-Saxon kingdoms.",
       "frontText": "Viking invasions of England (Great Heathen Army)War"
     },
@@ -8262,7 +8235,7 @@
       "noteId": 1768841314139,
       "deckName": "Master Deck::History",
       "state": "Review",
-      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/5/50/Bi_Sheng_movable_type.jpg\"><br><b>Movable-type printing (China)</b><br><i>Invention</i>",
+      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/a/ae/Metal_movable_type.jpg\"><br><b>Movable-type printing (China)</b><br><i>Invention</i>",
       "backHtml": "<b>c. 1040</b><br>Movable type allowed reusable characters for printing texts.",
       "frontText": "Movable-type printing (China)Invention"
     },
@@ -8451,7 +8424,7 @@
       "noteId": 1768841314160,
       "deckName": "Master Deck::History",
       "state": "Review",
-      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/b/b5/Special%3AFilePath%3AGodfreyKneller-IsaacNewton-1689.jpg\"><br><b>Isaac Newton</b><br><i>Person</i>",
+      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/f/f7/Portrait_of_Sir_Isaac_Newton%2C_1689_%28brightened%29.jpg\"><br><b>Isaac Newton</b><br><i>Person</i>",
       "backHtml": "<b>4 January 1643</b><br>Physicist and mathematician; laws of motion and gravitation.",
       "frontText": "Isaac NewtonPerson"
     },
@@ -8550,7 +8523,7 @@
       "noteId": 1768841314172,
       "deckName": "Master Deck::History",
       "state": "Review",
-      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/9/94/Special%3AFilePath%3AAda_Lovelace_portrait.jpg\"><br><b>Ada Lovelace</b><br><i>Person</i>",
+      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/a/a4/Ada_Lovelace_portrait.jpg\"><br><b>Ada Lovelace</b><br><i>Person</i>",
       "backHtml": "<b>10 December 1815</b><br>Mathematician often credited with early work on computing.",
       "frontText": "Ada LovelacePerson"
     },
@@ -8676,7 +8649,7 @@
       "noteId": 1768841314187,
       "deckName": "Master Deck::History",
       "state": "Review",
-      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/9/9a/WWI_Map.png\"><br><b>World War I</b><br><i>War</i>",
+      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/e/e3/American_troops_going_forward_to_the_battle_line_in_the_Forest_of_Argonne._France%2C_September_26%2C_1918._-_NARA_-_530748.jpg\"><br><b>World War I</b><br><i>War</i>",
       "backHtml": "<b>1914–1918</b><br>Participants: Central Powers vs Allied Powers.",
       "frontText": "World War IWar"
     },
@@ -8793,7 +8766,7 @@
       "noteId": 1768841314200,
       "deckName": "Master Deck::History",
       "state": "Review",
-      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/5/51/GPS_Block_I_satellite.jpg\"><br><b>GPS becomes fully operational</b><br><i>Invention</i>",
+      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/4/49/GPS_Block_IIIA.jpg\"><br><b>GPS becomes fully operational</b><br><i>Invention</i>",
       "backHtml": "<b>1995</b><br>Global Positioning System provides precise positioning worldwide.",
       "frontText": "GPS becomes fully operationalInvention"
     },
@@ -11996,7 +11969,7 @@
       "cardId": 1768420061455,
       "noteId": 1768420061434,
       "deckName": "Master Deck::English Vocabulary",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "{{c1::Prudence}}, indeed, will dictate that Governments {{c2::long established}} should not be changed for {{c3::light and transient causes}}...",
       "backHtml": "<style>.card {\n    font-family: arial;\n    font-size: 20px;\n    text-align: center;\n    color: black;\n    background-color: white;\n}\n.cloze {\n    font-weight: bold;\n    color: blue;\n}\n.nightMode .cloze {\n    color: lightblue;\n}\n</style><span class=\"cloze\" data-ordinal=\"1\">Prudence</span>, indeed, will dictate that Governments <span class=\"cloze-inactive\" data-ordinal=\"2\">long established</span> should not be changed for <span class=\"cloze-inactive\" data-ordinal=\"3\">light and transient causes</span>...<br>\n\n<style>\n  kbd {\n    box-shadow: inset 0 1px 0 0 white;\n    background:\n      gradient(\n        linear,\n        left top,\n        left bottom,\n        color-stop(0.05, #f9f9f9),\n        color-stop(1, #e9e9e9)\n      );\n    background-color: #f9f9f9;\n    border-radius: 4px;\n    border: 1px solid gainsboro;\n    display: inline-block;\n    font-size: 15px;\n    height: 15px;\n    line-height: 15px;\n    padding: 4px 4px;\n    margin: 5px;\n    text-align: center;\n    text-shadow: 1px 1px 0 white;\n    cursor: pointer;\n    cursor: hand;\n  }\n  \n</style>\n\n<div>\n  <script type=\"text/javascript\">\n    function ct_click(tag) {\n      pycmd(\"ct_click_\" + tag)\n    }\n    function ct_dblclick(tag, deck) {\n      pycmd(\"ct_dblclick_\" + tag + \"|\" + deck)\n    }\n\n    (function(){\n      // numTagLevelsToShow is defined in AnKing note types\n      if(typeof numTagLevelsToShow === 'undefined') return;\n\n      var clickableTags = document.getElementsByClassName(\"clickable-tag\");\n      for (let tagElm of clickableTags){\n        var tag = tagElm.innerHTML;\n        // numTagLevelsToShow == 0 means the whole tag should be shown\n        if(numTagLevelsToShow != 0){\n          tag = tag.split('::').slice(-numTagLevelsToShow).join(\"::\");\n        }\n        tagElm.innerHTML = tag;\n      };\n\n    })();\n    \n  </script>\n</div>\n",
       "frontText": "{{c1::Prudence}}, indeed, will dictate that Governments {{c2::long established}} should not be changed for {{c3::light and transient causes}}..."
@@ -12005,7 +11978,7 @@
       "cardId": 1768420061457,
       "noteId": 1768420061435,
       "deckName": "Master Deck::English Vocabulary",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "...accordingly all {{c1::experience hath shewn}}, that mankind are more disposed to {{c2::suffer, while evils are sufferable}}...",
       "backHtml": "<style>.card {\n    font-family: arial;\n    font-size: 20px;\n    text-align: center;\n    color: black;\n    background-color: white;\n}\n.cloze {\n    font-weight: bold;\n    color: blue;\n}\n.nightMode .cloze {\n    color: lightblue;\n}\n</style>...accordingly all <span class=\"cloze\" data-ordinal=\"1\">experience hath shewn</span>, that mankind are more disposed to <span class=\"cloze-inactive\" data-ordinal=\"2\">suffer, while evils are sufferable</span>...<br>\n\n<style>\n  kbd {\n    box-shadow: inset 0 1px 0 0 white;\n    background:\n      gradient(\n        linear,\n        left top,\n        left bottom,\n        color-stop(0.05, #f9f9f9),\n        color-stop(1, #e9e9e9)\n      );\n    background-color: #f9f9f9;\n    border-radius: 4px;\n    border: 1px solid gainsboro;\n    display: inline-block;\n    font-size: 15px;\n    height: 15px;\n    line-height: 15px;\n    padding: 4px 4px;\n    margin: 5px;\n    text-align: center;\n    text-shadow: 1px 1px 0 white;\n    cursor: pointer;\n    cursor: hand;\n  }\n  \n</style>\n\n<div>\n  <script type=\"text/javascript\">\n    function ct_click(tag) {\n      pycmd(\"ct_click_\" + tag)\n    }\n    function ct_dblclick(tag, deck) {\n      pycmd(\"ct_dblclick_\" + tag + \"|\" + deck)\n    }\n\n    (function(){\n      // numTagLevelsToShow is defined in AnKing note types\n      if(typeof numTagLevelsToShow === 'undefined') return;\n\n      var clickableTags = document.getElementsByClassName(\"clickable-tag\");\n      for (let tagElm of clickableTags){\n        var tag = tagElm.innerHTML;\n        // numTagLevelsToShow == 0 means the whole tag should be shown\n        if(numTagLevelsToShow != 0){\n          tag = tag.split('::').slice(-numTagLevelsToShow).join(\"::\");\n        }\n        tagElm.innerHTML = tag;\n      };\n\n    })();\n    \n  </script>\n</div>\n",
       "frontText": "...accordingly all {{c1::experience hath shewn}}, that mankind are more disposed to {{c2::suffer, while evils are sufferable}}..."
@@ -12014,7 +11987,7 @@
       "cardId": 1768420061459,
       "noteId": 1768420061436,
       "deckName": "Master Deck::English Vocabulary",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "...than to right themselves by {{c1::abolishing the forms}} to which they are {{c2::accustomed}}.",
       "backHtml": "<style>.card {\n    font-family: arial;\n    font-size: 20px;\n    text-align: center;\n    color: black;\n    background-color: white;\n}\n.cloze {\n    font-weight: bold;\n    color: blue;\n}\n.nightMode .cloze {\n    color: lightblue;\n}\n</style>...than to right themselves by <span class=\"cloze\" data-ordinal=\"1\">abolishing the forms</span> to which they are <span class=\"cloze-inactive\" data-ordinal=\"2\">accustomed</span>.<br>\n\n<style>\n  kbd {\n    box-shadow: inset 0 1px 0 0 white;\n    background:\n      gradient(\n        linear,\n        left top,\n        left bottom,\n        color-stop(0.05, #f9f9f9),\n        color-stop(1, #e9e9e9)\n      );\n    background-color: #f9f9f9;\n    border-radius: 4px;\n    border: 1px solid gainsboro;\n    display: inline-block;\n    font-size: 15px;\n    height: 15px;\n    line-height: 15px;\n    padding: 4px 4px;\n    margin: 5px;\n    text-align: center;\n    text-shadow: 1px 1px 0 white;\n    cursor: pointer;\n    cursor: hand;\n  }\n  \n</style>\n\n<div>\n  <script type=\"text/javascript\">\n    function ct_click(tag) {\n      pycmd(\"ct_click_\" + tag)\n    }\n    function ct_dblclick(tag, deck) {\n      pycmd(\"ct_dblclick_\" + tag + \"|\" + deck)\n    }\n\n    (function(){\n      // numTagLevelsToShow is defined in AnKing note types\n      if(typeof numTagLevelsToShow === 'undefined') return;\n\n      var clickableTags = document.getElementsByClassName(\"clickable-tag\");\n      for (let tagElm of clickableTags){\n        var tag = tagElm.innerHTML;\n        // numTagLevelsToShow == 0 means the whole tag should be shown\n        if(numTagLevelsToShow != 0){\n          tag = tag.split('::').slice(-numTagLevelsToShow).join(\"::\");\n        }\n        tagElm.innerHTML = tag;\n      };\n\n    })();\n    \n  </script>\n</div>\n",
       "frontText": "...than to right themselves by {{c1::abolishing the forms}} to which they are {{c2::accustomed}}."
@@ -12023,7 +11996,7 @@
       "cardId": 1768420061462,
       "noteId": 1768420061437,
       "deckName": "Master Deck::English Vocabulary",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "But when a {{c1::long train of abuses and usurpations}}, pursuing invariably the same Object evinces a design to reduce them under {{c2::absolute Despotism}}...",
       "backHtml": "<style>.card {\n    font-family: arial;\n    font-size: 20px;\n    text-align: center;\n    color: black;\n    background-color: white;\n}\n.cloze {\n    font-weight: bold;\n    color: blue;\n}\n.nightMode .cloze {\n    color: lightblue;\n}\n</style>But when a <span class=\"cloze\" data-ordinal=\"1\">long train of abuses and usurpations</span>, pursuing invariably the same Object evinces a design to reduce them under <span class=\"cloze-inactive\" data-ordinal=\"2\">absolute Despotism</span>...<br>\n\n<style>\n  kbd {\n    box-shadow: inset 0 1px 0 0 white;\n    background:\n      gradient(\n        linear,\n        left top,\n        left bottom,\n        color-stop(0.05, #f9f9f9),\n        color-stop(1, #e9e9e9)\n      );\n    background-color: #f9f9f9;\n    border-radius: 4px;\n    border: 1px solid gainsboro;\n    display: inline-block;\n    font-size: 15px;\n    height: 15px;\n    line-height: 15px;\n    padding: 4px 4px;\n    margin: 5px;\n    text-align: center;\n    text-shadow: 1px 1px 0 white;\n    cursor: pointer;\n    cursor: hand;\n  }\n  \n</style>\n\n<div>\n  <script type=\"text/javascript\">\n    function ct_click(tag) {\n      pycmd(\"ct_click_\" + tag)\n    }\n    function ct_dblclick(tag, deck) {\n      pycmd(\"ct_dblclick_\" + tag + \"|\" + deck)\n    }\n\n    (function(){\n      // numTagLevelsToShow is defined in AnKing note types\n      if(typeof numTagLevelsToShow === 'undefined') return;\n\n      var clickableTags = document.getElementsByClassName(\"clickable-tag\");\n      for (let tagElm of clickableTags){\n        var tag = tagElm.innerHTML;\n        // numTagLevelsToShow == 0 means the whole tag should be shown\n        if(numTagLevelsToShow != 0){\n          tag = tag.split('::').slice(-numTagLevelsToShow).join(\"::\");\n        }\n        tagElm.innerHTML = tag;\n      };\n\n    })();\n    \n  </script>\n</div>\n",
       "frontText": "But when a {{c1::long train of abuses and usurpations}}, pursuing invariably the same Object evinces a design to reduce them under {{c2::absolute Despotism}}..."
@@ -12032,7 +12005,7 @@
       "cardId": 1768420061463,
       "noteId": 1768420061438,
       "deckName": "Master Deck::English Vocabulary",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "...it is their {{c1::right}}, it is their {{c2::duty}}, to {{c3::throw off such Government}}...",
       "backHtml": "<style>.card {\n    font-family: arial;\n    font-size: 20px;\n    text-align: center;\n    color: black;\n    background-color: white;\n}\n.cloze {\n    font-weight: bold;\n    color: blue;\n}\n.nightMode .cloze {\n    color: lightblue;\n}\n</style>...it is their <span class=\"cloze\" data-ordinal=\"1\">right</span>, it is their <span class=\"cloze-inactive\" data-ordinal=\"2\">duty</span>, to <span class=\"cloze-inactive\" data-ordinal=\"3\">throw off such Government</span>...<br>\n\n<style>\n  kbd {\n    box-shadow: inset 0 1px 0 0 white;\n    background:\n      gradient(\n        linear,\n        left top,\n        left bottom,\n        color-stop(0.05, #f9f9f9),\n        color-stop(1, #e9e9e9)\n      );\n    background-color: #f9f9f9;\n    border-radius: 4px;\n    border: 1px solid gainsboro;\n    display: inline-block;\n    font-size: 15px;\n    height: 15px;\n    line-height: 15px;\n    padding: 4px 4px;\n    margin: 5px;\n    text-align: center;\n    text-shadow: 1px 1px 0 white;\n    cursor: pointer;\n    cursor: hand;\n  }\n  \n</style>\n\n<div>\n  <script type=\"text/javascript\">\n    function ct_click(tag) {\n      pycmd(\"ct_click_\" + tag)\n    }\n    function ct_dblclick(tag, deck) {\n      pycmd(\"ct_dblclick_\" + tag + \"|\" + deck)\n    }\n\n    (function(){\n      // numTagLevelsToShow is defined in AnKing note types\n      if(typeof numTagLevelsToShow === 'undefined') return;\n\n      var clickableTags = document.getElementsByClassName(\"clickable-tag\");\n      for (let tagElm of clickableTags){\n        var tag = tagElm.innerHTML;\n        // numTagLevelsToShow == 0 means the whole tag should be shown\n        if(numTagLevelsToShow != 0){\n          tag = tag.split('::').slice(-numTagLevelsToShow).join(\"::\");\n        }\n        tagElm.innerHTML = tag;\n      };\n\n    })();\n    \n  </script>\n</div>\n",
       "frontText": "...it is their {{c1::right}}, it is their {{c2::duty}}, to {{c3::throw off such Government}}..."
@@ -12041,7 +12014,7 @@
       "cardId": 1768420061466,
       "noteId": 1768420061439,
       "deckName": "Master Deck::English Vocabulary",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "...and to provide {{c1::new Guards}} for their {{c2::future security}}.",
       "backHtml": "<style>.card {\n    font-family: arial;\n    font-size: 20px;\n    text-align: center;\n    color: black;\n    background-color: white;\n}\n.cloze {\n    font-weight: bold;\n    color: blue;\n}\n.nightMode .cloze {\n    color: lightblue;\n}\n</style>...and to provide <span class=\"cloze\" data-ordinal=\"1\">new Guards</span> for their <span class=\"cloze-inactive\" data-ordinal=\"2\">future security</span>.<br>\n\n<style>\n  kbd {\n    box-shadow: inset 0 1px 0 0 white;\n    background:\n      gradient(\n        linear,\n        left top,\n        left bottom,\n        color-stop(0.05, #f9f9f9),\n        color-stop(1, #e9e9e9)\n      );\n    background-color: #f9f9f9;\n    border-radius: 4px;\n    border: 1px solid gainsboro;\n    display: inline-block;\n    font-size: 15px;\n    height: 15px;\n    line-height: 15px;\n    padding: 4px 4px;\n    margin: 5px;\n    text-align: center;\n    text-shadow: 1px 1px 0 white;\n    cursor: pointer;\n    cursor: hand;\n  }\n  \n</style>\n\n<div>\n  <script type=\"text/javascript\">\n    function ct_click(tag) {\n      pycmd(\"ct_click_\" + tag)\n    }\n    function ct_dblclick(tag, deck) {\n      pycmd(\"ct_dblclick_\" + tag + \"|\" + deck)\n    }\n\n    (function(){\n      // numTagLevelsToShow is defined in AnKing note types\n      if(typeof numTagLevelsToShow === 'undefined') return;\n\n      var clickableTags = document.getElementsByClassName(\"clickable-tag\");\n      for (let tagElm of clickableTags){\n        var tag = tagElm.innerHTML;\n        // numTagLevelsToShow == 0 means the whole tag should be shown\n        if(numTagLevelsToShow != 0){\n          tag = tag.split('::').slice(-numTagLevelsToShow).join(\"::\");\n        }\n        tagElm.innerHTML = tag;\n      };\n\n    })();\n    \n  </script>\n</div>\n",
       "frontText": "...and to provide {{c1::new Guards}} for their {{c2::future security}}."
@@ -12050,7 +12023,7 @@
       "cardId": 1768420061468,
       "noteId": 1768420061440,
       "deckName": "Master Deck::English Vocabulary",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "Such has been the {{c1::patient sufferance}} of these Colonies; and such is now the {{c2::necessity}} which constrains them to {{c3::alter their former Systems of Government}}.",
       "backHtml": "<style>.card {\n    font-family: arial;\n    font-size: 20px;\n    text-align: center;\n    color: black;\n    background-color: white;\n}\n.cloze {\n    font-weight: bold;\n    color: blue;\n}\n.nightMode .cloze {\n    color: lightblue;\n}\n</style>Such has been the <span class=\"cloze\" data-ordinal=\"1\">patient sufferance</span> of these Colonies; and such is now the <span class=\"cloze-inactive\" data-ordinal=\"2\">necessity</span> which constrains them to <span class=\"cloze-inactive\" data-ordinal=\"3\">alter their former Systems of Government</span>.<br>\n\n<style>\n  kbd {\n    box-shadow: inset 0 1px 0 0 white;\n    background:\n      gradient(\n        linear,\n        left top,\n        left bottom,\n        color-stop(0.05, #f9f9f9),\n        color-stop(1, #e9e9e9)\n      );\n    background-color: #f9f9f9;\n    border-radius: 4px;\n    border: 1px solid gainsboro;\n    display: inline-block;\n    font-size: 15px;\n    height: 15px;\n    line-height: 15px;\n    padding: 4px 4px;\n    margin: 5px;\n    text-align: center;\n    text-shadow: 1px 1px 0 white;\n    cursor: pointer;\n    cursor: hand;\n  }\n  \n</style>\n\n<div>\n  <script type=\"text/javascript\">\n    function ct_click(tag) {\n      pycmd(\"ct_click_\" + tag)\n    }\n    function ct_dblclick(tag, deck) {\n      pycmd(\"ct_dblclick_\" + tag + \"|\" + deck)\n    }\n\n    (function(){\n      // numTagLevelsToShow is defined in AnKing note types\n      if(typeof numTagLevelsToShow === 'undefined') return;\n\n      var clickableTags = document.getElementsByClassName(\"clickable-tag\");\n      for (let tagElm of clickableTags){\n        var tag = tagElm.innerHTML;\n        // numTagLevelsToShow == 0 means the whole tag should be shown\n        if(numTagLevelsToShow != 0){\n          tag = tag.split('::').slice(-numTagLevelsToShow).join(\"::\");\n        }\n        tagElm.innerHTML = tag;\n      };\n\n    })();\n    \n  </script>\n</div>\n",
       "frontText": "Such has been the {{c1::patient sufferance}} of these Colonies; and such is now the {{c2::necessity}} which constrains them to {{c3::alter their former Systems of Government}}."
@@ -13095,7 +13068,7 @@
       "noteId": 1768841314111,
       "deckName": "Master Deck::History",
       "state": "Review",
-      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/4/45/Special%3AFilePath%3ACode-de-Hammurabi-1.jpg\"><br><b>Code of Hammurabi compiled</b><br><i>Event</i>",
+      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/6/64/P1050763_Louvre_code_Hammurabi_face_rwk.JPG\"><br><b>Code of Hammurabi compiled</b><br><i>Event</i>",
       "backHtml": "<b>c. 1754 BCE</b><br>One of the best-preserved ancient law codes.",
       "frontText": "Code of Hammurabi compiledEvent"
     },
@@ -13239,7 +13212,7 @@
       "noteId": 1768841314133,
       "deckName": "Master Deck::History",
       "state": "Review",
-      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/b/b0/Special%3AFilePath%3AHijra.svg\"><br><b>Hijra (Muhammad's migration to Medina)</b><br><i>Event</i>",
+      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/6/6f/New_York_Public_Library%2C_Spencer_Collection_Turk._MS._3_Siyar-i_Nab%C3%AE_fol._286r_Jibril_delivers_to_Muhammad_a_message_from_God_telling_him_to_leave_Makka_for_Madina.jpg\"><br><b>Hijra (Muhammad's migration to Medina)</b><br><i>Event</i>",
       "backHtml": "<b>622</b><br>Marks the start of the Islamic calendar.",
       "frontText": "Hijra (Muhammad's migration to Medina)Event"
     },
@@ -13248,8 +13221,8 @@
       "noteId": 1768841314134,
       "deckName": "Master Deck::History",
       "state": "Review",
-      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/5/58/Rashidun_Caliphate_map.jpg\"><br><b>Early Muslim conquests</b><br><i>War</i>",
-      "backHtml": "<b>632–750</b><br>Participants: Rashidun/Umayyad Caliphates vs Byzantine & Sasanian and others.",
+      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/7/72/Map_of_expansion_of_Caliphate.svg\"><br><b>Early Muslim conquests</b><br><i>War</i>",
+      "backHtml": "<b>632–750</b><br>Participants: Rashidun/Umayyad Caliphates vs Byzantine &amp; Sasanian and others.",
       "frontText": "Early Muslim conquestsWar"
     },
     {
@@ -13275,7 +13248,7 @@
       "noteId": 1768841314137,
       "deckName": "Master Deck::History",
       "state": "Review",
-      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/d/db/Great_Heathen_Army_map.png\"><br><b>Viking invasions of England (Great Heathen Army)</b><br><i>War</i>",
+      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/9/91/Cnutcoin.jpg\"><br><b>Viking invasions of England (Great Heathen Army)</b><br><i>War</i>",
       "backHtml": "<b>865–878</b><br>Participants: Viking forces (Danes) vs Anglo-Saxon kingdoms.",
       "frontText": "Viking invasions of England (Great Heathen Army)War"
     },
@@ -13293,7 +13266,7 @@
       "noteId": 1768841314139,
       "deckName": "Master Deck::History",
       "state": "Review",
-      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/5/50/Bi_Sheng_movable_type.jpg\"><br><b>Movable-type printing (China)</b><br><i>Invention</i>",
+      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/a/ae/Metal_movable_type.jpg\"><br><b>Movable-type printing (China)</b><br><i>Invention</i>",
       "backHtml": "<b>c. 1040</b><br>Movable type allowed reusable characters for printing texts.",
       "frontText": "Movable-type printing (China)Invention"
     },
@@ -13482,7 +13455,7 @@
       "noteId": 1768841314160,
       "deckName": "Master Deck::History",
       "state": "Review",
-      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/b/b5/Special%3AFilePath%3AGodfreyKneller-IsaacNewton-1689.jpg\"><br><b>Isaac Newton</b><br><i>Person</i>",
+      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/f/f7/Portrait_of_Sir_Isaac_Newton%2C_1689_%28brightened%29.jpg\"><br><b>Isaac Newton</b><br><i>Person</i>",
       "backHtml": "<b>4 January 1643</b><br>Physicist and mathematician; laws of motion and gravitation.",
       "frontText": "Isaac NewtonPerson"
     },
@@ -13581,7 +13554,7 @@
       "noteId": 1768841314172,
       "deckName": "Master Deck::History",
       "state": "Review",
-      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/9/94/Special%3AFilePath%3AAda_Lovelace_portrait.jpg\"><br><b>Ada Lovelace</b><br><i>Person</i>",
+      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/a/a4/Ada_Lovelace_portrait.jpg\"><br><b>Ada Lovelace</b><br><i>Person</i>",
       "backHtml": "<b>10 December 1815</b><br>Mathematician often credited with early work on computing.",
       "frontText": "Ada LovelacePerson"
     },
@@ -13707,7 +13680,7 @@
       "noteId": 1768841314187,
       "deckName": "Master Deck::History",
       "state": "Review",
-      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/9/9a/WWI_Map.png\"><br><b>World War I</b><br><i>War</i>",
+      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/e/e3/American_troops_going_forward_to_the_battle_line_in_the_Forest_of_Argonne._France%2C_September_26%2C_1918._-_NARA_-_530748.jpg\"><br><b>World War I</b><br><i>War</i>",
       "backHtml": "<b>1914–1918</b><br>Participants: Central Powers vs Allied Powers.",
       "frontText": "World War IWar"
     },
@@ -13824,7 +13797,7 @@
       "noteId": 1768841314200,
       "deckName": "Master Deck::History",
       "state": "Review",
-      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/5/51/GPS_Block_I_satellite.jpg\"><br><b>GPS becomes fully operational</b><br><i>Invention</i>",
+      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/4/49/GPS_Block_IIIA.jpg\"><br><b>GPS becomes fully operational</b><br><i>Invention</i>",
       "backHtml": "<b>1995</b><br>Global Positioning System provides precise positioning worldwide.",
       "frontText": "GPS becomes fully operationalInvention"
     },
@@ -14309,7 +14282,7 @@
       "cardId": 1768419405641,
       "noteId": 1768419405615,
       "deckName": "Master Deck::Plants",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/d/de/Anemones5.jpg\">",
       "backHtml": "Anemone",
       "frontText": ""
@@ -14318,7 +14291,7 @@
       "cardId": 1768419405642,
       "noteId": 1768419405616,
       "deckName": "Master Deck::Plants",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/3/38/Alpen_Edelwei%C3%9F,_Leontopodium_alpinum_2.JPG\">",
       "backHtml": "Edelweiss",
       "frontText": ""
@@ -14327,43 +14300,25 @@
       "cardId": 1768419405643,
       "noteId": 1768419405617,
       "deckName": "Master Deck::Plants",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/9/90/Ipomoea_tricolor_'Heavenly_Blue'.jpg\">",
       "backHtml": "Morning glory",
-      "frontText": ""
-    },
-    {
-      "cardId": 1768419405644,
-      "noteId": 1768419405618,
-      "deckName": "Master Deck::Plants",
-      "state": "New",
-      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/a/a3/Vehn%C3%A4pelto_6.jpg\">",
-      "backHtml": "Wheat",
       "frontText": ""
     },
     {
       "cardId": 1768419405645,
       "noteId": 1768419405619,
       "deckName": "Master Deck::Plants",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/0/0a/20201102.Hengnan.Hybrid_rice_Sanyou-1.6.jpg\">",
       "backHtml": "Rice",
-      "frontText": ""
-    },
-    {
-      "cardId": 1768419405646,
-      "noteId": 1768419405620,
-      "deckName": "Master Deck::Plants",
-      "state": "New",
-      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/e/e3/Zea_mays_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-283.jpg\">",
-      "backHtml": "Maize",
       "frontText": ""
     },
     {
       "cardId": 1768419405647,
       "noteId": 1768419405621,
       "deckName": "Master Deck::Plants",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/2/20/Barley_(Hordeum_vulgare)_-_United_States_National_Arboretum_-_24_May_2009.jpg\">",
       "backHtml": "Barley",
       "frontText": ""
@@ -14894,25 +14849,16 @@
       "cardId": 1766416871994,
       "noteId": 1766416871962,
       "deckName": "Master Deck::Squares",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "\\(39^2\\)",
       "backHtml": "1521",
       "frontText": "\\(39^2\\)"
     },
     {
-      "cardId": 1766416871995,
-      "noteId": 1766416871963,
-      "deckName": "Master Deck::Squares",
-      "state": "New",
-      "frontHtml": "\\(40^2\\)",
-      "backHtml": "1600",
-      "frontText": "\\(40^2\\)"
-    },
-    {
       "cardId": 1766416871996,
       "noteId": 1766416871964,
       "deckName": "Master Deck::Squares",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "\\(41^2\\)",
       "backHtml": "1681",
       "frontText": "\\(41^2\\)"
@@ -14921,7 +14867,7 @@
       "cardId": 1766416871997,
       "noteId": 1766416871965,
       "deckName": "Master Deck::Squares",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "\\(42^2\\)",
       "backHtml": "1764",
       "frontText": "\\(42^2\\)"
@@ -14930,7 +14876,7 @@
       "cardId": 1766416871998,
       "noteId": 1766416871966,
       "deckName": "Master Deck::Squares",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "\\(43^2\\)",
       "backHtml": "1849",
       "frontText": "\\(43^2\\)"
@@ -14939,7 +14885,7 @@
       "cardId": 1766416871999,
       "noteId": 1766416871967,
       "deckName": "Master Deck::Squares",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "\\(44^2\\)",
       "backHtml": "1936",
       "frontText": "\\(44^2\\)"
@@ -15551,7 +15497,7 @@
       "cardId": 1574587964718,
       "noteId": 1574587964685,
       "deckName": "Master Deck::Ultimate Geography",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "Bosnia and Herzegovina",
       "backHtml": "<style>.card {\n  padding: 1em 0;\n  background-color: white;\n  color: black;\n  font-family: Verdana;\n  font-size: 16px;\n  text-align: center;\n}\n\n.type {\n  margin-bottom: 0.25em;\n  color: #333;\n  font-size: 70%;\n  font-weight: bold;\n  text-transform: uppercase;\n}\n\n.info {\n  max-width: 30em;\n  margin: 0.75em auto;\n  color: #333;\n  font-size: 90%;\n  font-style: italic;\n}\n\n.value {\n  font-size: 150%;\n}\n\n.value--top {\n  margin-top: 1em;\n}\n\n.value--image {\n  margin-top: 0.75em;\n}\n\n.value > img,\n.value > .placeholder {\n  max-width: 100%;\n  height: auto;\n}\n\n/**\n * Apply shadow to images, notably to bring out white areas on flags.\n * Ignore images with non-rectangular outlines (e.g. flag of Nepal).\n */\n.value > img:not([src*=\"-nobox\"]) {\n  box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.2);\n}\n\n/**\n * Some flags (e.g. Guam's) contain identifying words that can give away the answer.\n * If a blurred version is available, show it on the front but not on the back.\n */\n.value--front > img[src*=\"-blur\"] + img {\n  display: none;\n}\n\n.value--back > img[src*=\"-blur\"] {\n  display: none;\n}\n\n/**\n * Placeholder SVG to hint at the type of answer that is expected.\n * Used on \"Country - Flag\" and \"Country - Map\" templates.\n */\n.placeholder {\n  color: #333;\n}\n\n.placeholder > path {\n  fill: none;\n  stroke: currentColor;\n  stroke-width: 1;\n}\n\n.night_mode .info,\n.night_mode .type,\n.night_mode .placeholder,\n.nightMode .info,\n.nightMode .type,\n.nightMode .placeholder {\n  color: #ccc;\n}\n\n/**\n * Apply shadow to images, to bring out black areas on flags, in night\n   mode.\n */\n.nightMode .value > img:not([src*=\"-nobox\"]),\n.night_mode .value > img:not([src*=\"-nobox\"]) {\n  box-shadow: 0 0 4px 1px rgba(54, 54, 54, 0.9);\n}\n\nhr {\n  margin: 1.5em 0;\n}\n</style><div id=answer class=\"value value--top\">Bosnia and Herzegovina</div>\n\n\n<hr>\n\n<div class=\"type\">Location</div>\n<div class=\"value value--image\"><img src=\"ug-map-bosnia_and_herzegovina.png\" /></div>\n\n<style>\n  kbd {\n    box-shadow: inset 0 1px 0 0 white;\n    background:\n      gradient(\n        linear,\n        left top,\n        left bottom,\n        color-stop(0.05, #f9f9f9),\n        color-stop(1, #e9e9e9)\n      );\n    background-color: #f9f9f9;\n    border-radius: 4px;\n    border: 1px solid gainsboro;\n    display: inline-block;\n    font-size: 15px;\n    height: 15px;\n    line-height: 15px;\n    padding: 4px 4px;\n    margin: 5px;\n    text-align: center;\n    text-shadow: 1px 1px 0 white;\n    cursor: pointer;\n    cursor: hand;\n  }\n  \n</style>\n\n<div>\n  <script type=\"text/javascript\">\n    function ct_click(tag) {\n      pycmd(\"ct_click_\" + tag)\n    }\n    function ct_dblclick(tag, deck) {\n      pycmd(\"ct_dblclick_\" + tag + \"|\" + deck)\n    }\n\n    (function(){\n      // numTagLevelsToShow is defined in AnKing note types\n      if(typeof numTagLevelsToShow === 'undefined') return;\n\n      var clickableTags = document.getElementsByClassName(\"clickable-tag\");\n      for (let tagElm of clickableTags){\n        var tag = tagElm.innerHTML;\n        // numTagLevelsToShow == 0 means the whole tag should be shown\n        if(numTagLevelsToShow != 0){\n          tag = tag.split('::').slice(-numTagLevelsToShow).join(\"::\");\n        }\n        tagElm.innerHTML = tag;\n      };\n\n    })();\n    \n  </script>\n</div>\n",
       "frontText": "Bosnia and Herzegovina"
@@ -15560,7 +15506,7 @@
       "cardId": 1574587964722,
       "noteId": 1574587964686,
       "deckName": "Master Deck::Ultimate Geography",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "Bulgaria",
       "backHtml": "<style>.card {\n  padding: 1em 0;\n  background-color: white;\n  color: black;\n  font-family: Verdana;\n  font-size: 16px;\n  text-align: center;\n}\n\n.type {\n  margin-bottom: 0.25em;\n  color: #333;\n  font-size: 70%;\n  font-weight: bold;\n  text-transform: uppercase;\n}\n\n.info {\n  max-width: 30em;\n  margin: 0.75em auto;\n  color: #333;\n  font-size: 90%;\n  font-style: italic;\n}\n\n.value {\n  font-size: 150%;\n}\n\n.value--top {\n  margin-top: 1em;\n}\n\n.value--image {\n  margin-top: 0.75em;\n}\n\n.value > img,\n.value > .placeholder {\n  max-width: 100%;\n  height: auto;\n}\n\n/**\n * Apply shadow to images, notably to bring out white areas on flags.\n * Ignore images with non-rectangular outlines (e.g. flag of Nepal).\n */\n.value > img:not([src*=\"-nobox\"]) {\n  box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.2);\n}\n\n/**\n * Some flags (e.g. Guam's) contain identifying words that can give away the answer.\n * If a blurred version is available, show it on the front but not on the back.\n */\n.value--front > img[src*=\"-blur\"] + img {\n  display: none;\n}\n\n.value--back > img[src*=\"-blur\"] {\n  display: none;\n}\n\n/**\n * Placeholder SVG to hint at the type of answer that is expected.\n * Used on \"Country - Flag\" and \"Country - Map\" templates.\n */\n.placeholder {\n  color: #333;\n}\n\n.placeholder > path {\n  fill: none;\n  stroke: currentColor;\n  stroke-width: 1;\n}\n\n.night_mode .info,\n.night_mode .type,\n.night_mode .placeholder,\n.nightMode .info,\n.nightMode .type,\n.nightMode .placeholder {\n  color: #ccc;\n}\n\n/**\n * Apply shadow to images, to bring out black areas on flags, in night\n   mode.\n */\n.nightMode .value > img:not([src*=\"-nobox\"]),\n.night_mode .value > img:not([src*=\"-nobox\"]) {\n  box-shadow: 0 0 4px 1px rgba(54, 54, 54, 0.9);\n}\n\nhr {\n  margin: 1.5em 0;\n}\n</style><div id=answer class=\"value value--top\">Bulgaria</div>\n\n\n<hr>\n\n<div class=\"type\">Location</div>\n<div class=\"value value--image\"><img src=\"ug-map-bulgaria.png\" /></div>\n\n<style>\n  kbd {\n    box-shadow: inset 0 1px 0 0 white;\n    background:\n      gradient(\n        linear,\n        left top,\n        left bottom,\n        color-stop(0.05, #f9f9f9),\n        color-stop(1, #e9e9e9)\n      );\n    background-color: #f9f9f9;\n    border-radius: 4px;\n    border: 1px solid gainsboro;\n    display: inline-block;\n    font-size: 15px;\n    height: 15px;\n    line-height: 15px;\n    padding: 4px 4px;\n    margin: 5px;\n    text-align: center;\n    text-shadow: 1px 1px 0 white;\n    cursor: pointer;\n    cursor: hand;\n  }\n  \n</style>\n\n<div>\n  <script type=\"text/javascript\">\n    function ct_click(tag) {\n      pycmd(\"ct_click_\" + tag)\n    }\n    function ct_dblclick(tag, deck) {\n      pycmd(\"ct_dblclick_\" + tag + \"|\" + deck)\n    }\n\n    (function(){\n      // numTagLevelsToShow is defined in AnKing note types\n      if(typeof numTagLevelsToShow === 'undefined') return;\n\n      var clickableTags = document.getElementsByClassName(\"clickable-tag\");\n      for (let tagElm of clickableTags){\n        var tag = tagElm.innerHTML;\n        // numTagLevelsToShow == 0 means the whole tag should be shown\n        if(numTagLevelsToShow != 0){\n          tag = tag.split('::').slice(-numTagLevelsToShow).join(\"::\");\n        }\n        tagElm.innerHTML = tag;\n      };\n\n    })();\n    \n  </script>\n</div>\n",
       "frontText": "Bulgaria"
@@ -15569,7 +15515,7 @@
       "cardId": 1574587964726,
       "noteId": 1574587964687,
       "deckName": "Master Deck::Ultimate Geography",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "Croatia",
       "backHtml": "<style>.card {\n  padding: 1em 0;\n  background-color: white;\n  color: black;\n  font-family: Verdana;\n  font-size: 16px;\n  text-align: center;\n}\n\n.type {\n  margin-bottom: 0.25em;\n  color: #333;\n  font-size: 70%;\n  font-weight: bold;\n  text-transform: uppercase;\n}\n\n.info {\n  max-width: 30em;\n  margin: 0.75em auto;\n  color: #333;\n  font-size: 90%;\n  font-style: italic;\n}\n\n.value {\n  font-size: 150%;\n}\n\n.value--top {\n  margin-top: 1em;\n}\n\n.value--image {\n  margin-top: 0.75em;\n}\n\n.value > img,\n.value > .placeholder {\n  max-width: 100%;\n  height: auto;\n}\n\n/**\n * Apply shadow to images, notably to bring out white areas on flags.\n * Ignore images with non-rectangular outlines (e.g. flag of Nepal).\n */\n.value > img:not([src*=\"-nobox\"]) {\n  box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.2);\n}\n\n/**\n * Some flags (e.g. Guam's) contain identifying words that can give away the answer.\n * If a blurred version is available, show it on the front but not on the back.\n */\n.value--front > img[src*=\"-blur\"] + img {\n  display: none;\n}\n\n.value--back > img[src*=\"-blur\"] {\n  display: none;\n}\n\n/**\n * Placeholder SVG to hint at the type of answer that is expected.\n * Used on \"Country - Flag\" and \"Country - Map\" templates.\n */\n.placeholder {\n  color: #333;\n}\n\n.placeholder > path {\n  fill: none;\n  stroke: currentColor;\n  stroke-width: 1;\n}\n\n.night_mode .info,\n.night_mode .type,\n.night_mode .placeholder,\n.nightMode .info,\n.nightMode .type,\n.nightMode .placeholder {\n  color: #ccc;\n}\n\n/**\n * Apply shadow to images, to bring out black areas on flags, in night\n   mode.\n */\n.nightMode .value > img:not([src*=\"-nobox\"]),\n.night_mode .value > img:not([src*=\"-nobox\"]) {\n  box-shadow: 0 0 4px 1px rgba(54, 54, 54, 0.9);\n}\n\nhr {\n  margin: 1.5em 0;\n}\n</style><div id=answer class=\"value value--top\">Croatia</div>\n\n\n<hr>\n\n<div class=\"type\">Location</div>\n<div class=\"value value--image\"><img src=\"ug-map-croatia.png\" /></div>\n\n<style>\n  kbd {\n    box-shadow: inset 0 1px 0 0 white;\n    background:\n      gradient(\n        linear,\n        left top,\n        left bottom,\n        color-stop(0.05, #f9f9f9),\n        color-stop(1, #e9e9e9)\n      );\n    background-color: #f9f9f9;\n    border-radius: 4px;\n    border: 1px solid gainsboro;\n    display: inline-block;\n    font-size: 15px;\n    height: 15px;\n    line-height: 15px;\n    padding: 4px 4px;\n    margin: 5px;\n    text-align: center;\n    text-shadow: 1px 1px 0 white;\n    cursor: pointer;\n    cursor: hand;\n  }\n  \n</style>\n\n<div>\n  <script type=\"text/javascript\">\n    function ct_click(tag) {\n      pycmd(\"ct_click_\" + tag)\n    }\n    function ct_dblclick(tag, deck) {\n      pycmd(\"ct_dblclick_\" + tag + \"|\" + deck)\n    }\n\n    (function(){\n      // numTagLevelsToShow is defined in AnKing note types\n      if(typeof numTagLevelsToShow === 'undefined') return;\n\n      var clickableTags = document.getElementsByClassName(\"clickable-tag\");\n      for (let tagElm of clickableTags){\n        var tag = tagElm.innerHTML;\n        // numTagLevelsToShow == 0 means the whole tag should be shown\n        if(numTagLevelsToShow != 0){\n          tag = tag.split('::').slice(-numTagLevelsToShow).join(\"::\");\n        }\n        tagElm.innerHTML = tag;\n      };\n\n    })();\n    \n  </script>\n</div>\n",
       "frontText": "Croatia"
