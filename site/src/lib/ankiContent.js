@@ -34,6 +34,7 @@ export function groupCardsByDeck(cards) {
   const decks = Array.from(byDeck.keys()).sort((a, b) => a.localeCompare(b));
   return decks.map((deckName) => ({
     deckName,
+    displayName: String(deckName || "").includes("::") ? String(deckName).split("::").slice(-1)[0] : deckName,
     cards: (byDeck.get(deckName) || []).slice().sort((a, b) => String(a.frontText || "").localeCompare(String(b.frontText || ""))),
   }));
 }

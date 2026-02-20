@@ -3,17 +3,23 @@ const links = [
   { href: '/', label: 'Home' },
   { href: '/Blog', label: 'Blog' },
   { href: '/Anki', label: 'Anki' },
-  { href: '/Fighting', label: 'Fighting' },
   { href: '/About', label: 'About' },
 ];
 ---
 
 <header class="nav card">
   <div class="inner">
-    <a class="brand" href="/" aria-label="Home">
-      <span class="mark">G</span>
-      <span class="name">Gabriel Taylor</span>
-    </a>
+    <div class="brand">
+      <button class="markBtn" type="button" id="avatarBtn" aria-label="Open profile photo">
+        <span class="mark" aria-hidden="true">
+          <span class="initial">G</span>
+          <img class="avatar" id="avatarImg" src="/assets/bio.jpeg" alt="Gabriel Taylor" loading="lazy" />
+        </span>
+      </button>
+      <a class="nameLink" href="/" aria-label="Home">
+        <span class="name">Gabriel Taylor</span>
+      </a>
+    </div>
 
     <nav class="links" aria-label="Primary">
       {links.map((l) => (
@@ -50,6 +56,22 @@ const links = [
     localStorage.setItem(key, next);
     apply(next);
   });
+
+  // Open the global image-zoom modal for the avatar.
+  document.getElementById("avatarBtn")?.addEventListener("click", () => {
+    const dlg = document.getElementById("imgZoom");
+    const img = document.getElementById("imgZoomImg");
+    const src = document.getElementById("avatarImg")?.getAttribute("src");
+    if (!dlg?.showModal || !img || !src) return;
+    img.setAttribute("src", src);
+    img.setAttribute("alt", "Gabriel Taylor");
+    dlg.showModal();
+  });
+
+  // If avatar loads, remove the decorative border/gradient.
+  const avatar = document.getElementById("avatarImg");
+  const markBtn = document.getElementById("avatarBtn");
+  avatar?.addEventListener("load", () => markBtn?.classList.add("hasAvatar"), { once: true });
 </script>
 
 <style>
@@ -66,13 +88,8 @@ const links = [
     gap: 14px;
     padding: 12px 14px;
   }
-  .brand {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    font-weight: 850;
-  }
+  .brand { display: inline-flex; align-items: center; gap: 10px; }
+  .nameLink { text-decoration: none; font-weight: 850; }
   .mark {
     width: 34px;
     height: 34px;
@@ -86,6 +103,33 @@ const links = [
       color-mix(in oklab, var(--accent2) 18%, transparent)
     );
     box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--border) 55%, transparent);
+    position: relative;
+    overflow: hidden;
+  }
+  .initial { font-weight: 900; }
+  .avatar {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.95;
+  }
+  .markBtn {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 12px;
+  }
+  .markBtn.hasAvatar .mark {
+    border-color: transparent;
+    background: transparent;
+    box-shadow: none;
+  }
+  .markBtn:focus-visible {
+    outline: 2px solid color-mix(in oklab, var(--accent) 55%, transparent);
+    outline-offset: 3px;
   }
   .name { white-space: nowrap; }
   .links {

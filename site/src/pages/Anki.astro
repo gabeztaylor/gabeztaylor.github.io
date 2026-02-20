@@ -19,7 +19,7 @@ function stateLabel(s) {
     <div class="inner">
       <div class="kicker pill">Anki</div>
       <h1>Master Deck</h1>
-      <p class="muted">A snapshot of my local Anki deck, grouped by deck/subdeck. Suspended cards are excluded.</p>
+      <p class="muted">Here is my growing Anki deck that I use to memorize ever more useless facts.</p>
       <div class="meta">
         <span class="pill">Cards: {cards.length}</span>
         {stateOrder.map((s) => (
@@ -58,10 +58,10 @@ function stateLabel(s) {
           {decks.map((d) => {
             const counts = countStates(d.cards);
             return (
-              <details class="deck" open>
+              <details class="deck">
                 <summary>
                   <div class="left">
-                    <div class="name">{d.deckName}</div>
+                    <div class="name" title={d.deckName}>{d.displayName || d.deckName}</div>
                     <div class="muted small">{d.cards.length} cards</div>
                   </div>
                   <div class="right">
@@ -70,14 +70,22 @@ function stateLabel(s) {
                     ))}
                   </div>
                 </summary>
-                <ul class="cards">
+                <div class="cards">
                   {d.cards.map((c) => (
-                    <li class="cardRow" data-state={stateLabel(String(c.state || ""))} data-text={String(c.frontText || "").toLowerCase()}>
+                    <div class="cardRow" data-state={stateLabel(String(c.state || ""))} data-text={String(c.frontText || "").toLowerCase()}>
                       <span class="state">{stateLabel(String(c.state || ""))}</span>
-                      <span class="front" set:html={c.frontHtml || c.frontText || ""} />
-                    </li>
+                      <div class="qa">
+                        <div class="front" set:html={c.frontHtml || c.frontText || ""} />
+                        {c.backHtml && (
+                          <details class="answer">
+                            <summary>Answer</summary>
+                            <div class="back" set:html={c.backHtml} />
+                          </details>
+                        )}
+                      </div>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </details>
             );
           })}
@@ -138,7 +146,7 @@ function stateLabel(s) {
     font-weight: 850;
   }
 
-  .cards { margin: 0; padding: 0 12px 12px; list-style: none; display: grid; gap: 8px; }
+  .cards { padding: 0 12px 12px; display: grid; gap: 8px; }
   .cardRow {
     display: grid;
     grid-template-columns: 92px minmax(0, 1fr);
@@ -148,6 +156,7 @@ function stateLabel(s) {
     border: 1px solid var(--border);
     background: color-mix(in oklab, var(--surface2) 65%, transparent);
     align-items: start;
+    overflow: hidden;
   }
   .state {
     font-size: 12px;
@@ -159,8 +168,53 @@ function stateLabel(s) {
     border-radius: 999px;
     width: fit-content;
   }
+  .qa { min-width: 0; }
   .front :global(*) { margin: 0; }
-  .front { line-height: 1.45; }
+  .front { line-height: 1.45; min-width: 0; overflow: hidden; }
+  .front :global(img) {
+    max-width: 100% !important;
+    max-height: 220px !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain;
+    display: block;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .front :global(picture),
+  .front :global(svg) { max-width: 100%; height: auto; display: block; }
+
+  .answer {
+    margin-top: 10px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface);
+    padding: 8px 10px;
+  }
+  .answer summary {
+    cursor: pointer;
+    font-weight: 900;
+    color: var(--muted);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .answer summary::-webkit-details-marker { display: none; }
+  .back { margin-top: 10px; }
+  .back :global(img) {
+    max-width: 100% !important;
+    max-height: 320px !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain;
+    display: block;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .back :global(*) { margin: 0; }
 
   @media (max-width: 720px) {
     .cardRow { grid-template-columns: 1fr; }
@@ -173,6 +227,24 @@ function stateLabel(s) {
   const filters = document.getElementById("ankiFilters");
   let activeState = "ALL";
 
+  function stripTypeDirectives(root) {
+    if (!root) return;
+    const re = /\[\[\s*type:[^\]]+\]\]|\{\{\s*type:[^}]+\}\}/i;
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    const toRemove = [];
+    while (walker.nextNode()) {
+      const n = walker.currentNode;
+      if (!n?.nodeValue) continue;
+      if (re.test(n.nodeValue)) {
+        n.nodeValue = n.nodeValue.replace(re, "").trim();
+        if (!n.nodeValue) toRemove.push(n);
+      }
+    }
+    for (const n of toRemove) {
+      try { n.parentNode?.removeChild(n); } catch {}
+    }
+  }
+
   function apply() {
     const q = String(search?.value || "").trim().toLowerCase();
     const rows = Array.from(deckList?.querySelectorAll?.(".cardRow") || []);
@@ -184,6 +256,9 @@ function stateLabel(s) {
       r.style.display = okState && okText ? "" : "none";
     }
   }
+
+  // Clean up leaked Anki template directives if present.
+  stripTypeDirectives(deckList);
 
   search?.addEventListener("input", apply);
   filters?.addEventListener("click", (e) => {

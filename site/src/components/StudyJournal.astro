@@ -5,7 +5,7 @@ const {
   showHero = false,
   heroKicker = "Daily",
   heroTitle = "Study Journal",
-  heroSubtitle = "What I’m studying, with notes, sources, screenshots, tags, and time totals.",
+  heroSubtitle = "What I’m studying these days",
 } = Astro.props;
 
 const days = loadStudyJournalDays();
@@ -41,7 +41,6 @@ function renderInline(s) {
       <p class="muted">{heroSubtitle}</p>
       <div class="cta">
         <a class="btn primary" href="#tag-index">Browse by tag</a>
-        <a class="btn" href="/Blog">Blog</a>
       </div>
     </div>
   </section>
