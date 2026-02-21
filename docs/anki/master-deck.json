@@ -1,12 +1,12 @@
 {
   "version": 1,
   "deckRoot": "Master Deck",
-  "generatedAt": "2026-02-20T20:25:07.520Z",
+  "generatedAt": "2026-02-21T15:56:00.309Z",
   "excludeSuspended": true,
   "media": {
     "urlBase": "/assets/anki-media",
     "exported": 0,
-    "skipped": 421
+    "skipped": 419
   },
   "cards": [
     {
@@ -3028,7 +3028,7 @@
       "cardId": 1574587964730,
       "noteId": 1574587964688,
       "deckName": "Master Deck::Ultimate Geography",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "\n  <div class=\"value value--top\">?</div>\n\n  <hr>\n\n  <div class=\"type\">Location</div>\n  <div class=\"value value--image\"><img src=\"/assets/anki-media/ug-map-czech_republic.png\" /></div>\n\n\n\n<div>\n  \n</div>\n",
       "backHtml": "<div id=answer class=\"value value--top\">Czech Republic</div>\n<div class=\"info\">Also known as Czechia.</div>\n\n<hr>\n\n<div class=\"type\">Location</div>\n<div class=\"value value--image\"><img src=\"/assets/anki-media/ug-map-czech_republic.png\" /></div>\n\n\n\n<div>\n  \n</div>\n",
       "frontText": "? Location"
@@ -3037,7 +3037,7 @@
       "cardId": 1574587964734,
       "noteId": 1574587964699,
       "deckName": "Master Deck::Ultimate Geography",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "\n  <div class=\"value value--top\">?</div>\n\n  <hr>\n\n  <div class=\"type\">Location</div>\n  <div class=\"value value--image\"><img src=\"/assets/anki-media/ug-map-denmark.png\" /></div>\n\n\n\n<div>\n  \n</div>\n",
       "backHtml": "<div id=answer class=\"value value--top\">Denmark</div>\n\n\n<hr>\n\n<div class=\"type\">Location</div>\n<div class=\"value value--image\"><img src=\"/assets/anki-media/ug-map-denmark.png\" /></div>\n\n\n\n<div>\n  \n</div>\n",
       "frontText": "? Location"
@@ -3046,25 +3046,16 @@
       "cardId": 1574587964738,
       "noteId": 1574587964700,
       "deckName": "Master Deck::Ultimate Geography",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "\n  <div class=\"value value--top\">?</div>\n\n  <hr>\n\n  <div class=\"type\">Location</div>\n  <div class=\"value value--image\"><img src=\"/assets/anki-media/ug-map-estonia.png\" /></div>\n\n\n\n<div>\n  \n</div>\n",
       "backHtml": "<div id=answer class=\"value value--top\">Estonia</div>\n\n\n<hr>\n\n<div class=\"type\">Location</div>\n<div class=\"value value--image\"><img src=\"/assets/anki-media/ug-map-estonia.png\" /></div>\n\n\n\n<div>\n  \n</div>\n",
-      "frontText": "? Location"
-    },
-    {
-      "cardId": 1574587964742,
-      "noteId": 1574587964714,
-      "deckName": "Master Deck::Ultimate Geography",
-      "state": "New",
-      "frontHtml": "\n  <div class=\"value value--top\">?</div>\n\n  <hr>\n\n  <div class=\"type\">Location</div>\n  <div class=\"value value--image\"><img src=\"/assets/anki-media/ug-map-faroe_islands.png\" /></div>\n\n\n\n<div>\n  \n</div>\n",
-      "backHtml": "<div id=answer class=\"value value--top\">Faroe Islands</div>\n<div class=\"info\">Constituent country in the Kingdom of Denmark.</div>\n\n<hr>\n\n<div class=\"type\">Location</div>\n<div class=\"value value--image\"><img src=\"/assets/anki-media/ug-map-faroe_islands.png\" /></div>\n\n\n\n<div>\n  \n</div>\n",
       "frontText": "? Location"
     },
     {
       "cardId": 1574587964746,
       "noteId": 1574587964715,
       "deckName": "Master Deck::Ultimate Geography",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "\n  <div class=\"value value--top\">?</div>\n\n  <hr>\n\n  <div class=\"type\">Location</div>\n  <div class=\"value value--image\"><img src=\"/assets/anki-media/ug-map-finland.png\" /></div>\n\n\n\n<div>\n  \n</div>\n",
       "backHtml": "<div id=answer class=\"value value--top\">Finland</div>\n\n\n<hr>\n\n<div class=\"type\">Location</div>\n<div class=\"value value--image\"><img src=\"/assets/anki-media/ug-map-finland.png\" /></div>\n\n\n\n<div>\n  \n</div>\n",
       "frontText": "? Location"
@@ -3100,7 +3091,7 @@
       "cardId": 1574587964766,
       "noteId": 1574587964732,
       "deckName": "Master Deck::Ultimate Geography",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "\n  <div class=\"value value--top\">?</div>\n\n  <hr>\n\n  <div class=\"type\">Location</div>\n  <div class=\"value value--image\"><img src=\"/assets/anki-media/ug-map-liechtenstein.png\"></div>\n\n\n\n<div>\n  \n</div>\n",
       "backHtml": "<div id=answer class=\"value value--top\">Liechtenstein</div>\n\n\n<hr>\n\n<div class=\"type\">Location</div>\n<div class=\"value value--image\"><img src=\"/assets/anki-media/ug-map-liechtenstein.png\"></div>\n\n\n\n<div>\n  \n</div>\n",
       "frontText": "? Location"
@@ -3109,7 +3100,7 @@
       "cardId": 1574587964770,
       "noteId": 1574587964733,
       "deckName": "Master Deck::Ultimate Geography",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "\n  <div class=\"value value--top\">?</div>\n\n  <hr>\n\n  <div class=\"type\">Location</div>\n  <div class=\"value value--image\"><img src=\"/assets/anki-media/ug-map-lithuania.png\" /></div>\n\n\n\n<div>\n  \n</div>\n",
       "backHtml": "<div id=answer class=\"value value--top\">Lithuania</div>\n\n\n<hr>\n\n<div class=\"type\">Location</div>\n<div class=\"value value--image\"><img src=\"/assets/anki-media/ug-map-lithuania.png\" /></div>\n\n\n\n<div>\n  \n</div>\n",
       "frontText": "? Location"
@@ -3118,7 +3109,7 @@
       "cardId": 1574587964774,
       "noteId": 1574587964734,
       "deckName": "Master Deck::Ultimate Geography",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "\n  <div class=\"value value--top\">?</div>\n\n  <hr>\n\n  <div class=\"type\">Location</div>\n  <div class=\"value value--image\"><img src=\"/assets/anki-media/ug-map-luxembourg.png\" /></div>\n\n\n\n<div>\n  \n</div>\n",
       "backHtml": "<div id=answer class=\"value value--top\">Luxembourg</div>\n\n\n<hr>\n\n<div class=\"type\">Location</div>\n<div class=\"value value--image\"><img src=\"/assets/anki-media/ug-map-luxembourg.png\" /></div>\n\n\n\n<div>\n  \n</div>\n",
       "frontText": "? Location"
@@ -3130,15 +3121,6 @@
       "state": "Review",
       "frontHtml": "\n  <div class=\"value value--top\">?</div>\n\n  <hr>\n\n  <div class=\"type\">Location</div>\n  <div class=\"value value--image\"><img src=\"/assets/anki-media/ug-map-north_macedonia.png\" /></div>\n\n\n\n<div>\n  \n</div>\n",
       "backHtml": "<div id=answer class=\"value value--top\">North Macedonia</div>\n<div class=\"info\">Formerly known as Macedonia.</div>\n\n<hr>\n\n<div class=\"type\">Location</div>\n<div class=\"value value--image\"><img src=\"/assets/anki-media/ug-map-north_macedonia.png\" /></div>\n\n\n\n<div>\n  \n</div>\n",
-      "frontText": "? Location"
-    },
-    {
-      "cardId": 1574587964782,
-      "noteId": 1574587964749,
-      "deckName": "Master Deck::Ultimate Geography",
-      "state": "New",
-      "frontHtml": "\n  <div class=\"value value--top\">?</div>\n\n  <hr>\n\n  <div class=\"type\">Location</div>\n  <div class=\"value value--image\"><img src=\"/assets/anki-media/ug-map-malta.png\" /></div>\n\n\n\n<div>\n  \n</div>\n",
-      "backHtml": "<div id=answer class=\"value value--top\">Malta</div>\n\n\n<hr>\n\n<div class=\"type\">Location</div>\n<div class=\"value value--image\"><img src=\"/assets/anki-media/ug-map-malta.png\" /></div>\n\n\n\n<div>\n  \n</div>\n",
       "frontText": "? Location"
     },
     {
@@ -3163,7 +3145,7 @@
       "cardId": 1574587964794,
       "noteId": 1574587964756,
       "deckName": "Master Deck::Ultimate Geography",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "\n  <div class=\"value value--top\">?</div>\n\n  <hr>\n\n  <div class=\"type\">Location</div>\n  <div class=\"value value--image\"><img src=\"/assets/anki-media/ug-map-montenegro.png\"></div>\n\n\n\n<div>\n  \n</div>\n",
       "backHtml": "<div id=answer class=\"value value--top\">Montenegro</div>\n\n\n<hr>\n\n<div class=\"type\">Location</div>\n<div class=\"value value--image\"><img src=\"/assets/anki-media/ug-map-montenegro.png\"></div>\n\n\n\n<div>\n  \n</div>\n",
       "frontText": "? Location"
@@ -3199,7 +3181,7 @@
       "cardId": 1574587964810,
       "noteId": 1574587964768,
       "deckName": "Master Deck::Ultimate Geography",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "\n  <div class=\"value value--top\">?</div>\n\n  <hr>\n\n  <div class=\"type\">Location</div>\n  <div class=\"value value--image\"><img src=\"/assets/anki-media/ug-map-portugal.png\"></div>\n\n\n\n<div>\n  \n</div>\n",
       "backHtml": "<div id=answer class=\"value value--top\">Portugal</div>\n\n\n<hr>\n\n<div class=\"type\">Location</div>\n<div class=\"value value--image\"><img src=\"/assets/anki-media/ug-map-portugal.png\"></div>\n\n\n\n<div>\n  \n</div>\n",
       "frontText": "? Location"
@@ -3208,7 +3190,7 @@
       "cardId": 1574587964814,
       "noteId": 1574587964771,
       "deckName": "Master Deck::Ultimate Geography",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "\n  <div class=\"value value--top\">?</div>\n\n  <hr>\n\n  <div class=\"type\">Location</div>\n  <div class=\"value value--image\"><img src=\"/assets/anki-media/ug-map-romania.png\" /></div>\n\n\n\n<div>\n  \n</div>\n",
       "backHtml": "<div id=answer class=\"value value--top\">Romania</div>\n\n\n<hr>\n\n<div class=\"type\">Location</div>\n<div class=\"value value--image\"><img src=\"/assets/anki-media/ug-map-romania.png\" /></div>\n\n\n\n<div>\n  \n</div>\n",
       "frontText": "? Location"
@@ -6349,7 +6331,7 @@
       "cardId": 1766416872000,
       "noteId": 1766416871968,
       "deckName": "Master Deck::Squares",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "\\(45^2\\)\n\n\n<div>\n  \n</div>\n",
       "backHtml": "\\(45^2\\)\n\n<hr id=answer>\n\n2025\n\n\n<div>\n  \n</div>\n",
       "frontText": "\\(45^2\\)"
@@ -6358,7 +6340,7 @@
       "cardId": 1766416872001,
       "noteId": 1766416871969,
       "deckName": "Master Deck::Squares",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "\\(46^2\\)\n\n\n<div>\n  \n</div>\n",
       "backHtml": "\\(46^2\\)\n\n<hr id=answer>\n\n2116\n\n\n<div>\n  \n</div>\n",
       "frontText": "\\(46^2\\)"
@@ -6367,7 +6349,7 @@
       "cardId": 1766416872002,
       "noteId": 1766416871970,
       "deckName": "Master Deck::Squares",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "\\(47^2\\)\n\n\n<div>\n  \n</div>\n",
       "backHtml": "\\(47^2\\)\n\n<hr id=answer>\n\n2209\n\n\n<div>\n  \n</div>\n",
       "frontText": "\\(47^2\\)"
@@ -6376,7 +6358,7 @@
       "cardId": 1766416872003,
       "noteId": 1766416871971,
       "deckName": "Master Deck::Squares",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "\\(48^2\\)\n\n\n<div>\n  \n</div>\n",
       "backHtml": "\\(48^2\\)\n\n<hr id=answer>\n\n2304\n\n\n<div>\n  \n</div>\n",
       "frontText": "\\(48^2\\)"
@@ -6385,7 +6367,7 @@
       "cardId": 1766416872004,
       "noteId": 1766416871972,
       "deckName": "Master Deck::Squares",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "\\(49^2\\)\n\n\n<div>\n  \n</div>\n",
       "backHtml": "\\(49^2\\)\n\n<hr id=answer>\n\n2401\n\n\n<div>\n  \n</div>\n",
       "frontText": "\\(49^2\\)"
@@ -7348,7 +7330,7 @@
       "cardId": 1768419405648,
       "noteId": 1768419405622,
       "deckName": "Master Deck::Plants",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/f/f0/AvenaSativa3.jpg\">\n\n\n<div>\n  \n</div>\n",
       "backHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/f/f0/AvenaSativa3.jpg\">\n\n<hr id=answer>\n\nOats\n\n\n<div>\n  \n</div>\n",
       "frontText": ""
@@ -7357,34 +7339,16 @@
       "cardId": 1768419405649,
       "noteId": 1768419405623,
       "deckName": "Master Deck::Plants",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/7/79/Ear_of_rye.jpg\">\n\n\n<div>\n  \n</div>\n",
       "backHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/7/79/Ear_of_rye.jpg\">\n\n<hr id=answer>\n\nRye\n\n\n<div>\n  \n</div>\n",
-      "frontText": ""
-    },
-    {
-      "cardId": 1768419405650,
-      "noteId": 1768419405624,
-      "deckName": "Master Deck::Plants",
-      "state": "New",
-      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/a/ab/Patates.jpg\">\n\n\n<div>\n  \n</div>\n",
-      "backHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/a/ab/Patates.jpg\">\n\n<hr id=answer>\n\nPotato\n\n\n<div>\n  \n</div>\n",
-      "frontText": ""
-    },
-    {
-      "cardId": 1768419405651,
-      "noteId": 1768419405625,
-      "deckName": "Master Deck::Plants",
-      "state": "New",
-      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/5/58/Ipomoea_batatas_006.JPG\">\n\n\n<div>\n  \n</div>\n",
-      "backHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/5/58/Ipomoea_batatas_006.JPG\">\n\n<hr id=answer>\n\nSweet potato\n\n\n<div>\n  \n</div>\n",
       "frontText": ""
     },
     {
       "cardId": 1768419405652,
       "noteId": 1768419405626,
       "deckName": "Master Deck::Plants",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/f/f1/Manihot_esculenta_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-090.jpg\">\n\n\n<div>\n  \n</div>\n",
       "backHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/f/f1/Manihot_esculenta_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-090.jpg\">\n\n<hr id=answer>\n\nCassava\n\n\n<div>\n  \n</div>\n",
       "frontText": ""
@@ -7393,7 +7357,7 @@
       "cardId": 1768419405653,
       "noteId": 1768419405627,
       "deckName": "Master Deck::Plants",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/7/74/Saccharum_officinarum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-125.jpg\">\n\n\n<div>\n  \n</div>\n",
       "backHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/7/74/Saccharum_officinarum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-125.jpg\">\n\n<hr id=answer>\n\nSugarcane\n\n\n<div>\n  \n</div>\n",
       "frontText": ""
@@ -7402,7 +7366,7 @@
       "cardId": 1768419405654,
       "noteId": 1768419405628,
       "deckName": "Master Deck::Plants",
-      "state": "New",
+      "state": "Review",
       "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/c/c7/Coffee_Flowers.JPG\">\n\n\n<div>\n  \n</div>\n",
       "backHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/c/c7/Coffee_Flowers.JPG\">\n\n<hr id=answer>\n\nCoffee plant\n\n\n<div>\n  \n</div>\n",
       "frontText": ""
@@ -8087,8 +8051,8 @@
       "noteId": 1768841314116,
       "deckName": "Master Deck::History",
       "state": "Review",
-      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/9/9c/Battle_of_Salamis.jpg\"><br><b>Greco-Persian Wars</b><br><i>War</i>\n\n\n<div>\n  \n</div>\n",
-      "backHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/9/9c/Battle_of_Salamis.jpg\"><br><b>Greco-Persian Wars</b><br><i>War</i>\n\n<hr id=answer>\n\n<b>499–449 BCE</b><br>Participants: Greek city-states (notably Athens &amp; Sparta) vs the Achaemenid Persian Empire.\n\n\n<div>\n  \n</div>\n",
+      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/2/22/Greek-Persian_duel.jpg\"><br><b>Greco-Persian Wars</b><br><i>War</i>\n\n\n<div>\n  \n</div>\n",
+      "backHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/2/22/Greek-Persian_duel.jpg\"><br><b>Greco-Persian Wars</b><br><i>War</i>\n\n<hr id=answer>\n\n<b>499–449 BCE</b><br>Participants: Greek city-states (notably Athens &amp; Sparta) vs the Achaemenid Persian Empire.\n\n\n<div>\n  \n</div>\n",
       "frontText": "Greco-Persian WarsWar"
     },
     {
@@ -8456,8 +8420,8 @@
       "noteId": 1768841314164,
       "deckName": "Master Deck::History",
       "state": "Review",
-      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/4/4e/Seven_Years%27_War_map.png\"><br><b>Seven Years' War</b><br><i>War</i>\n\n\n<div>\n  \n</div>\n",
-      "backHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/4/4e/Seven_Years%27_War_map.png\"><br><b>Seven Years' War</b><br><i>War</i>\n\n<hr id=answer>\n\n<b>1756–1763</b><br>Participants: Great Britain & allies vs France & allies (global conflict involving Prussia, Austria, Russia, etc.).\n\n\n<div>\n  \n</div>\n",
+      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/3/30/Seven_Years%27_War_Collage.jpg\"><br><b>Seven Years' War</b><br><i>War</i>\n\n\n<div>\n  \n</div>\n",
+      "backHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/3/30/Seven_Years%27_War_Collage.jpg\"><br><b>Seven Years' War</b><br><i>War</i>\n\n<hr id=answer>\n\n<b>1756–1763</b><br>Participants: Great Britain &amp; allies vs France &amp; allies (global conflict involving Prussia, Austria, Russia, etc.).\n\n\n<div>\n  \n</div>\n",
       "frontText": "Seven Years' WarWar"
     },
     {
@@ -8573,8 +8537,8 @@
       "noteId": 1768841314178,
       "deckName": "Master Deck::History",
       "state": "Review",
-      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/3/3b/Special%3AFilePath%3AMarie_Curie_c1920.jpg\"><br><b>Marie Curie</b><br><i>Person</i>\n\n\n<div>\n  \n</div>\n",
-      "backHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/3/3b/Special%3AFilePath%3AMarie_Curie_c1920.jpg\"><br><b>Marie Curie</b><br><i>Person</i>\n\n<hr id=answer>\n\n<b>7 November 1867</b><br>Pioneer in radioactivity; Nobel laureate.\n\n\n<div>\n  \n</div>\n",
+      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/c/c8/Marie_Curie_c._1920s.jpg\"><br><b>Marie Curie</b><br><i>Person</i>\n\n\n<div>\n  \n</div>\n",
+      "backHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/c/c8/Marie_Curie_c._1920s.jpg\"><br><b>Marie Curie</b><br><i>Person</i>\n\n<hr id=answer>\n\n<b>7 November 1867</b><br>Pioneer in radioactivity; Nobel laureate.\n\n\n<div>\n  \n</div>\n",
       "frontText": "Marie CuriePerson"
     },
     {
@@ -8609,8 +8573,8 @@
       "noteId": 1768841314182,
       "deckName": "Master Deck::History",
       "state": "Review",
-      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/4/40/Special%3AFilePath%3AEinstein_1921_by_F_Schmutzer_-_restoration.jpg\"><br><b>Albert Einstein</b><br><i>Person</i>\n\n\n<div>\n  \n</div>\n",
-      "backHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/4/40/Special%3AFilePath%3AEinstein_1921_by_F_Schmutzer_-_restoration.jpg\"><br><b>Albert Einstein</b><br><i>Person</i>\n\n<hr id=answer>\n\n<b>14 March 1879</b><br>Developed relativity; major influence on modern physics.\n\n\n<div>\n  \n</div>\n",
+      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/1/14/Albert_Einstein_1947.jpg\"><br><b>Albert Einstein</b><br><i>Person</i>\n\n\n<div>\n  \n</div>\n",
+      "backHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/1/14/Albert_Einstein_1947.jpg\"><br><b>Albert Einstein</b><br><i>Person</i>\n\n<hr id=answer>\n\n<b>14 March 1879</b><br>Developed relativity; major influence on modern physics.\n\n\n<div>\n  \n</div>\n",
       "frontText": "Albert EinsteinPerson"
     },
     {
@@ -8681,8 +8645,8 @@
       "noteId": 1768841314190,
       "deckName": "Master Deck::History",
       "state": "Review",
-      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/f/f8/Special%3AFilePath%3AMartin_Luther_King%2C_Jr..jpg\"><br><b>Martin Luther King Jr.</b><br><i>Person</i>\n\n\n<div>\n  \n</div>\n",
-      "backHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/f/f8/Special%3AFilePath%3AMartin_Luther_King%2C_Jr..jpg\"><br><b>Martin Luther King Jr.</b><br><i>Person</i>\n\n<hr id=answer>\n\n<b>15 January 1929</b><br>U.S. civil rights leader.\n\n\n<div>\n  \n</div>\n",
+      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/0/05/Martin_Luther_King%2C_Jr..jpg\"><br><b>Martin Luther King Jr.</b><br><i>Person</i>\n\n\n<div>\n  \n</div>\n",
+      "backHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/0/05/Martin_Luther_King%2C_Jr..jpg\"><br><b>Martin Luther King Jr.</b><br><i>Person</i>\n\n<hr id=answer>\n\n<b>15 January 1929</b><br>U.S. civil rights leader.\n\n\n<div>\n  \n</div>\n",
       "frontText": "Martin Luther King Jr.Person"
     },
     {
@@ -8726,8 +8690,8 @@
       "noteId": 1768841314195,
       "deckName": "Master Deck::History",
       "state": "Review",
-      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/2/2c/VietnamWarMap.png\"><br><b>Vietnam War</b><br><i>War</i>\n\n\n<div>\n  \n</div>\n",
-      "backHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/2/2c/VietnamWarMap.png\"><br><b>Vietnam War</b><br><i>War</i>\n\n<hr id=answer>\n\n<b>1955–1975</b><br>Participants: North Vietnam & Viet Cong vs South Vietnam and the United States and allies.\n\n\n<div>\n  \n</div>\n",
+      "frontHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/6/67/U.S._Army_UH-1H_Hueys_insert_ARVN_troops_at_Kh%C3%A2m_%C4%90%E1%BB%A9c%2C_Vietnam%2C_12_July_1970_%2879431435%29.jpg\"><br><b>Vietnam War</b><br><i>War</i>\n\n\n<div>\n  \n</div>\n",
+      "backHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/6/67/U.S._Army_UH-1H_Hueys_insert_ARVN_troops_at_Kh%C3%A2m_%C4%90%E1%BB%A9c%2C_Vietnam%2C_12_July_1970_%2879431435%29.jpg\"><br><b>Vietnam War</b><br><i>War</i>\n\n<hr id=answer>\n\n<b>1955–1975</b><br>Participants: North Vietnam &amp; Viet Cong vs South Vietnam and the United States and allies.\n\n\n<div>\n  \n</div>\n",
       "frontText": "Vietnam WarWar"
     },
     {
