@@ -11,6 +11,10 @@ const {
 const days = loadStudyJournalDays();
 const tagIndex = computeStudyTagIndex(days);
 const dayByISO = new Map(days.map((d) => [d.dateISO, d]));
+const topTags = [...(tagIndex.tags || [])]
+  .sort((a, b) => (Number(b.totalMinutes) || 0) - (Number(a.totalMinutes) || 0))
+  .slice(0, 5);
+const topMaxMinutes = topTags.length > 0 ? (Number(topTags[0]?.totalMinutes) || 0) : 0;
 
 function escapeHtml(s) {
   return String(s || "")
@@ -36,12 +40,36 @@ function renderInline(s) {
 {showHero && (
   <section class="hero card">
     <div class="inner">
-      <div class="kicker pill">{heroKicker}</div>
-      <h1>{heroTitle}</h1>
-      <p class="muted">{heroSubtitle}</p>
-      <div class="cta">
-        <a class="btn primary" href="#tag-index">Browse by tag</a>
+      <div class="heroText">
+        <div class="kicker pill">{heroKicker}</div>
+        <h1>{heroTitle}</h1>
+        <p class="muted">{heroSubtitle}</p>
+        <div class="cta">
+          <a class="btn primary" href="#tag-index">Browse by tag</a>
+        </div>
       </div>
+
+      {topTags.length > 0 && (
+        <aside class="topChart" aria-label="Top studied subjects">
+          <div class="chartTitle">Top subjects</div>
+          <ol class="chartList">
+            {topTags.map((t, i) => {
+              const mins = Number(t.totalMinutes) || 0;
+              const w = topMaxMinutes > 0 ? Math.max(3, Math.round((mins / topMaxMinutes) * 100)) : 0;
+              const hue = `${(i * 42) % 360}deg`;
+              return (
+                <li class="chartRow">
+                  <a class="chartTag" href={`#tag-${t.tag}`}>#{t.tag}</a>
+                  <div class="chartBar" style={`--w:${w}%;--hue:${hue};`} title={`${t.totalLabel}`}>
+                    <div class="chartFill" />
+                  </div>
+                  <div class="chartValue">{t.totalLabel}</div>
+                </li>
+              );
+            })}
+          </ol>
+        </aside>
+      )}
     </div>
   </section>
 )}
@@ -148,9 +176,72 @@ function renderInline(s) {
 
 <style>
   .hero { padding: 18px; }
-  .hero .inner { display: grid; gap: 12px; padding: 12px; }
+  .hero .inner { display: grid; gap: 14px; padding: 12px; align-items: start; }
+  .heroText { display: grid; gap: 12px; }
   .kicker { width: fit-content; font-weight: 800; font-size: 12px; color: var(--muted); }
   .cta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px; }
+
+  .topChart {
+    border: 1px solid var(--border);
+    background: color-mix(in oklab, var(--surface2) 70%, transparent);
+    border-radius: 14px;
+    padding: 12px;
+  }
+  .chartTitle {
+    font-weight: 950;
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+    margin-bottom: 10px;
+  }
+  .chartList { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+  .chartRow {
+    display: grid;
+    grid-template-columns: 120px 1fr 70px;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+  }
+  .chartTag {
+    display: block;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 900;
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .chartTag:hover { color: var(--accent); }
+  .chartValue {
+    color: var(--muted);
+    font-weight: 850;
+    font-size: 12px;
+    white-space: nowrap;
+    text-align: right;
+  }
+  .chartBar {
+    height: 10px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: color-mix(in oklab, var(--surface) 65%, transparent);
+    overflow: hidden;
+  }
+  .chartFill {
+    height: 100%;
+    width: var(--w);
+    background: linear-gradient(
+      90deg,
+      color-mix(in oklab, var(--accent) 85%, transparent),
+      color-mix(in oklab, var(--accent) 60%, transparent)
+    );
+    filter: hue-rotate(var(--hue));
+  }
+
+  @media (min-width: 740px) {
+    .hero .inner { grid-template-columns: 1.2fr 1fr; }
+    .topChart { margin-top: 6px; }
+  }
 
   .page { padding: 18px; }
   .content :global(.study-day) {
