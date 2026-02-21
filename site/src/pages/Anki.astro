@@ -7,11 +7,80 @@ const data = loaded.ok ? loaded.data : null;
 const cards = Array.isArray(data?.cards) ? data.cards : [];
 const decks = groupCardsByDeck(cards);
 const totalCounts = countStates(cards);
+const exportVersion = Number(data?.version) || 1;
+const generatedAt = String(data?.generatedAt || "").trim();
 
 const stateOrder = ["New", "Learning", "Review", "Relearning", "Unknown"];
 function stateLabel(s) {
   return stateOrder.includes(s) ? s : "Unknown";
 }
+
+function formatIntervalDays(days) {
+  const d = Math.max(0, Math.round(Number(days) || 0));
+  if (d === 0) return "0d";
+  if (d < 14) return `${d}d`;
+  if (d < 60) return `${Math.round(d / 7)}w`;
+  if (d < 365) return `${Math.round(d / 30)}mo`;
+  return `${Math.round(d / 365)}y`;
+}
+
+const hasCardStats = cards.some((c) =>
+  Number.isFinite(Number(c?.reviews)) || Number.isFinite(Number(c?.intervalDays)) || Number.isFinite(Number(c?.lapses)),
+);
+const hasSurfacedStats = cards.some((c) => Boolean(String(c?.lastSeenAt || "").trim()));
+
+function formatShortDate(iso) {
+  const s = String(iso || "").trim();
+  const dt = new Date(s);
+  if (!s || Number.isNaN(dt.getTime())) return "";
+  return new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric" }).format(dt);
+}
+
+const struggled = cards
+  .filter((c) => Number(c?.reviews) > 0)
+  .slice()
+  .sort((a, b) => {
+    const ar = Number(a?.reviews) || 0;
+    const br = Number(b?.reviews) || 0;
+    if (br !== ar) return br - ar;
+    const al = Number(a?.lapses) || 0;
+    const bl = Number(b?.lapses) || 0;
+    if (bl !== al) return bl - al;
+    return String(a?.deckName || "").localeCompare(String(b?.deckName || ""));
+  })
+  .slice(0, 8);
+
+const mastered = cards
+  .filter((c) => String(c?.state || "") === "Review")
+  .slice()
+  .sort((a, b) => {
+    const ai = Number(a?.intervalDays) || 0;
+    const bi = Number(b?.intervalDays) || 0;
+    if (bi !== ai) return bi - ai;
+    const al = Number(a?.lapses) || 0;
+    const bl = Number(b?.lapses) || 0;
+    if (al !== bl) return al - bl;
+    const ar = Number(a?.reviews) || 0;
+    const br = Number(b?.reviews) || 0;
+    return ar - br;
+  })
+  .slice(0, 8);
+
+const justSurfaced = cards
+  .filter((c) => {
+    const r = Number(c?.reviews) || 0;
+    return r > 0 && r <= 4 && String(c?.lastSeenAt || "").trim();
+  })
+  .slice()
+  .sort((a, b) => {
+    const t = String(b?.lastSeenAt || "").localeCompare(String(a?.lastSeenAt || ""));
+    if (t !== 0) return t;
+    const ar = Number(a?.reviews) || 0;
+    const br = Number(b?.reviews) || 0;
+    if (ar !== br) return ar - br; // prefer fewer reviews when equally recent
+    return String(a?.deckName || "").localeCompare(String(b?.deckName || ""));
+  })
+  .slice(0, 8);
 ---
 
 <BaseLayout title="Anki">
@@ -22,9 +91,13 @@ function stateLabel(s) {
       <p class="muted">Here is my growing Anki deck that I use to memorize ever more useless facts.</p>
       <div class="meta">
         <span class="pill">Cards: {cards.length}</span>
+        <span class="pill">Export: v{exportVersion}</span>
         {stateOrder.map((s) => (
           <span class="pill">{s}: {totalCounts.get(s) || 0}</span>
         ))}
+        {generatedAt && (
+          <span class="pill" title={generatedAt}>Updated</span>
+        )}
       </div>
     </div>
   </section>
@@ -44,6 +117,176 @@ function stateLabel(s) {
   ) : (
     <section class="card page">
       <div class="inner">
+        <div class="spotlights">
+          <details class="spot card">
+            <summary class="spotSummary">
+              <div class="spotHead">
+                <div class="spotTitleRow">
+                  <h2>Just surfaced</h2>
+                  {(hasCardStats || hasSurfacedStats) && <span class="pill tiny">{justSurfaced.length}</span>}
+                </div>
+                <div class="muted small">Recently introduced cards (low review count)</div>
+              </div>
+              <span class="chev" aria-hidden="true">▾</span>
+            </summary>
+            <div class="spotBody">
+              {!hasSurfacedStats ? (
+                <p class="muted small">
+                  Sync Anki again to include “first seen” timestamps in the export.
+                </p>
+              ) : justSurfaced.length === 0 ? (
+                <p class="muted small">No newly surfaced cards yet.</p>
+              ) : (
+                <div class="cards compact">
+                  {justSurfaced.map((c) => (
+                    <div
+                      class="cardRow"
+                      data-state={stateLabel(String(c.state || ""))}
+                      data-text={String(c.frontText || "").toLowerCase()}
+                    >
+                      <span class="state">{stateLabel(String(c.state || ""))}</span>
+                      <div class="qa">
+                        <div class="metaLine muted small">
+                          <span class="mono">{c.deckName}</span>
+                          {c.lastSeenAt && (
+                            <>
+                              <span class="sep">·</span>
+                              <span>seen <strong>{formatShortDate(c.lastSeenAt) || "recently"}</strong></span>
+                              <span class="sep">·</span>
+                              <span>{Number(c.reviews) || 0} reviews</span>
+                            </>
+                          )}
+                        </div>
+                        <div class="front" set:html={c.frontHtml || c.frontText || ""} />
+                        {c.backHtml && (
+                          <details class="answer">
+                            <summary>Answer</summary>
+                            <div class="back" set:html={c.backHtml} />
+                          </details>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </details>
+
+          <details class="spot card">
+            <summary class="spotSummary">
+              <div class="spotHead">
+                <div class="spotTitleRow">
+                  <h2>Most reviewed</h2>
+                  {hasCardStats && <span class="pill tiny">{struggled.length}</span>}
+                </div>
+                <div class="muted small">A sample of cards with the most total reviews</div>
+              </div>
+              <span class="chev" aria-hidden="true">▾</span>
+            </summary>
+            <div class="spotBody">
+              {!hasCardStats ? (
+                <p class="muted small">
+                  Sync Anki again to include review statistics in the export.
+                </p>
+              ) : struggled.length === 0 ? (
+                <p class="muted small">No reviewed cards yet.</p>
+              ) : (
+                <div class="cards compact">
+                  {struggled.map((c) => (
+                    <div
+                      class="cardRow"
+                      data-state={stateLabel(String(c.state || ""))}
+                      data-text={String(c.frontText || "").toLowerCase()}
+                    >
+                      <span class="state">{stateLabel(String(c.state || ""))}</span>
+                      <div class="qa">
+                        <div class="metaLine muted small">
+                          <span class="mono">{c.deckName}</span>
+                          <span class="sep">·</span>
+                          <span><strong>{Number(c.reviews) || 0}</strong> reviews</span>
+                          {Number(c.lapses) ? (
+                            <>
+                              <span class="sep">·</span>
+                              <span>{Number(c.lapses) || 0} lapses</span>
+                            </>
+                          ) : null}
+                        </div>
+                        <div class="front" set:html={c.frontHtml || c.frontText || ""} />
+                        {c.backHtml && (
+                          <details class="answer">
+                            <summary>Answer</summary>
+                            <div class="back" set:html={c.backHtml} />
+                          </details>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </details>
+
+          <details class="spot card">
+            <summary class="spotSummary">
+              <div class="spotHead">
+                <div class="spotTitleRow">
+                  <h2>Mastered</h2>
+                  {hasCardStats && <span class="pill tiny">{mastered.length}</span>}
+                </div>
+                <div class="muted small">Long-interval cards (reviewed less frequently)</div>
+              </div>
+              <span class="chev" aria-hidden="true">▾</span>
+            </summary>
+            <div class="spotBody">
+              {!hasCardStats ? (
+                <p class="muted small">
+                  Sync Anki again to include interval statistics in the export.
+                </p>
+              ) : mastered.length === 0 ? (
+                <p class="muted small">No mature review cards yet.</p>
+              ) : (
+                <div class="cards compact">
+                  {mastered.map((c) => (
+                    <div
+                      class="cardRow"
+                      data-state={stateLabel(String(c.state || ""))}
+                      data-text={String(c.frontText || "").toLowerCase()}
+                    >
+                      <span class="state">{stateLabel(String(c.state || ""))}</span>
+                      <div class="qa">
+                        <div class="metaLine muted small">
+                          <span class="mono">{c.deckName}</span>
+                          <span class="sep">·</span>
+                          <span><strong>{formatIntervalDays(c.intervalDays)}</strong> interval</span>
+                          {Number(c.reviews) ? (
+                            <>
+                              <span class="sep">·</span>
+                              <span>{Number(c.reviews) || 0} reviews</span>
+                            </>
+                          ) : null}
+                          {Number(c.lapses) ? (
+                            <>
+                              <span class="sep">·</span>
+                              <span>{Number(c.lapses) || 0} lapses</span>
+                            </>
+                          ) : null}
+                        </div>
+                        <div class="front" set:html={c.frontHtml || c.frontText || ""} />
+                        {c.backHtml && (
+                          <details class="answer">
+                            <summary>Answer</summary>
+                            <div class="back" set:html={c.backHtml} />
+                          </details>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </details>
+        </div>
+
         <div class="toolbar">
           <input id="ankiSearch" class="pill" type="search" placeholder="Search cards…" />
           <div class="filters" id="ankiFilters">
@@ -103,6 +346,40 @@ function stateLabel(s) {
 
   .page { padding: 18px; }
   .page .inner { padding: 12px; }
+
+  .spotlights {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .spot { padding: 0; overflow: hidden; }
+  .spotSummary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px;
+  }
+  .spotSummary::-webkit-details-marker { display: none; }
+  .spotBody { padding: 0 12px 12px; }
+  .spotHead { display: grid; gap: 4px; }
+  .spotTitleRow { display: inline-flex; align-items: baseline; gap: 8px; }
+  .spotHead h2 { margin: 0; font-size: 16px; }
+  .chev { color: var(--muted); font-weight: 900; transform: rotate(0deg); transition: transform 160ms ease; }
+  details.spot[open] .chev { transform: rotate(180deg); }
+
+  .pill.tiny { font-size: 11px; padding: 4px 8px; }
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+  .metaLine { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; margin-bottom: 8px; }
+  .sep { opacity: 0.6; }
+  .cards.compact { padding: 0; }
+  .cards.compact .cardRow { background: color-mix(in oklab, var(--surface2) 55%, transparent); }
+
+  @media (min-width: 860px) {
+    .spotlights { grid-template-columns: 1fr 1fr; }
+  }
 
   .toolbar { display: grid; gap: 10px; margin-bottom: 14px; }
   .filters { display: flex; flex-wrap: wrap; gap: 8px; }
