@@ -2,6 +2,19 @@
   "date": "2026-02-21",
   "sessions": [
     {
+      "start": "2026-02-21T09:17",
+      "end": "2026-02-21T09:54",
+      "durationMinutes": 37,
+      "description": "cleared anki deck",
+      "tags": [
+        "a",
+        "ki"
+      ],
+      "sources": [],
+      "notes": [],
+      "screenshots": []
+    },
+    {
       "start": "2026-02-21T07:21",
       "end": "2026-02-21T09:17",
       "durationMinutes": 116,
