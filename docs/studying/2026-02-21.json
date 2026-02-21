@@ -1,0 +1,25 @@
+{
+  "date": "2026-02-21",
+  "sessions": [
+    {
+      "start": "2026-02-21T07:21",
+      "end": "2026-02-21T09:17",
+      "durationMinutes": 116,
+      "description": "cluesbysam and dailyintegral",
+      "tags": [
+        "puzzle"
+      ],
+      "sources": [],
+      "notes": [
+        "Built little helper app for clues by sam, and learned Legendre's formula for the dailyintegral puzzle",
+        "I solved the daily #CluesBySam, Feb 21st 2026 (Hard), in less than 41 minutes",
+        "🟩🟩🟩🟩",
+        "🟩🟨🟨🟨",
+        "🟩🟩🟩🟩",
+        "🟩🟩🟩🟩",
+        "🟩🟩🟩🟩"
+      ],
+      "screenshots": []
+    }
+  ]
+}

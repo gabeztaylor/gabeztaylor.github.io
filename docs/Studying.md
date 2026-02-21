@@ -59,6 +59,27 @@ permalink: /Studying/
 
 <section class="study-day" markdown="1">
 
+
+
+
+
+
+<section class="study-day" markdown="1">
+
+
+
+
+
+
+<section class="study-day" markdown="1">
+
+
+
+
+
+
+<section class="study-day" markdown="1">
+
 <!-- STUDY_STYLE_START -->
 <style>
   .study-day {
@@ -138,6 +159,7 @@ permalink: /Studying/
 
 ### #puzzle {#tag-puzzle}
 
+- [2/21/26](#d-2-21-26)
 - [2/20/26](#d-2-20-26)
 
 ### #research {#tag-research}
@@ -153,6 +175,41 @@ permalink: /Studying/
 - [2/20/26](#d-2-20-26)
 
 <!-- TAG_INDEX_END -->
+
+<section class="study-day" markdown="1">
+### 2/21/26 {#d-2-21-26}
+
+- **7:21 AM – 9:17 AM** (1h 56m): cluesbysam and dailyintegral
+  - **Tags**
+    - [#puzzle](#tag-puzzle)
+  - **Notes**
+    - Built little helper app for clues by sam, and learned Legendre's formula for the dailyintegral puzzle
+    - I solved the daily #CluesBySam, Feb 21st 2026 (Hard), in less than 41 minutes
+    - 🟩🟩🟩🟩
+    - 🟩🟨🟨🟨
+    - 🟩🟩🟩🟩
+    - 🟩🟩🟩🟩
+    - 🟩🟩🟩🟩
+
+- **7:21 AM – 9:17 AM** (1h 56m): cluesbysam and dailyintegral
+  - **Tags**
+    - [#puzzle](#tag-puzzle)
+  - **Notes**
+    - Built little helper app for clues by sam, and learned Legendre's formula for the dailyintegral puzzle
+
+- **7:21 AM – 9:17 AM** (1h 56m): cluesbysam and dailyintegral
+  - **Tags**
+    - [#puzzle](#tag-puzzle)
+
+</section>
+
+<section class="study-day" markdown="1">
+
+</section>
+
+<section class="study-day" markdown="1">
+
+</section>
 
 <section class="study-day" markdown="1">
 ### 2/20/26 {#d-2-20-26}
@@ -190,6 +247,18 @@ permalink: /Studying/
   - **Sources**
     - https://cluesbysam.com/
     - https://dailyintegral.com/
+
+</section>
+
+<section class="study-day" markdown="1">
+
+</section>
+
+<section class="study-day" markdown="1">
+
+</section>
+
+<section class="study-day" markdown="1">
 
 </section>
 
@@ -264,12 +333,36 @@ permalink: /Studying/
 </section>
 
 <section class="study-day" markdown="1">
+
+</section>
+
+<section class="study-day" markdown="1">
+
+</section>
+
+<section class="study-day" markdown="1">
+
+</section>
+
+<section class="study-day" markdown="1">
 ### 2/18/26 {#d-2-18-26}
 
 - **8:15 AM – 11:04 AM** (2h 49m): PDE homework which mainly covered weak derivatives and more practice solving 1d wave equations
   - **Tags**
     - [#homework](#tag-homework)
     - [#pde](#tag-pde)
+
+</section>
+
+<section class="study-day" markdown="1">
+
+</section>
+
+<section class="study-day" markdown="1">
+
+</section>
+
+<section class="study-day" markdown="1">
 
 </section>
 
@@ -367,6 +460,18 @@ permalink: /Studying/
 </section>
 
 <section class="study-day" markdown="1">
+
+</section>
+
+<section class="study-day" markdown="1">
+
+</section>
+
+<section class="study-day" markdown="1">
+
+</section>
+
+<section class="study-day" markdown="1">
 ### 2/16/26 {#d-2-16-26}
 
 - **7:30 AM – 9:00 AM** (1h 30m): Reviewed Asymptotics of RL paper and talked a bit with Gemini and NotebookLM
@@ -376,6 +481,18 @@ permalink: /Studying/
 - **9:30 AM – 11:00 AM** (1h 30m): Cleared Anki deck, roughly 250 cards.
   - **Notes**
     - Still struggling with colors, blues always give me a tough time
+
+</section>
+
+<section class="study-day" markdown="1">
+
+</section>
+
+<section class="study-day" markdown="1">
+
+</section>
+
+<section class="study-day" markdown="1">
 
 </section>
 
@@ -433,6 +550,12 @@ permalink: /Studying/
     - https://arxiv.org/pdf/1911.07304
   - **Notes**
     - The measure for the weight distribution is frozen in time, but the solution still evolves in time. Roughly, the network is so wide that we're making tiny enough updates that the distribution doesn't change, but the accumulated changes over all weights is $$O(1)$$. The learning is driven from the kernel $$A$$ and the TD-error given from the environment. The network acts as like a fixed feature space instead of learning to represent new features.
+
+</section>
+
+</section>
+
+</section>
 
 </section>
 
