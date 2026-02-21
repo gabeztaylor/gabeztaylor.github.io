@@ -2,6 +2,21 @@
   "date": "2026-02-21",
   "sessions": [
     {
+      "start": "2026-02-21T10:31",
+      "end": "2026-02-21T12:59",
+      "durationMinutes": 148,
+      "description": "Asymptotics of rl paper",
+      "tags": [
+        "research",
+        "rl"
+      ],
+      "sources": [],
+      "notes": [
+        "Sowers wanted me to walk him through the \"various scales and how they interact\". I translated this to roughly mean how the processes are coupled and what the convergence implications are. For example, since $h_t^N := Q_{\\lfloor Nt \\rfloor}^N$ it appears that letting $N \\to \\infty$ we would be taking infinitely many Q-learning steps. However, since we scale the output by $1\\sqrt{N}$ and impose the learning rate to be $O(N^{-1})$, this amounts to making no parameter updates. So effectively, no learning is occurring even though the processes are coupled. However, once we obtain the limit $h_t$, training actually begins and converges to the Bellman solution as $t \\to \\infty$. I think this is roughly what we wants."
+      ],
+      "screenshots": []
+    },
+    {
       "start": "2026-02-21T09:17",
       "end": "2026-02-21T09:54",
       "durationMinutes": 37,
