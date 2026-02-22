@@ -2,6 +2,21 @@
   "date": "2026-02-22",
   "sessions": [
     {
+      "start": "2026-02-22T10:07",
+      "end": "2026-02-22T12:31",
+      "durationMinutes": 144,
+      "description": "PDE homework",
+      "tags": [
+        "pde",
+        "homework"
+      ],
+      "sources": [],
+      "notes": [
+        "Breaking for lunch, but problems for plane waves in 3 dimensions"
+      ],
+      "screenshots": []
+    },
+    {
       "start": "2026-02-22T08:45",
       "end": "2026-02-22T09:41",
       "durationMinutes": 56,
