@@ -1,0 +1,40 @@
+{
+  "date": "2026-02-22",
+  "sessions": [
+    {
+      "start": "2026-02-22T08:45",
+      "end": "2026-02-22T09:41",
+      "durationMinutes": 56,
+      "description": "cluesbysam and dailyintegral logic puzzle",
+      "tags": [
+        "puzzle"
+      ],
+      "sources": [],
+      "notes": [
+        "I solved the daily #CluesBySam, Feb 22nd 2026 (Hard), in less than 14 minutes",
+        "🟩🟨🟩🟩",
+        "🟩🟩🟩🟩",
+        "🟩🟩🟩🟩",
+        "🟩🟩🟩🟩",
+        "🟩🟩🟩🟩",
+        "https://cluesbysam.com",
+        "I failed the logic puzzle on the daily integral, but I enjoyed the problem, and especially since the solution uses the pigeonhole principle."
+      ],
+      "screenshots": []
+    },
+    {
+      "start": "2026-02-22T08:14",
+      "end": "2026-02-22T08:44",
+      "durationMinutes": 30,
+      "description": "Reviewed CLT",
+      "tags": [
+        "probability"
+      ],
+      "sources": [
+        "https://www.cs.toronto.edu/~yuvalf/CLT.pdf"
+      ],
+      "notes": [],
+      "screenshots": []
+    }
+  ]
+}
