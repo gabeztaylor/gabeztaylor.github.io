@@ -1,0 +1,20 @@
+{
+  "date": "2026-02-23",
+  "sessions": [
+    {
+      "start": "2026-02-23T19:24",
+      "end": "2026-02-23T20:28",
+      "durationMinutes": 64,
+      "description": "PDE homework",
+      "tags": [
+        "homework",
+        "pde"
+      ],
+      "sources": [],
+      "notes": [
+        "Finished the last problem: continuous $$L^2$$ dependence on the data for the homogeneous wave equation in three dimensions."
+      ],
+      "screenshots": []
+    }
+  ]
+}
