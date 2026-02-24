@@ -11,10 +11,52 @@ const {
 const days = loadStudyJournalDays();
 const tagIndex = computeStudyTagIndex(days);
 const dayByISO = new Map(days.map((d) => [d.dateISO, d]));
-const topTags = [...(tagIndex.tags || [])]
+
+function formatMinutes(totalMinutes) {
+  const mins = Math.max(0, Math.round(Number(totalMinutes) || 0));
+  if (mins < 60) return `${mins}m`;
+  const h = Math.floor(mins / 60);
+  const m = mins % 60;
+  return m === 0 ? `${h}h` : `${h}h ${m}m`;
+}
+
+function toISODateLocal(d) {
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${day}`;
+}
+
+function startOfWeekMondayLocal(now) {
+  const d = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0);
+  const dow = d.getDay(); // 0..6 (Sun..Sat)
+  const delta = (dow + 6) % 7; // days since Monday
+  d.setDate(d.getDate() - delta);
+  return d;
+}
+
+const weekStart = startOfWeekMondayLocal(new Date());
+const weekStartISO = toISODateLocal(weekStart);
+const weekEnd = new Date(weekStart.getFullYear(), weekStart.getMonth(), weekStart.getDate() + 7, 0, 0, 0, 0);
+const weekEndISO = toISODateLocal(weekEnd);
+
+const weekDays = days.filter((d) => d.dateISO >= weekStartISO && d.dateISO < weekEndISO);
+const weekTagIndex = computeStudyTagIndex(weekDays);
+
+const weekTotalMinutes = weekDays.reduce(
+  (acc, d) => acc + d.sessions.reduce((a, s) => a + (Number(s.durationMinutes) || 0), 0),
+  0,
+);
+
+const topTagsAll = [...(tagIndex.tags || [])]
   .sort((a, b) => (Number(b.totalMinutes) || 0) - (Number(a.totalMinutes) || 0))
   .slice(0, 5);
-const topMaxMinutes = topTags.length > 0 ? (Number(topTags[0]?.totalMinutes) || 0) : 0;
+const topMaxMinutesAll = topTagsAll.length > 0 ? (Number(topTagsAll[0]?.totalMinutes) || 0) : 0;
+
+const topTagsWeek = [...(weekTagIndex.tags || [])]
+  .sort((a, b) => (Number(b.totalMinutes) || 0) - (Number(a.totalMinutes) || 0))
+  .slice(0, 5);
+const topMaxMinutesWeek = topTagsWeek.length > 0 ? (Number(topTagsWeek[0]?.totalMinutes) || 0) : 0;
 
 function escapeHtml(s) {
   return String(s || "")
@@ -49,13 +91,43 @@ function renderInline(s) {
         </div>
       </div>
 
-      {topTags.length > 0 && (
+      {(topTagsWeek.length > 0 || topTagsAll.length > 0) && (
         <aside class="topChart" aria-label="Top studied subjects">
-          <div class="chartTitle">Top subjects</div>
-          <ol class="chartList">
-            {topTags.map((t, i) => {
+          <div class="chartHead">
+            <div class="chartTitle">Top subjects</div>
+            <div class="chartFilters" role="group" aria-label="Time filter">
+              <button class="chip active" type="button" data-chart="week">This week</button>
+              <button class="chip" type="button" data-chart="all">All time</button>
+            </div>
+          </div>
+
+          <div class="chartHint muted">
+            <span class="mono">Week of {weekStartISO}</span>
+            <span class="sep">·</span>
+            <span>{formatMinutes(weekTotalMinutes)} total</span>
+          </div>
+
+          <ol class="chartList" data-chart-panel="week">
+            {topTagsWeek.map((t, i) => {
               const mins = Number(t.totalMinutes) || 0;
-              const w = topMaxMinutes > 0 ? Math.max(3, Math.round((mins / topMaxMinutes) * 100)) : 0;
+              const w = topMaxMinutesWeek > 0 ? Math.max(3, Math.round((mins / topMaxMinutesWeek) * 100)) : 0;
+              const hue = `${(i * 42) % 360}deg`;
+              return (
+                <li class="chartRow">
+                  <a class="chartTag" href={`#tag-${t.tag}`}>#{t.tag}</a>
+                  <div class="chartBar" style={`--w:${w}%;--hue:${hue};`} title={`${t.totalLabel}`}>
+                    <div class="chartFill" />
+                  </div>
+                  <div class="chartValue">{t.totalLabel}</div>
+                </li>
+              );
+            })}
+          </ol>
+
+          <ol class="chartList hidden" data-chart-panel="all">
+            {topTagsAll.map((t, i) => {
+              const mins = Number(t.totalMinutes) || 0;
+              const w = topMaxMinutesAll > 0 ? Math.max(3, Math.round((mins / topMaxMinutesAll) * 100)) : 0;
               const hue = `${(i * 42) % 360}deg`;
               return (
                 <li class="chartRow">
@@ -187,14 +259,38 @@ function renderInline(s) {
     border-radius: 14px;
     padding: 12px;
   }
+  .chartHead { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
   .chartTitle {
     font-weight: 950;
     font-size: 13px;
     color: var(--muted);
     letter-spacing: 0.02em;
-    margin-bottom: 10px;
   }
+  .chartFilters { display: inline-flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+  .chartFilters .chip {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--muted);
+    font-weight: 850;
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+  .chartFilters .chip.active {
+    color: var(--text);
+    border-color: color-mix(in oklab, var(--accent) 35%, var(--border));
+  }
+  .chartHint { margin-top: 8px; font-size: 12px; display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; }
+  .chartHint .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+  .chartHint .sep { opacity: 0.6; }
+
+  .hidden { display: none; }
+  .muted { color: var(--muted); }
+
   .chartList { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+  .chartList { margin-top: 10px; }
+  .chartList.hidden { display: none; }
   .chartRow {
     display: grid;
     grid-template-columns: 120px 1fr 70px;
@@ -340,6 +436,31 @@ function renderInline(s) {
   }
   .content :global(details.tagGroup[open] ul) { margin-top: 10px; }
 </style>
+
+<script is:inline>
+  (function () {
+    const root = document;
+    const chart = root.querySelector(".topChart");
+    if (!chart) return;
+    const buttons = Array.from(chart.querySelectorAll(".chartFilters .chip"));
+    const panels = {
+      week: chart.querySelector('[data-chart-panel="week"]'),
+      all: chart.querySelector('[data-chart-panel="all"]'),
+    };
+
+    function set(which) {
+      for (const b of buttons) b.classList.toggle("active", b.getAttribute("data-chart") === which);
+      if (panels.week) panels.week.classList.toggle("hidden", which !== "week");
+      if (panels.all) panels.all.classList.toggle("hidden", which !== "all");
+    }
+
+    for (const b of buttons) {
+      b.addEventListener("click", () => set(b.getAttribute("data-chart") || "week"));
+    }
+
+    set("week");
+  })();
+</script>
 
 <script is:inline>
   function openIfTagHash() {
