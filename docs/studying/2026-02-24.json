@@ -2,6 +2,26 @@
   "date": "2026-02-24",
   "sessions": [
     {
+      "start": "2026-02-24T08:14",
+      "end": "2026-02-24T08:41",
+      "durationMinutes": 27,
+      "description": "cluesbysam and dailyintegral logic puzzle",
+      "tags": [
+        "puzzle"
+      ],
+      "sources": [],
+      "notes": [
+        "Less than 10 minutes",
+        "🟩🟩🟨🟩",
+        "🟩🟩🟩🟩",
+        "🟩🟩🟩🟩",
+        "🟩🟩🟩🟩",
+        "🟩🟩🟩🟩",
+        "Logic puzzle was the classic Nim game"
+      ],
+      "screenshots": []
+    },
+    {
       "start": "2026-02-24T07:27",
       "end": "2026-02-24T07:57",
       "durationMinutes": 30,

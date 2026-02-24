@@ -136,6 +136,13 @@ permalink: /Studying/
 
 <section class="study-day" markdown="1">
 
+
+
+
+
+
+<section class="study-day" markdown="1">
+
 <!-- STUDY_STYLE_START -->
 <style>
   .study-day {
@@ -227,6 +234,7 @@ permalink: /Studying/
 
 ### #puzzle {#tag-puzzle}
 
+- [2/24/26](#d-2-24-26)
 - [2/22/26](#d-2-22-26)
 - [2/21/26](#d-2-21-26)
 - [2/20/26](#d-2-20-26)
@@ -250,9 +258,25 @@ permalink: /Studying/
 <section class="study-day" markdown="1">
 ### 2/24/26 {#d-2-24-26}
 
+- **8:14 AM – 8:41 AM** (27m): cluesbysam and dailyintegral logic puzzle
+  - **Tags**
+    - [#puzzle](#tag-puzzle)
+  - **Notes**
+    - Less than 10 minutes
+    - 🟩🟩🟨🟩
+    - 🟩🟩🟩🟩
+    - 🟩🟩🟩🟩
+    - 🟩🟩🟩🟩
+    - 🟩🟩🟩🟩
+    - Logic puzzle was the classic Nim game
+
 - **7:27 AM – 7:57 AM** (30m): Anki
   - **Tags**
     - [#anki](#tag-anki)
+
+</section>
+
+<section class="study-day" markdown="1">
 
 </section>
 
@@ -265,6 +289,10 @@ permalink: /Studying/
     - [#pde](#tag-pde)
   - **Notes**
     - Finished the last problem: continuous $$L^2$$ dependence on the data for the homogeneous wave equation in three dimensions.
+
+</section>
+
+<section class="study-day" markdown="1">
 
 </section>
 
@@ -304,6 +332,10 @@ permalink: /Studying/
     - [#probability](#tag-probability)
   - **Sources**
     - https://www.cs.toronto.edu/~yuvalf/CLT.pdf
+
+</section>
+
+<section class="study-day" markdown="1">
 
 </section>
 
@@ -407,6 +439,10 @@ permalink: /Studying/
 </section>
 
 <section class="study-day" markdown="1">
+
+</section>
+
+<section class="study-day" markdown="1">
 ### 2/20/26 {#d-2-20-26}
 
 - **3:03 PM – 5:27 PM** (2h 24m): Texed PDE homework
@@ -442,6 +478,10 @@ permalink: /Studying/
   - **Sources**
     - https://cluesbysam.com/
     - https://dailyintegral.com/
+
+</section>
+
+<section class="study-day" markdown="1">
 
 </section>
 
@@ -604,12 +644,20 @@ permalink: /Studying/
 </section>
 
 <section class="study-day" markdown="1">
+
+</section>
+
+<section class="study-day" markdown="1">
 ### 2/18/26 {#d-2-18-26}
 
 - **8:15 AM – 11:04 AM** (2h 49m): PDE homework which mainly covered weak derivatives and more practice solving 1d wave equations
   - **Tags**
     - [#homework](#tag-homework)
     - [#pde](#tag-pde)
+
+</section>
+
+<section class="study-day" markdown="1">
 
 </section>
 
@@ -795,6 +843,10 @@ permalink: /Studying/
 </section>
 
 <section class="study-day" markdown="1">
+
+</section>
+
+<section class="study-day" markdown="1">
 ### 2/16/26 {#d-2-16-26}
 
 - **7:30 AM – 9:00 AM** (1h 30m): Reviewed Asymptotics of RL paper and talked a bit with Gemini and NotebookLM
@@ -804,6 +856,10 @@ permalink: /Studying/
 - **9:30 AM – 11:00 AM** (1h 30m): Cleared Anki deck, roughly 250 cards.
   - **Notes**
     - Still struggling with colors, blues always give me a tough time
+
+</section>
+
+<section class="study-day" markdown="1">
 
 </section>
 
@@ -905,6 +961,8 @@ permalink: /Studying/
     - https://arxiv.org/pdf/1911.07304
   - **Notes**
     - The measure for the weight distribution is frozen in time, but the solution still evolves in time. Roughly, the network is so wide that we're making tiny enough updates that the distribution doesn't change, but the accumulated changes over all weights is $$O(1)$$. The learning is driven from the kernel $$A$$ and the TD-error given from the environment. The network acts as like a fixed feature space instead of learning to represent new features.
+
+</section>
 
 </section>
 
