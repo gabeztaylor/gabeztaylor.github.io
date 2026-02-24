@@ -1,0 +1,17 @@
+{
+  "date": "2026-02-24",
+  "sessions": [
+    {
+      "start": "2026-02-24T07:27",
+      "end": "2026-02-24T07:57",
+      "durationMinutes": 30,
+      "description": "Anki",
+      "tags": [
+        "anki"
+      ],
+      "sources": [],
+      "notes": [],
+      "screenshots": []
+    }
+  ]
+}
