@@ -1,0 +1,19 @@
+{
+  "date": "2026-02-25",
+  "sessions": [
+    {
+      "start": "2026-02-25T08:07",
+      "end": "2026-02-25T09:07",
+      "durationMinutes": 60,
+      "description": "cluesbysam dailyintegral logic puzzle",
+      "tags": [
+        "puzzle"
+      ],
+      "sources": [],
+      "notes": [
+        "finally got a perfect score on cluesbysam"
+      ],
+      "screenshots": []
+    }
+  ]
+}
