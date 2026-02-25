@@ -2,6 +2,22 @@
   "date": "2026-02-25",
   "sessions": [
     {
+      "start": "2026-02-25T09:07",
+      "end": "2026-02-25T10:22",
+      "durationMinutes": 75,
+      "description": "Asymptotics of rl paper",
+      "tags": [
+        "research",
+        "rl"
+      ],
+      "sources": [],
+      "notes": [
+        "Studied the interaction of the scales a bit more. The main idea is that the scaling $$\\frac{1}{\\sqrt{N}} \\times \\frac{1}{N} \\times \\frac{1}{\\sqrt{N}}$$ coming from $$\\text{Xavier} \\times \\alpha^N \\times \\text{Gradient} $$ is what ensures convergence. We end up with $\\frac{1}{N^2}$, but one $\\frac{1}{N}$ gets absorbed in the empirical measure, and the other gets absorbed in the discrete integral (equation 5.4). Thus, we get a prelimit trajectory $h^N_t$ with fluctuation terms that vanish while the desired term in Theorem 3.4 is preserved. Moreover, while the measures $\\mu_s^N$ in (5.4) are random, they will converge to $\\mu_0$ in the limit.",
+        "In terms of the evolution of the parameters, each update is on the order of $\\frac{1}{N} \\times \\frac{1}{\\sqrt{N}}$ coming from $\\alpha^N \\times \\text{Xavier}$. Over $Nt$ training steps, this is still only on the order of $\\frac{1}{\\sqrt{N}}$. Thus, as the width goes off to infinity, the parameters make smaller and smaller updates, and in fact converge in distribution to the initial distribution."
+      ],
+      "screenshots": []
+    },
+    {
       "start": "2026-02-25T08:07",
       "end": "2026-02-25T09:07",
       "durationMinutes": 60,

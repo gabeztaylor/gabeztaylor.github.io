@@ -150,6 +150,13 @@ permalink: /Studying/
 
 <section class="study-day" markdown="1">
 
+
+
+
+
+
+<section class="study-day" markdown="1">
+
 <!-- STUDY_STYLE_START -->
 <style>
   .study-day {
@@ -249,11 +256,13 @@ permalink: /Studying/
 
 ### #research {#tag-research}
 
+- [2/25/26](#d-2-25-26)
 - [2/21/26](#d-2-21-26)
 - [2/17/26](#d-2-17-26)
 
 ### #rl {#tag-rl}
 
+- [2/25/26](#d-2-25-26)
 - [2/21/26](#d-2-21-26)
 - [2/17/26](#d-2-17-26)
 
@@ -266,11 +275,23 @@ permalink: /Studying/
 <section class="study-day" markdown="1">
 ### 2/25/26 {#d-2-25-26}
 
+- **9:07 AM – 10:22 AM** (1h 15m): Asymptotics of rl paper
+  - **Tags**
+    - [#research](#tag-research)
+    - [#rl](#tag-rl)
+  - **Notes**
+    - Studied the interaction of the scales a bit more. The main idea is that the scaling $$\frac{1}{\sqrt{N}} \times \frac{1}{N} \times \frac{1}{\sqrt{N}}$$ coming from $$\text{Xavier} \times \alpha^N \times \text{Gradient} $$ is what ensures convergence. We end up with $\frac{1}{N^2}$, but one $\frac{1}{N}$ gets absorbed in the empirical measure, and the other gets absorbed in the discrete integral (equation 5.4). Thus, we get a prelimit trajectory $h^N_t$ with fluctuation terms that vanish while the desired term in Theorem 3.4 is preserved. Moreover, while the measures $\mu_s^N$ in (5.4) are random, they will converge to $\mu_0$ in the limit.
+    - In terms of the evolution of the parameters, each update is on the order of $\frac{1}{N} \times \frac{1}{\sqrt{N}}$ coming from $\alpha^N \times \text{Xavier}$. Over $Nt$ training steps, this is still only on the order of $\frac{1}{\sqrt{N}}$. Thus, as the width goes off to infinity, the parameters make smaller and smaller updates, and in fact converge in distribution to the initial distribution.
+
 - **8:07 AM – 9:07 AM** (1h): cluesbysam dailyintegral logic puzzle
   - **Tags**
     - [#puzzle](#tag-puzzle)
   - **Notes**
     - finally got a perfect score on cluesbysam
+
+</section>
+
+<section class="study-day" markdown="1">
 
 </section>
 
@@ -304,6 +325,10 @@ permalink: /Studying/
 </section>
 
 <section class="study-day" markdown="1">
+
+</section>
+
+<section class="study-day" markdown="1">
 ### 2/23/26 {#d-2-23-26}
 
 - **7:24 PM – 8:28 PM** (1h 4m): PDE homework
@@ -312,6 +337,10 @@ permalink: /Studying/
     - [#pde](#tag-pde)
   - **Notes**
     - Finished the last problem: continuous $$L^2$$ dependence on the data for the homogeneous wave equation in three dimensions.
+
+</section>
+
+<section class="study-day" markdown="1">
 
 </section>
 
@@ -359,6 +388,10 @@ permalink: /Studying/
     - [#probability](#tag-probability)
   - **Sources**
     - https://www.cs.toronto.edu/~yuvalf/CLT.pdf
+
+</section>
+
+<section class="study-day" markdown="1">
 
 </section>
 
@@ -478,6 +511,10 @@ permalink: /Studying/
 </section>
 
 <section class="study-day" markdown="1">
+
+</section>
+
+<section class="study-day" markdown="1">
 ### 2/20/26 {#d-2-20-26}
 
 - **3:03 PM – 5:27 PM** (2h 24m): Texed PDE homework
@@ -513,6 +550,10 @@ permalink: /Studying/
   - **Sources**
     - https://cluesbysam.com/
     - https://dailyintegral.com/
+
+</section>
+
+<section class="study-day" markdown="1">
 
 </section>
 
@@ -691,12 +732,20 @@ permalink: /Studying/
 </section>
 
 <section class="study-day" markdown="1">
+
+</section>
+
+<section class="study-day" markdown="1">
 ### 2/18/26 {#d-2-18-26}
 
 - **8:15 AM – 11:04 AM** (2h 49m): PDE homework which mainly covered weak derivatives and more practice solving 1d wave equations
   - **Tags**
     - [#homework](#tag-homework)
     - [#pde](#tag-pde)
+
+</section>
+
+<section class="study-day" markdown="1">
 
 </section>
 
@@ -898,6 +947,10 @@ permalink: /Studying/
 </section>
 
 <section class="study-day" markdown="1">
+
+</section>
+
+<section class="study-day" markdown="1">
 ### 2/16/26 {#d-2-16-26}
 
 - **7:30 AM – 9:00 AM** (1h 30m): Reviewed Asymptotics of RL paper and talked a bit with Gemini and NotebookLM
@@ -907,6 +960,10 @@ permalink: /Studying/
 - **9:30 AM – 11:00 AM** (1h 30m): Cleared Anki deck, roughly 250 cards.
   - **Notes**
     - Still struggling with colors, blues always give me a tough time
+
+</section>
+
+<section class="study-day" markdown="1">
 
 </section>
 
@@ -1016,6 +1073,8 @@ permalink: /Studying/
     - https://arxiv.org/pdf/1911.07304
   - **Notes**
     - The measure for the weight distribution is frozen in time, but the solution still evolves in time. Roughly, the network is so wide that we're making tiny enough updates that the distribution doesn't change, but the accumulated changes over all weights is $$O(1)$$. The learning is driven from the kernel $$A$$ and the TD-error given from the environment. The network acts as like a fixed feature space instead of learning to represent new features.
+
+</section>
 
 </section>
 
