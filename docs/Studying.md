@@ -164,6 +164,13 @@ permalink: /Studying/
 
 <section class="study-day" markdown="1">
 
+
+
+
+
+
+<section class="study-day" markdown="1">
+
 <!-- STUDY_STYLE_START -->
 <style>
   .study-day {
@@ -281,11 +288,22 @@ permalink: /Studying/
 <!-- TAG_INDEX_END -->
 
 <section class="study-day" markdown="1">
+### 3/23/26 {#d-3-23-26}
+
+- **8:57 AM – 11:15 AM** (2h 18m): PDE homework, first four problems: 1. Solving heat equation with a forcing term and either a Dirichlet or Neumann condition 2. Energy of heat equation is dissipated and thus solution is unique 3. Dirichlet eigenvalue on bounded domain. "Big drums have low tones" 4. If $u$ solves heat equation with Dirichlet and initial impulse $g(x)$, then $v(x) = \int_0^{\infty} u(x, t) dt$ solves the Poisson equation $\Delta v = -g$.
+
+</section>
+
+<section class="study-day" markdown="1">
 ### 2/27/26 {#d-2-27-26}
 
 - **7:11 AM – 8:11 AM** (1h): clues by sam and dailyintegral logic puzzle
   - **Tags**
     - [#puzzle](#tag-puzzle)
+
+</section>
+
+<section class="study-day" markdown="1">
 
 </section>
 
@@ -305,6 +323,10 @@ permalink: /Studying/
     - [#puzzle](#tag-puzzle)
   - **Notes**
     - finally got a perfect score on cluesbysam
+
+</section>
+
+<section class="study-day" markdown="1">
 
 </section>
 
@@ -354,6 +376,10 @@ permalink: /Studying/
 </section>
 
 <section class="study-day" markdown="1">
+
+</section>
+
+<section class="study-day" markdown="1">
 ### 2/23/26 {#d-2-23-26}
 
 - **7:24 PM – 8:28 PM** (1h 4m): PDE homework
@@ -362,6 +388,10 @@ permalink: /Studying/
     - [#pde](#tag-pde)
   - **Notes**
     - Finished the last problem: continuous $$L^2$$ dependence on the data for the homogeneous wave equation in three dimensions.
+
+</section>
+
+<section class="study-day" markdown="1">
 
 </section>
 
@@ -417,6 +447,10 @@ permalink: /Studying/
     - [#probability](#tag-probability)
   - **Sources**
     - https://www.cs.toronto.edu/~yuvalf/CLT.pdf
+
+</section>
+
+<section class="study-day" markdown="1">
 
 </section>
 
@@ -552,6 +586,10 @@ permalink: /Studying/
 </section>
 
 <section class="study-day" markdown="1">
+
+</section>
+
+<section class="study-day" markdown="1">
 ### 2/20/26 {#d-2-20-26}
 
 - **3:03 PM – 5:27 PM** (2h 24m): Texed PDE homework
@@ -587,6 +625,10 @@ permalink: /Studying/
   - **Sources**
     - https://cluesbysam.com/
     - https://dailyintegral.com/
+
+</section>
+
+<section class="study-day" markdown="1">
 
 </section>
 
@@ -781,12 +823,20 @@ permalink: /Studying/
 </section>
 
 <section class="study-day" markdown="1">
+
+</section>
+
+<section class="study-day" markdown="1">
 ### 2/18/26 {#d-2-18-26}
 
 - **8:15 AM – 11:04 AM** (2h 49m): PDE homework which mainly covered weak derivatives and more practice solving 1d wave equations
   - **Tags**
     - [#homework](#tag-homework)
     - [#pde](#tag-pde)
+
+</section>
+
+<section class="study-day" markdown="1">
 
 </section>
 
@@ -1004,6 +1054,10 @@ permalink: /Studying/
 </section>
 
 <section class="study-day" markdown="1">
+
+</section>
+
+<section class="study-day" markdown="1">
 ### 2/16/26 {#d-2-16-26}
 
 - **7:30 AM – 9:00 AM** (1h 30m): Reviewed Asymptotics of RL paper and talked a bit with Gemini and NotebookLM
@@ -1013,6 +1067,10 @@ permalink: /Studying/
 - **9:30 AM – 11:00 AM** (1h 30m): Cleared Anki deck, roughly 250 cards.
   - **Notes**
     - Still struggling with colors, blues always give me a tough time
+
+</section>
+
+<section class="study-day" markdown="1">
 
 </section>
 
@@ -1130,6 +1188,8 @@ permalink: /Studying/
     - https://arxiv.org/pdf/1911.07304
   - **Notes**
     - The measure for the weight distribution is frozen in time, but the solution still evolves in time. Roughly, the network is so wide that we're making tiny enough updates that the distribution doesn't change, but the accumulated changes over all weights is $$O(1)$$. The learning is driven from the kernel $$A$$ and the TD-error given from the environment. The network acts as like a fixed feature space instead of learning to represent new features.
+
+</section>
 
 </section>
 

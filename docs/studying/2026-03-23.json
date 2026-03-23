@@ -1,0 +1,15 @@
+{
+  "date": "2026-03-23",
+  "sessions": [
+    {
+      "start": "2026-03-23T08:57",
+      "end": "2026-03-23T11:15",
+      "durationMinutes": 138,
+      "description": "PDE homework, first four problems: 1. Solving heat equation with a forcing term and either a Dirichlet or Neumann condition 2. Energy of heat equation is dissipated and thus solution is unique 3. Dirichlet eigenvalue on bounded domain. \"Big drums have low tones\" 4. If $u$ solves heat equation with Dirichlet and initial impulse $g(x)$, then $v(x) = \\int_0^{\\infty} u(x, t) dt$ solves the Poisson equation $\\Delta v = -g$.",
+      "tags": [],
+      "sources": [],
+      "notes": [],
+      "screenshots": []
+    }
+  ]
+}
