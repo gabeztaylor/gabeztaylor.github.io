@@ -6,28 +6,29 @@ const page = loadPageByPermalink("/About");
 ---
 
 <BaseLayout title={page?.title || "About"}>
-  <section class="card page">
+  <section class="card page aboutGrid">
     <div class="content" set:html={page?.html || "<p>About page not found.</p>"} />
+    <figure class="portrait">
+      <img src="/assets/bio.jpeg" alt="Gabriel Taylor" loading="lazy" />
+      <figcaption>Gabriel Taylor · Chicago, Illinois</figcaption>
+    </figure>
   </section>
 </BaseLayout>
 
-<img
-  src="/assets/bio.jpeg"
-  alt="Gabriel Taylor"
-  loading="lazy",
-  style="width:280px;height:280px;border-radius:2000px;object-fit:cover;border:1px solid var(--border);"
-/>
-
 <style>
-  .page { padding: 18px; }
+  .page { padding: 28px; }
+  .aboutGrid { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 32px; align-items: start; }
+  .portrait { margin: 0; padding: 10px; background: var(--mustard); border: 2px solid var(--border); box-shadow: 5px 5px 0 var(--border); transform: rotate(1.25deg); }
+  .portrait img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border: 1px solid var(--border); filter: saturate(.78) contrast(1.05); }
+  .portrait figcaption { padding: 9px 4px 1px; font-size: 10px; font-weight: 900; letter-spacing: .1em; text-align: center; text-transform: uppercase; }
   .content :global(blockquote) {
     margin: 14px 0;
     padding: 12px 14px;
     border-left: 3px solid color-mix(in oklab, var(--accent) 55%, var(--border));
     background: color-mix(in oklab, var(--surface) 70%, transparent);
-    border-radius: 12px;
+    border-radius: 0;
   }
+  @media (max-width: 760px) { .aboutGrid { grid-template-columns: 1fr; } .portrait { max-width: 300px; margin: auto; } }
 </style>
-
 
 

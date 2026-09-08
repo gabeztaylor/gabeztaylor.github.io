@@ -51,7 +51,7 @@ const pageDescription =
         <slot />
       </main>
       <footer class="footer muted">
-        <div>© {new Date().getFullYear()} Gabriel Taylor</div>
+        <div>© {new Date().getFullYear()} · Gabriel Taylor</div>
         <div class="right">
           <a href="https://github.com/gabeztaylor" target="_blank" rel="noreferrer">GitHub</a>
         </div>
@@ -75,8 +75,11 @@ const pageDescription =
     gap: 12px;
     margin-top: 34px;
     padding-top: 18px;
-    border-top: 1px solid var(--border);
-    font-size: 13px;
+    border-top: 2px solid var(--border);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
   }
   .right { display: flex; gap: 12px; }
 
@@ -92,7 +95,7 @@ const pageDescription =
     display: block;
     max-width: 92vw;
     max-height: 88vh;
-    border-radius: 16px;
+    border-radius: 1px;
     border: 1px solid rgba(255,255,255,0.12);
     background: var(--surface);
   }
@@ -124,4 +127,3 @@ const pageDescription =
     dlg?.showModal?.();
   });
 </script>
-

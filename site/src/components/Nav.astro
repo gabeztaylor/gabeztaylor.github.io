@@ -2,7 +2,6 @@
 const links = [
   { href: '/', label: 'Home' },
   { href: '/Blog', label: 'Blog' },
-  { href: '/Anki', label: 'Anki' },
   { href: '/About', label: 'About' },
 ];
 ---
@@ -75,34 +74,25 @@ const links = [
 </script>
 
 <style>
-  .nav {
-    position: sticky;
-    top: 12px;
-    z-index: 50;
-    margin: 12px 0 22px;
-  }
+  .nav { position: sticky; top: 12px; z-index: 50; margin: 0 0 30px; }
   .inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 14px;
-    padding: 12px 14px;
+    gap: 20px;
+    padding: 10px 12px;
   }
-  .brand { display: inline-flex; align-items: center; gap: 10px; }
-  .nameLink { text-decoration: none; font-weight: 850; }
+  .brand { display: inline-flex; align-items: center; gap: 12px; min-width: 210px; }
+  .nameLink { text-decoration: none; }
   .mark {
-    width: 34px;
-    height: 34px;
-    border-radius: 12px;
+    width: 42px;
+    height: 42px;
+    border-radius: 1px;
     display: grid;
     place-items: center;
-    border: 1px solid var(--border);
-    background: linear-gradient(
-      135deg,
-      color-mix(in oklab, var(--accent) 28%, transparent),
-      color-mix(in oklab, var(--accent2) 18%, transparent)
-    );
-    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--border) 55%, transparent);
+    border: 1.5px solid var(--border);
+    background: var(--rose);
+    box-shadow: 3px 3px 0 var(--border);
     position: relative;
     overflow: hidden;
   }
@@ -115,46 +105,50 @@ const links = [
     object-fit: cover;
     opacity: 0.95;
   }
-  .markBtn {
-    padding: 0;
-    border: 0;
-    background: transparent;
-    cursor: pointer;
-    border-radius: 12px;
-  }
+  .markBtn { padding: 0; border: 0; background: transparent; cursor: pointer; border-radius: 1px; }
   .markBtn.hasAvatar .mark {
-    border-color: transparent;
-    background: transparent;
-    box-shadow: none;
+    border-color: var(--border);
+    background: var(--rose);
+    box-shadow: 3px 3px 0 var(--border);
   }
   .markBtn:focus-visible {
     outline: 2px solid color-mix(in oklab, var(--accent) 55%, transparent);
     outline-offset: 3px;
   }
-  .name { white-space: nowrap; }
+  .name {
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
   .links {
     display: flex;
-    gap: 10px;
+    gap: 4px;
     flex-wrap: wrap;
     justify-content: center;
   }
   .link {
-    padding: 8px 10px;
-    border-radius: 999px;
+    padding: 8px 12px;
+    border-radius: 1px;
     border: 1px solid transparent;
     text-decoration: none;
     color: var(--muted);
-    font-weight: 750;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
   }
   .link:hover {
     color: var(--text);
+    color: #242321;
     border-color: var(--border);
-    background: var(--surface);
+    background: var(--mustard);
   }
   .actions { display: flex; gap: 10px; }
   @media (max-width: 760px) {
-    .inner { flex-direction: column; align-items: stretch; }
-    .links { justify-content: flex-start; }
+    .inner { display: grid; grid-template-columns: 1fr auto; }
+    .brand { min-width: 0; }
+    .links { grid-column: 1 / -1; grid-row: 2; justify-content: center; border-top: 1px solid var(--border); padding-top: 8px; }
   }
 </style>
-

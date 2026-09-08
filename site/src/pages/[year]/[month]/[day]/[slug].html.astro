@@ -67,25 +67,26 @@ const { post } = Astro.props;
     gap: 14px;
     align-items: start;
   }
-  .post { padding: 18px; }
-  .hdr { padding: 10px 10px 14px; border-bottom: 1px solid var(--border); margin-bottom: 14px; }
-  .meta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 10px; font-size: 13px; }
-  .tags { display: inline-flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .post { padding: 32px; }
+  .hdr { padding: 18px 10px 26px; border-bottom: 2px solid var(--border); margin-bottom: 24px; text-align: center; }
+  .hdr h1 { font-size: clamp(38px, 6vw, 64px); }
+  .meta { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 14px; font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+  .tags { display: inline-flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
   .tag {
     padding: 6px 10px;
-    border-radius: 999px;
-    border: 1px solid var(--border);
-    background: var(--surface);
+    border-radius: 1px;
+    border: 1.5px solid var(--border);
+    background: var(--mustard);
     text-decoration: none;
     font-weight: 750;
     color: var(--muted);
   }
   .tag:hover { color: var(--text); border-color: color-mix(in oklab, var(--accent) 35%, var(--border)); }
-  .content :global(img) { max-width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--border); }
+  .content :global(img) { max-width: 100%; height: auto; border-radius: 1px; border: 1.5px solid var(--border); }
   .content :global(.youtube) {
     position: relative;
     padding-top: 56.25%;
-    border-radius: 16px;
+    border-radius: 1px;
     overflow: hidden;
     border: 1px solid var(--border);
     background: var(--surface);
@@ -103,10 +104,10 @@ const { post } = Astro.props;
     padding: 12px 14px;
     border-left: 3px solid color-mix(in oklab, var(--accent) 55%, var(--border));
     background: color-mix(in oklab, var(--surface) 70%, transparent);
-    border-radius: 12px;
+    border-radius: 0;
   }
 
-  .toc { position: sticky; top: 88px; padding: 14px; }
+  .toc { position: sticky; top: 88px; padding: 18px; background: var(--mustard); }
   .tocTitle { font-weight: 900; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
   .toc ul { list-style: none; padding: 0; margin: 10px 0 0; display: grid; gap: 8px; }
   .toc a { text-decoration: none; color: var(--muted); font-weight: 750; }
@@ -116,5 +117,5 @@ const { post } = Astro.props;
     .layout { grid-template-columns: 1fr; }
     .toc { position: static; }
   }
+  @media (max-width: 600px) { .post { padding: 20px; } }
 </style>
-

@@ -256,7 +256,7 @@ function renderInline(s) {
   .topChart {
     border: 1px solid var(--border);
     background: color-mix(in oklab, var(--surface2) 70%, transparent);
-    border-radius: 14px;
+    border-radius: 1px;
     padding: 12px;
   }
   .chartHead { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
@@ -274,7 +274,7 @@ function renderInline(s) {
     font-weight: 850;
     font-size: 12px;
     padding: 6px 10px;
-    border-radius: 999px;
+    border-radius: 1px;
     cursor: pointer;
   }
   .chartFilters .chip.active {
@@ -318,7 +318,7 @@ function renderInline(s) {
   }
   .chartBar {
     height: 10px;
-    border-radius: 999px;
+    border-radius: 1px;
     border: 1px solid var(--border);
     background: color-mix(in oklab, var(--surface) 65%, transparent);
     overflow: hidden;
@@ -345,7 +345,7 @@ function renderInline(s) {
     overflow: hidden;
     padding: 14px 16px;
     border: 1px solid var(--border);
-    border-radius: 14px;
+    border-radius: 1px;
     background: color-mix(in oklab, var(--surface2) 70%, transparent);
   }
   .content :global(.study-day h3) {
@@ -359,7 +359,7 @@ function renderInline(s) {
     max-width: 100%;
     height: auto;
     display: block;
-    border-radius: 14px;
+    border-radius: 1px;
     border: 1px solid var(--border);
     background: var(--surface);
   }
@@ -380,7 +380,7 @@ function renderInline(s) {
   .content :global(a.tagChip) {
     display: inline-flex;
     padding: 6px 10px;
-    border-radius: 999px;
+    border-radius: 1px;
     border: 1px solid var(--border);
     background: var(--surface);
     text-decoration: none;
@@ -405,7 +405,7 @@ function renderInline(s) {
 
   .content :global(details.tagGroup) {
     border: 1px solid var(--border);
-    border-radius: 14px;
+    border-radius: 1px;
     background: var(--surface);
     padding: 10px 12px;
     margin: 12px 0;
@@ -431,7 +431,7 @@ function renderInline(s) {
     border: 1px solid var(--border);
     background: var(--surface2);
     padding: 4px 8px;
-    border-radius: 999px;
+    border-radius: 1px;
     white-space: nowrap;
   }
   .content :global(details.tagGroup[open] ul) { margin-top: 10px; }
@@ -475,4 +475,3 @@ function renderInline(s) {
   window.addEventListener("hashchange", openIfTagHash);
   openIfTagHash();
 </script>
-

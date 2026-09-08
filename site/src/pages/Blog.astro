@@ -12,9 +12,9 @@ const allTags = Array.from(new Set(posts.flatMap((p) => (p.tags || []).map((t) =
 <BaseLayout title="Blog">
 	<section class="hero card">
 		<div class="inner">
-			<div class="kicker pill">Blog</div>
-			<h1>Posts</h1>
-			<p class="muted">Essays and notes. Legacy post URLs are preserved.</p>
+			<div class="kicker pill">The collected notes · Vol. I</div>
+			<h1>Gabriel’s<br />Descent</h1>
+			<p class="muted">Essays on machine learning, mathematics, and statistics.</p>
 			<div class="cta">
 				<button class="btn primary" type="button" id="openSearch">Search (⌘K)</button>
 				<a class="btn" href="/tags/machine-learning/">Browse Tags</a>
@@ -39,7 +39,7 @@ const allTags = Array.from(new Set(posts.flatMap((p) => (p.tags || []).map((t) =
 		<div class="inner">
 			<div class="row space">
 				<h2>All posts</h2>
-				<a class="btn" href="/">Studying</a>
+				<a class="btn" href="/Studying">Studying</a>
 			</div>
 			<div class="list" id="postList">
 				{posts.map((p) => (
@@ -73,21 +73,26 @@ const allTags = Array.from(new Set(posts.flatMap((p) => (p.tags || []).map((t) =
 </BaseLayout>
 
 <style>
-	.hero { padding: 18px; }
-	.hero .inner { display: grid; gap: 12px; padding: 12px; }
-	.kicker { width: fit-content; font-weight: 800; font-size: 12px; color: var(--muted); }
-	.cta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px; }
+	.hero { padding: 42px 24px 38px; position: relative; overflow: hidden; text-align: center; background: var(--rose); }
+	.hero::before, .hero::after { content: ""; position: absolute; top: 0; bottom: 0; width: 18px; background: var(--mustard); border-inline: 2px solid var(--border); }
+	.hero::before { left: 9%; }
+	.hero::after { right: 9%; }
+	.hero .inner { position: relative; z-index: 1; display: grid; justify-items: center; gap: 16px; max-width: 700px; margin: auto; }
+	.hero h1 { text-transform: none; }
+	.hero p { max-width: 570px; margin: 0; color: color-mix(in oklab, var(--text) 80%, transparent); }
+	.kicker { width: fit-content; font-weight: 900; font-size: 10px; letter-spacing: .15em; text-transform: uppercase; }
+	.cta { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
 
-	.tagbar { margin-top: 16px; }
-	.tagbar .inner { padding: 14px 14px 10px; }
+	.tagbar { margin-top: 24px; background: var(--accent2); }
+	.tagbar .inner { padding: 17px; text-align: center; }
 	.tagbar .label { font-weight: 850; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; }
-	.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+	.chips { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
 	.chip {
 		display: inline-flex;
 		padding: 8px 10px;
-		border-radius: 999px;
-		border: 1px solid var(--border);
-		background: var(--surface);
+		border-radius: 1px;
+		border: 1.5px solid var(--border);
+		background: var(--surface2);
 		text-decoration: none;
 		color: var(--muted);
 		font-weight: 800;
@@ -95,23 +100,25 @@ const allTags = Array.from(new Set(posts.flatMap((p) => (p.tags || []).map((t) =
 	}
 	.chip:hover { color: var(--text); border-color: color-mix(in oklab, var(--accent) 35%, var(--border)); }
 
-	.posts { margin-top: 16px; }
-	.posts .inner { padding: 14px; }
+	.posts { margin-top: 24px; }
+	.posts .inner { padding: 22px; }
 	.row { display: flex; align-items: center; gap: 10px; }
 	.space { justify-content: space-between; }
-	.list { margin-top: 12px; display: grid; gap: 10px; }
+	.list { margin-top: 18px; display: grid; border-top: 2px solid var(--border); }
 	.postRow {
 		display: flex;
 		justify-content: space-between;
 		gap: 12px;
-		padding: 12px 12px;
-		border-radius: 14px;
-		border: 1px solid var(--border);
-		background: var(--surface);
+		padding: 18px 12px;
+		border-radius: 0;
+		border: 0;
+		border-bottom: 1.5px solid var(--border);
+		background: transparent;
 		text-decoration: none;
+		transition: padding 140ms ease, background 140ms ease;
 	}
-	.postRow:hover { border-color: color-mix(in oklab, var(--accent) 35%, var(--border)); }
-	.title { font-weight: 850; }
+	.postRow:hover { padding-left: 20px; color: #242321; background: var(--mustard); }
+	.title { font-family: var(--serif); font-size: 21px; font-weight: 700; }
 	.sub { margin-top: 4px; font-size: 13px; }
 	.date { font-size: 13px; white-space: nowrap; }
 	@media (max-width: 720px) {
@@ -121,7 +128,7 @@ const allTags = Array.from(new Set(posts.flatMap((p) => (p.tags || []).map((t) =
 
 	.search { border: 0; padding: 0; background: transparent; }
 	.search::backdrop { background: rgba(0,0,0,0.45); backdrop-filter: blur(8px); }
-	.search .inner { padding: 14px; width: min(720px, calc(100vw - 30px)); }
+	.search .inner { padding: 20px; width: min(720px, calc(100vw - 30px)); }
 	.hint { font-size: 12px; margin: 10px 0 0; }
 </style>
 
@@ -160,4 +167,3 @@ const allTags = Array.from(new Set(posts.flatMap((p) => (p.tags || []).map((t) =
 	}
 	input?.addEventListener("input", () => applyFilter(input.value));
 </script>
-
