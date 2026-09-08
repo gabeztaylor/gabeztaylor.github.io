@@ -1,7 +1,7 @@
 /* Minimal Prism theme tuned for this site (light + dark). */
 code[class*="language-"],
 pre[class*="language-"] {
-  color: var(--text);
+  color: inherit;
   font-family: var(--mono);
   font-size: 13px;
   line-height: 1.55;
@@ -18,14 +18,18 @@ pre[class*="language-"] {
   padding: 14px;
   margin: 14px 0;
   overflow: auto;
-  border-radius: 14px;
-  border: 1px solid var(--border);
-  background: var(--surface);
+  border-radius: var(--radius);
+  border: 2px solid var(--border);
+  background: #20282a;
+  color: #f8efd9;
+  box-shadow: 4px 4px 0 var(--mustard);
 }
+
+pre[class*="language-"] > code[class*="language-"] { color: inherit; }
 
 :not(pre) > code[class*="language-"] {
   padding: 2px 6px;
-  border-radius: 10px;
+  border-radius: var(--radius);
   border: 1px solid var(--border);
   background: var(--surface);
 }
@@ -34,41 +38,40 @@ pre[class*="language-"] {
 .token.comment,
 .token.prolog,
 .token.doctype,
-.token.cdata { color: color-mix(in oklab, var(--muted) 80%, transparent); }
+.token.cdata { color: #aaa08e; }
 
-.token.punctuation { color: color-mix(in oklab, var(--text) 75%, transparent); }
+.token.punctuation { color: #f4ead4; }
 .token.property,
 .token.tag,
 .token.constant,
 .token.symbol,
-.token.deleted { color: #ef4444; }
+.token.deleted { color: #ef8b78; }
 
 .token.boolean,
-.token.number { color: #f59e0b; }
+.token.number { color: #f3c969; }
 
 .token.selector,
 .token.attr-name,
 .token.string,
 .token.char,
 .token.builtin,
-.token.inserted { color: #22c55e; }
+.token.inserted { color: #86c9a2; }
 
 .token.operator,
 .token.entity,
-.token.url { color: color-mix(in oklab, var(--accent2) 70%, var(--text)); }
+.token.url { color: #8fc8c0; }
 
 .token.atrule,
 .token.attr-value,
-.token.keyword { color: var(--accent); }
+.token.keyword { color: #e99185; }
 
 .token.function,
-.token.class-name { color: #06b6d4; }
+.token.class-name { color: #80bfd1; }
 
 .token.regex,
 .token.important,
-.token.variable { color: #e879f9; }
+.token.variable { color: #d8a3cf; }
 
 .token.important,
 .token.bold { font-weight: 800; }
 .token.italic { font-style: italic; }
-

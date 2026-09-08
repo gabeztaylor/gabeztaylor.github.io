@@ -127,7 +127,7 @@ code {
   padding: 2px 5px;
   border-radius: var(--radius);
 }
-pre code { border: 0; padding: 0; background: transparent; }
+pre code { border: 0; padding: 0; background: transparent; color: inherit; }
 
 h1, h2, h3 {
   color: var(--text);

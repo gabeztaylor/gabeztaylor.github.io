@@ -2,7 +2,6 @@
 import Nav from "../components/Nav.astro";
 import "../styles/global.css";
 import "../styles/prism.css";
-import clientEnhancementsUrl from "../scripts/clientEnhancements.js?url";
 
 const { title, description } = Astro.props;
 const pageTitle = title ? `${title} · Gabriel Taylor` : "Gabriel Taylor";
@@ -63,7 +62,7 @@ const pageDescription =
       <img id="imgZoomImg" alt="" />
     </dialog>
 
-    <script type="module" src={clientEnhancementsUrl}></script>
+    <script src="../scripts/clientEnhancements.js"></script>
   </body>
 </html>
 
