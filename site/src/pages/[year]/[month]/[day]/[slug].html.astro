@@ -61,28 +61,23 @@ const { post } = Astro.props;
 </BaseLayout>
 
 <style>
-  .layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 280px;
-    gap: 14px;
-    align-items: start;
-  }
-  .post { padding: 32px; }
-  .hdr { padding: 18px 10px 26px; border-bottom: 2px solid var(--border); margin-bottom: 24px; text-align: center; }
-  .hdr h1 { font-size: clamp(38px, 6vw, 64px); }
-  .meta { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 14px; font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
-  .tags { display: inline-flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+  .layout { display: block; }
+  .post { padding: 0; }
+  .hdr { padding: 20px 0; border-block: 1px solid var(--border); margin-bottom: 48px; }
+  .hdr h1 { font-size: clamp(28px, 5vw, 36px); }
+  .hdr > p { margin: 8px 0 0; }
+  .meta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 14px; font-size: 10px; text-transform: uppercase; }
+  .tags { display: inline-flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
   .tag {
-    padding: 6px 10px;
-    border-radius: 1px;
-    border: 1.5px solid var(--border);
-    background: var(--mustard);
+    padding: 0;
+    border: 0;
+    background: transparent;
     text-decoration: none;
-    font-weight: 750;
+    font-size: 12px;
     color: var(--muted);
   }
-  .tag:hover { color: var(--text); border-color: color-mix(in oklab, var(--accent) 35%, var(--border)); }
-  .content :global(img) { max-width: 100%; height: auto; border-radius: 1px; border: 1.5px solid var(--border); }
+  .tag:hover { color: var(--text); text-decoration: underline; }
+  .content :global(img) { max-width: 100%; height: auto; border: 0; }
   .content :global(.youtube) {
     position: relative;
     padding-top: 56.25%;
@@ -97,25 +92,21 @@ const { post } = Astro.props;
     width: 100%;
     height: 100%;
   }
-  .content :global(h2) { margin-top: 28px; }
-  .content :global(h3) { margin-top: 20px; }
+  .content :global(h1) { font-size: 28px; margin-top: 48px; }
+  .content :global(h2) { margin-top: 48px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+  .content :global(h3) { margin-top: 34px; }
   .content :global(blockquote) {
     margin: 18px 0;
     padding: 12px 14px;
     border-left: 3px solid color-mix(in oklab, var(--accent) 55%, var(--border));
-    background: color-mix(in oklab, var(--surface) 70%, transparent);
+    background: transparent;
     border-radius: 0;
   }
 
-  .toc { position: sticky; top: 88px; padding: 18px; background: var(--mustard); }
+  .toc { display: none; }
   .tocTitle { font-weight: 900; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
   .toc ul { list-style: none; padding: 0; margin: 10px 0 0; display: grid; gap: 8px; }
   .toc a { text-decoration: none; color: var(--muted); font-weight: 750; }
   .toc a:hover { color: var(--text); }
   .l3 { padding-left: 12px; }
-  @media (max-width: 980px) {
-    .layout { grid-template-columns: 1fr; }
-    .toc { position: static; }
-  }
-  @media (max-width: 600px) { .post { padding: 20px; } }
 </style>

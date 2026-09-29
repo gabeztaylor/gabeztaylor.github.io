@@ -12,8 +12,7 @@ const allTags = Array.from(new Set(posts.flatMap((p) => (p.tags || []).map((t) =
 <BaseLayout title="Blog">
 	<section class="hero card">
 		<div class="inner">
-			<div class="kicker pill">The collected notes · Vol. I</div>
-			<h1>Gabriel’s<br />Descent</h1>
+			<h1>Gabriel’s Descent</h1>
 			<p class="muted">Essays on machine learning, mathematics, and statistics.</p>
 			<div class="cta">
 				<button class="btn primary" type="button" id="openSearch">Search (⌘K)</button>
@@ -73,62 +72,51 @@ const allTags = Array.from(new Set(posts.flatMap((p) => (p.tags || []).map((t) =
 </BaseLayout>
 
 <style>
-	.hero { padding: 42px 24px 38px; position: relative; overflow: hidden; text-align: center; background: var(--rose); }
-	.hero::before, .hero::after { content: ""; position: absolute; top: 0; bottom: 0; width: 18px; background: var(--mustard); border-inline: 2px solid var(--border); }
-	.hero::before { left: 9%; }
-	.hero::after { right: 9%; }
-	.hero .inner { position: relative; z-index: 1; display: grid; justify-items: center; gap: 16px; max-width: 700px; margin: auto; }
-	.hero h1 { text-transform: none; }
-	.hero p { max-width: 570px; margin: 0; color: color-mix(in oklab, var(--text) 80%, transparent); }
-	.kicker { width: fit-content; font-weight: 900; font-size: 10px; letter-spacing: .15em; text-transform: uppercase; }
-	.cta { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+	.hero { margin-bottom: 42px; }
+	.hero .inner { display: grid; gap: 8px; }
+	.hero p { margin: 0; font-size: 14px; }
+	.cta { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
 
-	.tagbar { margin-top: 24px; background: var(--accent2); }
-	.tagbar .inner { padding: 17px; text-align: center; }
-	.tagbar .label { font-weight: 850; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; }
-	.chips { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+	.tagbar { margin-bottom: 48px; }
+	.tagbar .label { margin-bottom: 8px; font-size: 12px; }
+	.chips { display: flex; flex-wrap: wrap; gap: 6px 12px; }
 	.chip {
-		display: inline-flex;
-		padding: 8px 10px;
-		border-radius: 1px;
-		border: 1.5px solid var(--border);
-		background: var(--surface2);
+		padding: 0;
+		border: 0;
+		background: transparent;
 		text-decoration: none;
 		color: var(--muted);
-		font-weight: 800;
-		font-size: 13px;
+		font-weight: 600;
+		font-size: 12px;
 	}
-	.chip:hover { color: var(--text); border-color: color-mix(in oklab, var(--accent) 35%, var(--border)); }
+	.chip:hover { color: var(--text); text-decoration: underline; }
 
-	.posts { margin-top: 24px; }
-	.posts .inner { padding: 22px; }
+	.posts .inner { padding: 0; }
 	.row { display: flex; align-items: center; gap: 10px; }
 	.space { justify-content: space-between; }
-	.list { margin-top: 18px; display: grid; border-top: 2px solid var(--border); }
+	.posts h2 { font-size: 18px; }
+	.list { margin-top: 24px; display: grid; }
 	.postRow {
 		display: flex;
 		justify-content: space-between;
 		gap: 12px;
-		padding: 18px 12px;
-		border-radius: 0;
-		border: 0;
-		border-bottom: 1.5px solid var(--border);
+		padding: 0;
+		margin-bottom: 26px;
 		background: transparent;
 		text-decoration: none;
-		transition: padding 140ms ease, background 140ms ease;
 	}
-	.postRow:hover { padding-left: 20px; color: #242321; background: var(--mustard); }
-	.title { font-family: var(--serif); font-size: 21px; font-weight: 700; }
-	.sub { margin-top: 4px; font-size: 13px; }
-	.date { font-size: 13px; white-space: nowrap; }
+	.postRow:hover .title { text-decoration: underline; }
+	.title { font-size: 18px; font-weight: 650; }
+	.sub { margin-top: 2px; font-size: 14px; line-height: 1.5; }
+	.date { padding-top: 4px; font-size: 11px; font-weight: 600; text-transform: uppercase; white-space: nowrap; }
 	@media (max-width: 720px) {
 		.postRow { flex-direction: column; align-items: flex-start; }
 		.date { white-space: normal; }
 	}
 
 	.search { border: 0; padding: 0; background: transparent; }
-	.search::backdrop { background: rgba(0,0,0,0.45); backdrop-filter: blur(8px); }
-	.search .inner { padding: 20px; width: min(720px, calc(100vw - 30px)); }
+	.search::backdrop { background: rgba(0,0,0,0.35); }
+	.search .inner { padding: 22px; width: min(620px, calc(100vw - 30px)); background: var(--bg); border: 1px solid var(--border); }
 	.hint { font-size: 12px; margin: 10px 0 0; }
 </style>
 

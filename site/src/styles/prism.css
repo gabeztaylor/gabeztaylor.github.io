@@ -15,14 +15,14 @@ pre[class*="language-"] {
 }
 
 pre[class*="language-"] {
-  padding: 14px;
-  margin: 14px 0;
+  padding: 16px 18px;
+  margin: 20px 0;
   overflow: auto;
-  border-radius: var(--radius);
-  border: 2px solid var(--border);
-  background: #20282a;
-  color: #f8efd9;
-  box-shadow: 4px 4px 0 var(--mustard);
+  border: solid var(--border);
+  border-width: 1px 0;
+  border-radius: 0;
+  background: var(--surface);
+  color: var(--text);
 }
 
 pre[class*="language-"] > code[class*="language-"] { color: inherit; }
@@ -38,40 +38,66 @@ pre[class*="language-"] > code[class*="language-"] { color: inherit; }
 .token.comment,
 .token.prolog,
 .token.doctype,
-.token.cdata { color: #aaa08e; }
+.token.cdata { color: #6a737d; }
 
-.token.punctuation { color: #f4ead4; }
+.token.punctuation { color: var(--text); }
 .token.property,
 .token.tag,
 .token.constant,
 .token.symbol,
-.token.deleted { color: #ef8b78; }
+.token.deleted { color: #a31515; }
 
 .token.boolean,
-.token.number { color: #f3c969; }
+.token.number { color: #8959a8; }
 
 .token.selector,
 .token.attr-name,
 .token.string,
 .token.char,
 .token.builtin,
-.token.inserted { color: #86c9a2; }
+.token.inserted { color: #54790f; }
 
 .token.operator,
 .token.entity,
-.token.url { color: #8fc8c0; }
+.token.url { color: #444; }
 
 .token.atrule,
 .token.attr-value,
-.token.keyword { color: #e99185; }
+.token.keyword { color: #a626a4; }
 
 .token.function,
-.token.class-name { color: #80bfd1; }
+.token.class-name { color: #315f89; }
 
 .token.regex,
 .token.important,
-.token.variable { color: #d8a3cf; }
+.token.variable { color: #986801; }
 
 .token.important,
 .token.bold { font-weight: 800; }
 .token.italic { font-style: italic; }
+
+html[data-theme="dark"] .token.comment,
+html[data-theme="dark"] .token.prolog,
+html[data-theme="dark"] .token.doctype,
+html[data-theme="dark"] .token.cdata { color: #9aa0a6; }
+html[data-theme="dark"] .token.property,
+html[data-theme="dark"] .token.tag,
+html[data-theme="dark"] .token.constant,
+html[data-theme="dark"] .token.symbol,
+html[data-theme="dark"] .token.deleted { color: #ef8b78; }
+html[data-theme="dark"] .token.boolean,
+html[data-theme="dark"] .token.number { color: #c8a8df; }
+html[data-theme="dark"] .token.selector,
+html[data-theme="dark"] .token.attr-name,
+html[data-theme="dark"] .token.string,
+html[data-theme="dark"] .token.char,
+html[data-theme="dark"] .token.builtin,
+html[data-theme="dark"] .token.inserted { color: #9acb86; }
+html[data-theme="dark"] .token.operator,
+html[data-theme="dark"] .token.entity,
+html[data-theme="dark"] .token.url { color: #d6d6d6; }
+html[data-theme="dark"] .token.atrule,
+html[data-theme="dark"] .token.attr-value,
+html[data-theme="dark"] .token.keyword { color: #d6a0d9; }
+html[data-theme="dark"] .token.function,
+html[data-theme="dark"] .token.class-name { color: #8ab4dd; }

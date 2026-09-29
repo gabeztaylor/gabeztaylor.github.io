@@ -39,23 +39,24 @@ const tagged = posts.filter((p) => (p.tagSlugs || []).includes(tag));
 </BaseLayout>
 
 <style>
-  .page { padding: 28px; }
-  .hdr { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-bottom: 20px; border-bottom: 2px solid var(--border); }
-  .hdr h1 { font-size: clamp(34px, 5vw, 52px); }
-  .list { display: grid; }
+  .page { padding: 0; }
+  .hdr { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+  .hdr h1 { font-size: 28px; }
+  .list { display: grid; padding-top: 24px; }
   .row {
     display: flex;
     justify-content: space-between;
     gap: 12px;
-    padding: 17px 10px;
+    padding: 0;
+    margin-bottom: 24px;
     border-radius: 0;
     border: 0;
-    border-bottom: 1.5px solid var(--border);
+    border-bottom: 0;
     background: transparent;
     text-decoration: none;
   }
-  .row:hover { color: #242321; background: var(--mustard); padding-inline: 18px; }
-  .title { font-family: var(--serif); font-size: 19px; font-weight: 700; }
-  .meta { font-size: 13px; white-space: nowrap; }
+  .row:hover .title { text-decoration: underline; }
+  .title { font-size: 18px; font-weight: 650; }
+  .meta { font-size: 11px; text-transform: uppercase; white-space: nowrap; }
   @media (max-width: 720px) { .row { flex-direction: column; align-items: flex-start; } }
 </style>

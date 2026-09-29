@@ -6,149 +6,39 @@ const links = [
 ];
 ---
 
-<header class="nav card">
+<header class="nav">
   <div class="inner">
-    <div class="brand">
-      <button class="markBtn" type="button" id="avatarBtn" aria-label="Open profile photo">
-        <span class="mark" aria-hidden="true">
-          <span class="initial">G</span>
-          <img class="avatar" id="avatarImg" src="/assets/bio.jpeg" alt="Gabriel Taylor" loading="lazy" />
-        </span>
-      </button>
-      <a class="nameLink" href="/" aria-label="Home">
-        <span class="name">Gabriel Taylor</span>
-      </a>
-    </div>
-
+    <a class="nameLink" href="/" aria-label="Home">Gabriel Taylor</a>
     <nav class="links" aria-label="Primary">
-      {links.map((l) => (
-        <a class="link" href={l.href}>
-          {l.label}
-        </a>
-      ))}
+      {links.map((link) => <a class="link" href={link.href}>{link.label}</a>)}
     </nav>
-
-    <div class="actions">
-      <button class="btn" type="button" id="themeToggle" aria-label="Toggle theme">
-        Theme
-      </button>
-    </div>
+    <button class="theme" type="button" id="themeToggle" aria-label="Toggle theme">Theme</button>
   </div>
 </header>
 
 <script is:inline>
   const root = document.documentElement;
   const key = "theme";
-
-  function apply(theme) {
-    if (theme === "dark") root.setAttribute("data-theme", "dark");
-    else if (theme === "light") root.setAttribute("data-theme", "light");
-    else root.removeAttribute("data-theme");
-  }
-
   const saved = localStorage.getItem(key);
-  apply(saved);
+  if (saved === "dark" || saved === "light") root.setAttribute("data-theme", saved);
 
   document.getElementById("themeToggle")?.addEventListener("click", () => {
-    const cur = root.getAttribute("data-theme") || "";
-    const next = cur === "dark" ? "light" : "dark";
+    const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
     localStorage.setItem(key, next);
-    apply(next);
+    root.setAttribute("data-theme", next);
   });
-
-  // Open the global image-zoom modal for the avatar.
-  document.getElementById("avatarBtn")?.addEventListener("click", () => {
-    const dlg = document.getElementById("imgZoom");
-    const img = document.getElementById("imgZoomImg");
-    const src = document.getElementById("avatarImg")?.getAttribute("src");
-    if (!dlg?.showModal || !img || !src) return;
-    img.setAttribute("src", src);
-    img.setAttribute("alt", "Gabriel Taylor");
-    dlg.showModal();
-  });
-
-  // If avatar loads, remove the decorative border/gradient.
-  const avatar = document.getElementById("avatarImg");
-  const markBtn = document.getElementById("avatarBtn");
-  avatar?.addEventListener("load", () => markBtn?.classList.add("hasAvatar"), { once: true });
 </script>
 
 <style>
-  .nav { position: sticky; top: 12px; z-index: 50; margin: 0 0 30px; }
-  .inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 10px 12px;
-  }
-  .brand { display: inline-flex; align-items: center; gap: 12px; min-width: 210px; }
-  .nameLink { text-decoration: none; }
-  .mark {
-    width: 42px;
-    height: 42px;
-    border-radius: 1px;
-    display: grid;
-    place-items: center;
-    border: 1.5px solid var(--border);
-    background: var(--rose);
-    box-shadow: 3px 3px 0 var(--border);
-    position: relative;
-    overflow: hidden;
-  }
-  .initial { font-weight: 900; }
-  .avatar {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.95;
-  }
-  .markBtn { padding: 0; border: 0; background: transparent; cursor: pointer; border-radius: 1px; }
-  .markBtn.hasAvatar .mark {
-    border-color: var(--border);
-    background: var(--rose);
-    box-shadow: 3px 3px 0 var(--border);
-  }
-  .markBtn:focus-visible {
-    outline: 2px solid color-mix(in oklab, var(--accent) 55%, transparent);
-    outline-offset: 3px;
-  }
-  .name {
-    white-space: nowrap;
-    font-size: 12px;
-    font-weight: 900;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-  }
-  .links {
-    display: flex;
-    gap: 4px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .link {
-    padding: 8px 12px;
-    border-radius: 1px;
-    border: 1px solid transparent;
-    text-decoration: none;
-    color: var(--muted);
-    font-size: 11px;
-    font-weight: 900;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-  }
-  .link:hover {
-    color: var(--text);
-    color: #242321;
-    border-color: var(--border);
-    background: var(--mustard);
-  }
-  .actions { display: flex; gap: 10px; }
-  @media (max-width: 760px) {
-    .inner { display: grid; grid-template-columns: 1fr auto; }
-    .brand { min-width: 0; }
-    .links { grid-column: 1 / -1; grid-row: 2; justify-content: center; border-top: 1px solid var(--border); padding-top: 8px; }
+  .nav { margin-bottom: 68px; }
+  .inner { display: flex; align-items: center; gap: 14px; }
+  .nameLink { margin-right: auto; color: var(--text); font-size: 12px; font-weight: 600; text-decoration: none; }
+  .links { display: flex; gap: 12px; flex-wrap: wrap; }
+  .link, .theme { padding: 0; border: 0; background: transparent; color: var(--muted); font: inherit; font-size: 12px; text-decoration: none; cursor: pointer; }
+  .link:hover, .theme:hover { color: var(--text); }
+  @media (max-width: 520px) {
+    .nav { margin-bottom: 48px; }
+    .inner { flex-wrap: wrap; }
+    .nameLink { width: 100%; }
   }
 </style>
