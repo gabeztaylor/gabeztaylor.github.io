@@ -27,7 +27,7 @@ $$
 Suppose
 
 $$
-U:G\longrightarrow \mathrm U(\mathcal H)
+U:G\longrightarrow \mathrm U(\mathcal{H})
 $$
 
 is a continuous unitary representation. For $a,b\in[N]$, write
@@ -42,7 +42,7 @@ $$
 I_{ij}=\int_G\prod_{r=1}^d U_{i(r)j(r)}(g)\,dg.
 $$
 
-This looks to be quite a hairy integral. The main insight of Weingarten calculus is that it is really a problem about the $G$-invariant subspace of $mathcal H^{\otimes d}$.
+This looks to be quite a hairy integral. The main insight of Weingarten calculus is that it is really a problem about the $G$-invariant subspace of $\mathcal{H}^{\otimes d}$.
 
 For a multi-index $i\in\operatorname{Fun}(d,N)$, define
 
@@ -78,8 +78,8 @@ $$
 The integral is well-defined because $G$ is compact and the representation is continuous. We claim that $P$ is the orthogonal projection onto
 
 $$
-(\mathcal H^{\otimes d})^G
-=\{v\in\mathcal H^{\otimes d}:U^{\otimes d}(g)v=v\text{ for every }g\in G\}.
+(\mathcal{H}^{\otimes d})^G
+=\{v\in\mathcal{H}^{\otimes d}:U^{\otimes d}(g)v=v\text{ for every }g\in G\}.
 $$
 
 First, $P$ is idempotent. By Fubini's theorem and invariance of Haar measure,
@@ -126,14 +126,14 @@ $$
 Hence
 
 $$
-\operatorname{im}(P)=(\mathcal H^{\otimes d})^G.
+\operatorname{im}(P)=(\mathcal{H}^{\otimes d})^G.
 $$
 
 This illustrates the conceptual heart of the method: **Haar integration projects onto invariant tensors.**
 
 ## The fundamental theorem
 
-Choose any basis $a_1,\ldots,a_m$ of $(\mathcal H^{\otimes d})^G$, and define the matrix
+Choose any basis $a_1,\ldots,a_m$ of $(\mathcal{H}^{\otimes d})^G$, and define the matrix
 
 $$
 \mathbf A=\big[\langle e_i,a_x\rangle\big]_{
@@ -176,7 +176,7 @@ So every Weingarten calculation has the same recipe:
 
 ## A toy example: the symmetric group
 
-Let $G=S_N$ act on $mathcal H=\mathbb C^N$ by permuting the standard basis:
+Let $G=S_N$ act on $\mathcal{H}=\mathbb C^N$ by permuting the standard basis:
 
 $$
 U(\sigma)e_x=e_{\sigma(x)}.
@@ -206,7 +206,7 @@ a_\lambda
 \operatorname{type}(i)=\lambda}}e_i.
 $$
 
-These orbit sums form a basis for $(\mathcal H^{\otimes d})^{S_N}$. Distinct orbit sums have disjoint support, so they are orthogonal. If $\lambda$ has $k$ blocks, then assigning distinct labels from $[N]$ to those blocks gives
+These orbit sums form a basis for $(\mathcal{H}^{\otimes d})^{S_N}$. Distinct orbit sums have disjoint support, so they are orthogonal. If $\lambda$ has $k$ blocks, then assigning distinct labels from $[N]$ to those blocks gives
 
 $$
 \langle a_\lambda,a_\lambda\rangle
@@ -246,7 +246,7 @@ This answer also has a direct probabilistic interpretation, which I'm always loo
 
 ## The unitary group
 
-Now take $G=\mathrm U(N)$ with its defining representation on $\mathcal H=\mathbb C^N$. The center of $\mathrm U(N)$ acts on $\mathcal H^{\otimes d}$ by a nontrivial scalar when $d\geq1$, so this tensor power has no invariant vectors. To obtain nonzero moments, we pair entries of $U$ with entries of its complex conjugate and study integrals of the form
+Now take $G=\mathrm U(N)$ with its defining representation on $\mathcal{H}=\mathbb C^N$. The center of $\mathrm U(N)$ acts on $\mathcal{H}^{\otimes d}$ by a nontrivial scalar when $d\geq1$, so this tensor power has no invariant vectors. To obtain nonzero moments, we pair entries of $U$ with entries of its complex conjugate and study integrals of the form
 
 $$
 \int_{\mathrm U(N)}
@@ -254,10 +254,10 @@ $$
 \prod_{r=1}^d \overline{U_{i'_rj'_r}(U)}\,dU.
 $$
 
-These products arise as matrix coefficients of the conjugation representation on $\operatorname{End}(\mathcal H^{\otimes d})$. Its invariant subspace is the commutant
+These products arise as matrix coefficients of the conjugation representation on $\operatorname{End}(\mathcal{H}^{\otimes d})$. Its invariant subspace is the commutant
 
 $$
-\operatorname{End}_{\mathrm U(N)}(\mathcal H^{\otimes d})
+\operatorname{End}_{\mathrm U(N)}(\mathcal{H}^{\otimes d})
 =\{T:T U^{\otimes d}=U^{\otimes d}T
 \text{ for every }U\in\mathrm U(N)\}.
 $$
